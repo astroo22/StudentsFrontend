@@ -1,0 +1,67 @@
+.student-details {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    
+    p {
+      margin: 10px 0;
+    }
+    
+    strong {
+      font-weight: bold;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff;
+    background-color: #222;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #333;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #444;
+  }
+  
+  tr:hover {
+    background-color: #555;
+  }
+  .report-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    color: #333;
+  
+    table {
+      border-collapse: collapse;
+      width: 100%;
+  
+      th, td {
+        padding: 0.5rem;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+  
