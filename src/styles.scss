@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+$primary-color: #1a1a1a;
+$secondary-color: #7b7b7b;
+$tertiary-color: #c5c5c5;
+$accent-color: #ffcc00;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $primary-color;
+  color: $tertiary-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: $primary-color;
+  border-bottom: 1px solid $tertiary-color;
+}
+
+.nav-link {
+  color: $tertiary-color !important;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: $accent-color !important;
+}
+
+hr {
+  border-top: 1px solid $tertiary-color;
+}
+
+.resume-container {
+  margin-top: 5%;
+  padding: 5%;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.resume-header h2 {
+  color: $tertiary-color;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.resume-header p {
+  color: $accent-color;
+  font-size: 1.5rem;
+}
+
+.resume-section {
+  margin-bottom: 5%;
+}
+
+.resume-section h3 {
+  color: $accent-color;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+}
+
+.resume-subsection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.resume-subsection p {
+  color: $tertiary-color;
+  font-size: 1.2rem;
+  margin-right: 5%;
+}
+
+.resume-subsection span {
+  color: $accent-color;
+  font-size: 1.2rem;
+}
