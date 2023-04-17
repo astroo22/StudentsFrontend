@@ -1,11 +1,10 @@
 export interface Student {
-    student_id: string;
-    name: string;
-    current_year: number;
-    graduation_year: number;
-    avg_gpa: number;
-    age: number;
-    dob: Date;
-    enrolled: boolean;
+    StudentID: string;
+    Name: string;
+    CurrentYear: number;
+    GraduationYear: number;
+    AvgGPA: number;
+    Age: number;
+    Dob: Date;
+    Enrolled: boolean;
   }
-  

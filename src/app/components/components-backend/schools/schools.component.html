@@ -1,0 +1,17 @@
+
+  <div class="schools">
+    <div class="schools-container">
+      <div *ngFor="let school of schools" class="school-card" (click)="selectSchool(school)">
+        
+        <app-school [school]="school"></app-school>
+        <!--<p>Avg GPA: {{school.avgGPA || 'N/A'}}</p>
+        <p>Ranking: {{school.ranking || 'N/A'}}</p> -->
+      </div>
+    </div>
+    <div class="selected-school">
+      <app-school [school]="selectedSchool">
+        
+      </app-school>
+    </div>
+  </div>
+

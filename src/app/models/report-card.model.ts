@@ -1,10 +1,10 @@
 export interface ReportCard {
-    student_id: string;
-    math: number;
-    science: number;
-    english: number;
-    physical_ed: number;
-    lunch: number;
-    class_list: string[];
+    StudentID: string;
+    Math: number;
+    Science: number;
+    English: number;
+    PhysicalED: number;
+    Lunch: number;
+    ClassList: string[];
   }
   

@@ -1,1 +1,8 @@
-<p>class works!</p>
+<div class="class-container">
+    <div class="class-card">
+        <h2>Subject: {{class.Subject}}</h2>
+        <p>Grade Level: {{class.TeachingGrade}}  Avg Gpa: {{class.ClassAvg}}</p>
+        <app-professor [professorID]="class.ProfessorID"></app-professor>
+    </div>
+</div>
+

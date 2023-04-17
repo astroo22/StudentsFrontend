@@ -1,48 +1,15 @@
 <div class="student-container">
-    <h2>{{ student.name }}</h2>
-    <p>ID: {{ student.student_id }}</p>
-    <p>Current Year: {{ student.current_year }}</p>
-    <p>Graduation Year: {{ student.graduation_year }}</p>
-    <p>Average GPA: {{ student.avg_gpa }}</p>
-    <p>Age: {{ student.age }}</p>
-    <p>Date of Birth: {{ student.dob | date }}</p>
-    <p *ngIf="student.enrolled">Enrolled</p>
-    <p *ngIf="!student.enrolled">Not Enrolled</p>
-  
-    <button (click)="toggleReportCard()">View Report Card</button>
-
-    <div *ngIf="showReportCard" class="report-card">
-        <div class="report-card">
-    <h2>Report Card for {{ reportCard.student_id }}</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Math</td>
-          <td>{{ reportCard.math }}</td>
-        </tr>
-        <tr>
-          <td>Science</td>
-          <td>{{ reportCard.science }}</td>
-        </tr>
-        <tr>
-          <td>English</td>
-          <td>{{ reportCard.english }}</td>
-        </tr>
-        <tr>
-          <td>Physical Education</td>
-          <td>{{ reportCard.physical_ed }}</td>
-        </tr>
-        <tr>
-          <td>Lunch</td>
-          <td>{{ reportCard.lunch }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="student-card">
+      <h2>{{ student.Name }}</h2>
+      
+      <app-report-card [studentName] = "student.Name" [studentID]= "student.StudentID"></app-report-card>
+      <p>Current Grade: {{ student.CurrentYear }}</p>
+      <p>Graduation Year: {{ student.GraduationYear }}</p>
+      <p>GPA: {{ student.AvgGPA }}</p>
+      <p>Age: {{ student.Age }}</p>
+      <p>Date of Birth: {{ student.Dob | date }}</p>
+      <p *ngIf="student.Enrolled">Enrolled</p>
+      <p *ngIf="!student.Enrolled">Not Enrolled</p>   
+       
     </div>
+  </div>

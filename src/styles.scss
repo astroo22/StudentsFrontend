@@ -1,6 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
-
+//@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 $primary-color: #1a1a1a;
 $secondary-color: #7b7b7b;
 $tertiary-color: #c5c5c5;
@@ -89,3 +89,4 @@ hr {
   color: $accent-color;
   font-size: 1.2rem;
 }
+

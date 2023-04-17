@@ -1,33 +1,28 @@
 <div class="report-card">
-    <h2>Report Card for {{ reportCard.student_id }}</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Math</td>
-          <td>{{ reportCard.math }}</td>
-        </tr>
-        <tr>
-          <td>Science</td>
-          <td>{{ reportCard.science }}</td>
-        </tr>
-        <tr>
-          <td>English</td>
-          <td>{{ reportCard.english }}</td>
-        </tr>
-        <tr>
-          <td>Physical Education</td>
-          <td>{{ reportCard.physical_ed }}</td>
-        </tr>
-        <tr>
-          <td>Lunch</td>
-          <td>{{ reportCard.lunch }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <button (click)="toggleReportCard()" class="btn-secondary">Toggle Report Card</button>
+    <div *ngIf="showReportCard" class="report-card">
+      <div class="popup">
+        <h3>{{studentName}}</h3>
+        <div class="row">
+          <div class="label">Math:</div>
+          <div class="value">{{reportCard.Math}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Science:</div>
+          <div class="value">{{reportCard.Science}}</div>
+        </div>
+        <div class="row">
+          <div class="label">English:</div>
+          <div class="value">{{reportCard.English}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Physical Education:</div>
+          <div class="value">{{reportCard.PhysicalED}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Lunch:</div>
+          <div class="value">{{reportCard.Lunch}}</div>
+        </div>
+      </div>
+    </div>
   </div>
