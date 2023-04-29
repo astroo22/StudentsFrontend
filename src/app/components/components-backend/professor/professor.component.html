@@ -1,9 +1,9 @@
 <div class="professor-container">
-    <h3>{{ professor.Name }}</h3>
-    <p>Professor ID: {{ professor.ProfessorID }}</p>
-    <p>Student Average: {{ professor.StudentAvg }}</p>
+    <h3>{{ professor.name }}</h3>
+    <p>Professor ID: {{ professor.professor_id }}</p>
+    <p>Student Average: {{ professor.student_avg }}</p>
     <p>Classes: </p>
     <ul>
-      <li *ngFor="let class of professor.ClassList">{{ class }}</li>
+      <li *ngFor="let class of professor.class_list">{{ class }}</li>
     </ul>
   </div>

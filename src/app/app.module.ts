@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SchoolsComponent } from './components/components-backend/schools/schools.component';
 import { SchoolComponent } from './components/components-backend/school/school.component';
 import { ClassesComponent } from './components/components-backend/classes/classes.component';
+import { SchoolCardComponent } from './components/components-backend/school-card/school-card.component';
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ClassesComponent } from './components/components-backend/classes/classe
     ReportCardComponent,
     SchoolsComponent,
     SchoolComponent,
-    ClassesComponent
+    ClassesComponent,
+    SchoolCardComponent
    
    // PopupRectDirective
   ],

@@ -1,3 +1,21 @@
-<p>classes works!</p>
 <!-- do this tomorrow need to have a for loop that creates a bunch of class
      components based on classList passed to this component-->
+<!-- <ng-container *ngIf="classList">
+    <div class="classes-container">
+        <div *ngFor="let classID of classList" class="class-card" >
+            <app-class [classID]="classID"></app-class>
+        </div>
+    </div>
+</ng-container> -->
+<div class="class-list"*ngIf="schoolID">
+    <div class="class-list-header">
+      <h2>Classes</h2>
+    </div>
+    <div class="class-list-body">
+      <ul>
+        <li *ngFor="let class of classes">
+          <app-class [class]="class"></app-class>
+        </li>
+      </ul>
+    </div>
+  </div>

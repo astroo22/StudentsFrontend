@@ -1,15 +1,15 @@
 <div class="student-container">
     <div class="student-card">
-      <h2>{{ student.Name }}</h2>
+      <h2>{{ student.name }}</h2>
       
-      <app-report-card [studentName] = "student.Name" [studentID]= "student.StudentID"></app-report-card>
-      <p>Current Grade: {{ student.CurrentYear }}</p>
-      <p>Graduation Year: {{ student.GraduationYear }}</p>
-      <p>GPA: {{ student.AvgGPA }}</p>
-      <p>Age: {{ student.Age }}</p>
-      <p>Date of Birth: {{ student.Dob | date }}</p>
-      <p *ngIf="student.Enrolled">Enrolled</p>
-      <p *ngIf="!student.Enrolled">Not Enrolled</p>   
+      <app-report-card [studentName] = "student.name" [studentID]= "student.student_id"></app-report-card>
+      <p>Current Grade: {{ student.current_year }}</p>
+      <p>Graduation Year: {{ student.graduation_year }}</p>
+      <p>GPA: {{ student.avg_gpa }}</p>
+      <p>Age: {{ student.age }}</p>
+      <p>Date of Birth: {{ student.dob | date }}</p>
+      <p *ngIf="student.enrolled">Enrolled</p>
+      <p *ngIf="!student.enrolled">Not Enrolled</p>   
        
     </div>
   </div>

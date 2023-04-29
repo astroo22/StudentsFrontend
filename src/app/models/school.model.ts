@@ -1,8 +1,10 @@
 export interface School{
-    SchoolID: string;
-    SchoolOwnerID: string;
-    SchoolName: string
-    ProfessorList: string[];
-    ClassList: string[];
-    StudentList: string[];
+    school_id: string;
+    school_owner_id: string;
+    school_name: string
+    avg_gpa: number;        
+	ranking: number;       
+    professor_list: string[];
+    class_list: string[];
+    student_list: string[];
 }

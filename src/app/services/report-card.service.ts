@@ -26,15 +26,15 @@ export class ReportCardService {
 
   updateReportCard(reportcard: ReportCard): Observable<any> {
     const formData = new FormData();
-    formData.append('math', reportcard.Math.toString());
-    formData.append('science', reportcard.Science.toString());
-    formData.append('english', reportcard.English.toString());
-    formData.append('physicaled', reportcard.PhysicalED.toString());
-    formData.append('lunch', reportcard.Lunch.toString());
+    formData.append('math', reportcard.math.toString());
+    formData.append('science', reportcard.science.toString());
+    formData.append('english', reportcard.english.toString());
+    formData.append('physicaled', reportcard.physical_ed.toString());
+    formData.append('lunch', reportcard.lunch.toString());
     //TODO: forgot to create adding and removing classes implementation on backend will need to fix
     //formData.append('add_class_list', reportcard.addClassList.join());
     //formData.append('remove_class_list', reportcard.removeClassList.join());
-    return this.http.put(`${this.apiUrl}/${reportcard.StudentID}`, formData);
+    return this.http.put(`${this.apiUrl}/${reportcard.student_id}`, formData);
   }
 
   deleteReportCard(student_id: string): Observable<any> {

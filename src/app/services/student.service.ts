@@ -14,13 +14,13 @@ export class StudentService {
 
   createStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(this.apiUrl, {
-      name: student.Name,
-      current_year: student.CurrentYear,
-      graduation_year: student.GraduationYear,
-      gpa: student.AvgGPA,
-      age: student.Age,
-      dob: student.Dob,
-      enrolled: student.Enrolled
+      name: student.name,
+      current_year: student.current_year,
+      graduation_year: student.graduation_year,
+      gpa: student.avg_gpa,
+      age: student.age,
+      dob: student.dob,
+      enrolled: student.enrolled
     });
 }
 
@@ -43,13 +43,13 @@ export class StudentService {
   }
 
   updateStudent(student: Student): Observable<Student> {
-    const apiUrl = `${this.apiUrl}/${student.StudentID}`;
+    const apiUrl = `${this.apiUrl}/${student.student_id}`;
     const updateData = new FormData();
-    updateData.append('current_year', student.CurrentYear.toString());
-    updateData.append('graduation_year', student.GraduationYear.toString());
-    updateData.append('gpa', student.AvgGPA.toString());
-    updateData.append('age', student.Age.toString());
-    updateData.append('enrolled', student.Enrolled.toString());
+    updateData.append('current_year', student.current_year.toString());
+    updateData.append('graduation_year', student.graduation_year.toString());
+    updateData.append('gpa', student.avg_gpa.toString());
+    updateData.append('age', student.age.toString());
+    updateData.append('enrolled', student.enrolled.toString());
   
     return this.http.put(apiUrl, updateData).pipe(
       map((response: any) => {

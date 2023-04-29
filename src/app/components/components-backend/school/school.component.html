@@ -1,27 +1,48 @@
-<ng-container *ngIf="school">
-    <mat-card class="school-card">
-      <mat-card-title>{{ school.SchoolName }}</mat-card-title>
-      <mat-card-content>
-        <!-- <div>Professor List: {{ school.ProfessorList || 'N/A' }}</div>
-        <div>Class List: {{ school.ClassList || 'N/A' }}</div>
-        <div>Student List: {{ school.StudentList || 'N/A' }}</div> -->
-      </mat-card-content>
-    </mat-card>
-  </ng-container>
+<div class="school-container"*ngIf="school">
+  <h2>{{ school.school_name }}</h2>
+  <div class="stats-line">
+    <div class="stats-item">
+      <span><h4>Number of Students: </h4></span>
+      <span>{{ numberOfStudents }}</span>
+    </div>
+    <div class="stats-item">
+      <span><h4>Average GPA:</h4></span>
+      <span>{{ school.avg_gpa || '-' }}</span>
+    </div>
+    <div class="stats-item">
+      <span><h4>School Ranking:</h4></span>
+      <span>{{ school.ranking || '-' }}</span>
+    </div>
+  </div>
 
-
-
-<!--   
-  <div class="schools">
-    <div class="schools-container">
-      <div *ngFor="let school of schools" class="school-card" (click)="selectSchool(school)">
-        
-        <app-school [school]="school"></app-school>
-        <!--<p>Avg GPA: {{school.avgGPA || 'N/A'}}</p>
-        <p>Ranking: {{school.ranking || 'N/A'}}</p> 
+  <div class ="data-container">
+  <div class="top-professors-container">
+    <h3>Top Professors</h3>
+    <div class="professor-item"  *ngFor="let professor of visibleProfessors; let i = index">
+      <div class="professor-ranking">
+        <span *ngIf="professor.rank <= 3">
+          <img src="{{ professorIcons[i] }}" alt="Professor Icon" />
+        </span>
+        <span *ngIf="professor.rank > 3">{{ professor.rank }}</span>
+      </div>
+      <div class="professor-info">
+        <span>Professor: {{ professor.name }}</span>
+       <!-- <span>{{ professor.TeachingGrade }} Grade</span> -->
+        <span>Student GPA: {{ professor.student_avg }}</span>
       </div>
     </div>
-    <div class="selected-school">
-      <app-school [school]="selectedSchool"></app-school>
+    <div class="scroll-buttons">
+      <button class="scroll-button" (click)="scrollProfessors(-5)">Previous</button>
+      <button class="scroll-button" (click)="scrollProfessors(5)">Next</button>
     </div>
-  </div> -->
+  </div>
+
+  <div class="top-grades-container">
+    <h3>Top Grades</h3>
+    <div class="grade-item" *ngFor="let grade of topGrades">
+      <span>Grade: {{ grade.grade }} </span>
+      <span>GPA: {{ grade.avg_gpa }}</span>
+    </div>
+  </div>
+</div>
+</div>

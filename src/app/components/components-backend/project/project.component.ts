@@ -15,7 +15,7 @@ export class ProjectComponent implements OnInit {
   constructor(private studentService: StudentService, private reportCardService: ReportCardService) { }
   
   ngOnInit(): void {
-    this.getStudents();
+   // this.getStudents();
   }
 
   getStudents(): void {

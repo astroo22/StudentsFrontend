@@ -1,8 +1,8 @@
 export interface Class {
-    ClassID: string;
-    TeachingGrade: number;
-    ProfessorID: string;
-    Subject: string;
-    Roster: string[];
-    ClassAvg: number;
+  class_id: string;
+  teaching_grade: number;
+  professor_id: string;
+  subject: string;
+  roster: string[];
+  class_avg: number;
   }

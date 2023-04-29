@@ -1,7 +1,8 @@
 export interface Professor {
-    ProfessorID: string;
-    Name: string;
-    StudentAvg: number;
-    ClassList: string[];
+  professor_id: string;
+  name: string;
+  student_avg: number;
+  class_list: string[];
+  rank: number;
   }
   
