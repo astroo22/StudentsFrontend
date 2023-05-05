@@ -1,0 +1,47 @@
+.app-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-header {
+    display: flex;
+    justify-content: left;
+    padding: 0 20px;
+    background-color: #A3A3A3;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab-label {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-label:hover {
+    background-color: #ebebeb;
+  }
+  
+  .tab-label.active {
+    background-color: #f0f0f0;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }

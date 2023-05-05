@@ -1,0 +1,16 @@
+<div class="app-tabs">
+    <div class="tab-header">
+      <div
+        class="tab-label"
+        [class.active]="tab.active"
+        *ngFor="let tab of tabs"
+        (click)="selectTab(tab)"
+      >
+        {{ tab.label }}
+      </div>
+    </div>
+    <div class="tab-content">
+      <ng-content select="app-tab"></ng-content>
+    </div>
+  </div>
+  
