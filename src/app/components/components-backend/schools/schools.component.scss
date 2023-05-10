@@ -1,61 +1,62 @@
-// .schools {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: flex-start;
-//     align-items: stretch;
-//     height: 100vh;
-//     background-color: #222;
-//     color: #fff;
-//     padding: 2rem;
-//     box-sizing: border-box;
+.componenet-container{
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 1900px;
+}
+
+.schools {
+    align-items: stretch;
+    height: 100vh;
+    background-color: #222;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 60px;
+    box-sizing: border-box;
   
-//     .schools-list {
-//       flex: 1;
-//       margin-right: 2rem;
+    .schools-list {
+      flex: 2;
+      margin-right: 2rem;
   
-//       .school-card {
-//         border: 1px solid #333;
-//         padding: 1rem;
-//         margin-bottom: 1rem;
-//         cursor: pointer;
+      .school-card {
+        border: 1px solid #333;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
   
-//         &:hover {
-//           background-color: #333;
-//         }
+        &:hover {
+          background-color: #333;
+        }
   
-//         h3 {
-//           margin: 0;
-//         }
+        h3 {
+          margin: 0;
+        }
   
-//         p {
-//           margin: 0.5rem 0;
-//         }
-//       }
-//     }
-//     .schools-container {
-       
-//         top: 0;
-//         left: 0;
-//         bottom: 0;
-//         width: 450px;
-//         background-color: #222;
-//         color: black;
-//         padding: 10px;
-       
-//       }
-//     .selected-school {
-//       flex: 2;
-//     }
-//   }
+        p {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+    .selected-school {
+      flex: 2;
+      margin-top: 60px;
+    }
+  }
+ 
+
+
 .Group_Class {
   position: relative;
-  width: 388px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 375px;
   height: 61px;
-  overflow: visible;
+  //overflow: visible;
 }
 
 .Scroll_Group {
-  mix-blend-mode: normal;
+ 
   position: relative;
   width: 388px;
   height: 729px;
@@ -63,10 +64,14 @@
 }
 
 .Repeat_Grid {
+  //mix-blend-mode: normal;
   position: relative;
-  width: 388px;
-  height: 1695px;
-  overflow: hidden;
+  margin-top:  30px;
+  margin-right: 10px;
+  width: 400px;
+  left: 30px;
+  height: 675px;
+  overflow-y: scroll;
 }
 
 .Component_11__1_Class {
@@ -74,6 +79,19 @@
   width: 388px;
   height: 61px;
   overflow: visible;
+}
+.Ranks{
+  top: 257px;
+  left: 52px;
+  width: 420px;
+  height: 37px;
+  margin-left: 10px; 
+  font-weight: bold;
+  text-align: left;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
 }
 
 .School_Rectangle {
@@ -85,7 +103,7 @@
   padding: 10px;
 }
 
-.Ranking_Flexbox {
+.Ranking_Box {
   width: 42px;
   height: 35px;
   text-align: left;

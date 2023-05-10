@@ -3,46 +3,118 @@
   <div class="stats-line">
     <div class="stats-item">
       <span><h4>Number of Students: </h4></span>
-      <span>{{ numberOfStudents }}</span>
+      <span class="students-item-label">{{ numberOfStudents }}</span>
     </div>
-    <div class="stats-item">
+    <div class="stats-item ">
       <span><h4>Average GPA:</h4></span>
-      <span>{{ school.avg_gpa || '-' }}</span>
+      <span class="gpa-item-label gpa-number">{{ school.avg_gpa | number:'1.2-2' || '-' }}</span>
     </div>
     <div class="stats-item">
       <span><h4>School Ranking:</h4></span>
-      <span>{{ school.ranking || '-' }}</span>
+      <span class="ranking-item-label">{{ school.ranking  || '-' }}</span>
     </div>
   </div>
 
   <div class ="data-container">
-  <div class="top-professors-container">
-    <h3>Top Professors</h3>
-    <div class="professor-item"  *ngFor="let professor of visibleProfessors; let i = index">
-      <div class="professor-ranking">
-        <span *ngIf="professor.rank <= 3">
-          <img src="{{ professorIcons[i] }}" alt="Professor Icon" />
-        </span>
-        <span *ngIf="professor.rank > 3">{{ professor.rank }}</span>
-      </div>
-      <div class="professor-info">
-        <span> {{ professor.name }}</span>
-       <!-- <span>{{ professor.TeachingGrade }} Grade</span> -->
-        <span>Student GPA: {{ professor.student_avg }}</span>
-      </div>
-    </div>
-    <div class="scroll-buttons">
-      <button class="scroll-button" (click)="scrollProfessors(-5)">Previous</button>
-      <button class="scroll-button" (click)="scrollProfessors(5)">Next</button>
-    </div>
-  </div>
+    <div class="top-prof-grades-container">
+      <div class="top-professors-container">
+        <!--title -->
+        <div class="title-bar">
+          <h3 class="top-prof-title">Top Professors</h3><h3 class="top-grade-title">Top Grades</h3>
+        </div>
+        <!--professor scoreboard -->
+        <div class="top-row-container">
+          <!--column 1 -->
+          <div class="professor-column">
+            <div class="professor-item"  *ngFor="let professor of visibleProfessors.slice(0,5); let i = index">
+              <div class="professor-ranking">
+                <span *ngIf="professor.rank === 3">
+                  <img class="icon"src="{{ professorIcons[2] }}" alt="Professor Icon" />
+                </span>
+                <span *ngIf="professor.rank === 2">
+                  <img class="icon"src="{{ professorIcons[1] }}" alt="Professor Icon" />
+                </span>
+                <span *ngIf="professor.rank === 1">
+                  <img class="icon"src="{{ professorIcons[0] }}" alt="Professor Icon" />
+                </span>
+                <span class="ranking_box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
+              </div>
+              <div class="professor-info">
+                <span class="prof-name"> {{ professor.name }}</span>
+                <span class ="student-gpa">Student GPA: {{ professor.student_avg }}</span>
+              </div>
+            </div>
+          </div>
+          
 
-  <div class="top-grades-container">
-    <h3>Top Grades</h3>
-    <div class="grade-item" *ngFor="let grade of topGrades">
-      <span>Grade: {{ grade.grade }} </span>
-      <span>GPA: {{ grade.avg_gpa }}</span>
+          <!--column 2 -->
+          <div class="professor-column professor-column-2">
+            <div class="professor-item" *ngFor="let professor of visibleProfessors.slice(5); let i = index">
+              <div class="professor-ranking">
+                <span *ngIf="professor.rank <= 3">
+                  <img class="icon"src="{{ professorIcons[i] }}" alt="Professor Icon" />
+                </span>
+                <span class="ranking_box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
+              </div>
+              <div class="professor-info">
+                <span class="prof-name"> {{ professor.name }}</span>
+                <span class ="student-gpa">Student GPA: {{ professor.student_avg }}</span>
+              </div>
+            </div>
+          </div> 
+          
+          
+          <div class="top-grades-container">
+            <div class="grade-column">
+              
+                <div class="grade-box" *ngFor="let grade of visibleGrades let i = index">
+                  <div class="grade-ranking">
+                    <span *ngIf="grade?.rank === 3">
+                      <img class="icon"src="{{ professorIcons[2] }}" alt="grade Icon" />
+                    </span>
+                    <span *ngIf="grade?.rank === 2">
+                      <img class="icon"src="{{ professorIcons[1] }}" alt="grade Icon" />
+                    </span>
+                    <span *ngIf="grade?.rank === 1">
+                      <img class="icon"src="{{ professorIcons[0] }}" alt="grade Icon" />
+                    </span>
+                    <span class="ranking_box" *ngIf="grade.rank > 3">{{ grade?.rank || '-'}}</span>
+                  </div>
+                  <div class = "grade-info">
+                    <span class="grade-title">Grade: {{ grade.grade || '-' }} </span>
+                    <span class ="grade-gpa">GPA: {{ grade.avg_gpa || '-' }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
+<div class="bar">
+  <button class="button-1 previous" [class.disabled]="isPreviousDisabledProfessors" (click)="scrollProfessors(-1)">Previous</button>
+  <div class="previous-placeholder"></div>
+  <button class="button-2" [class.disabled]="isNextDisabledProfessors" (click)="scrollProfessors(1)">Next</button>
+  <div class="previous-placeholder"></div>
+  <button class="button-3" [class.disabled]="isPreviousDisabledGrades" (click)="scrollGrades(-5)">Previous</button>
+  <div class="previous-placeholder" ></div>
+  <button class="button-4" [class.disabled]="isNextDisabledGrades"(click)="scrollGrades(5)" >Next</button>  
+  <div class="previous-placeholder"></div>
 </div>
-</div>
+    <!-- <div class="bar">
+      <button *ngIf="currentIndex > 0" class="scroll-button" (click)="scrollProfessors(-5)">Previous</button>
+      <button  class="next-button" (click)="scrollProfessors(5)">Next</button>
+    </div> -->
+    
+    <!-- <div class="scroll-buttons">
+      <button class="scroll-button" [class.disabled]="currentIndex === 0" (click)="scrollGrades(-1)">Previous</button>
+      <button class="scroll-button" [class.disabled]="currentIndex + pageSize >= topGrades.length" (click)="scrollGrades(1)">Next</button>
+    </div> -->
+    
+  </div>
+  
+
+    
+
+   
+  

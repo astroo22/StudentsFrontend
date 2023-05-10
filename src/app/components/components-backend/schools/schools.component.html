@@ -1,24 +1,11 @@
-<!-- 
-  <div class="schools">
-    <div class="schools-container">
-      <div *ngFor="let school of schools" class="school-card" (click)="selectSchool(school)">
-        
-        <app-school-card [school]="school"></app-school-card>
-      </div>
-    </div>
-    <div class="selected-school">
-     <app-school [school]="selectedSchool"></app-school>
-    </div>
-  </div> -->
- <!-- <div class="school-details">
-  <app-school [school]="selectedSchool"></app-school> 
-  </div>-->
-  <div class="Scroll_Group">
+<div class="componenet-container">
+  <div class="Scroll_Group selected-school">
+    <h3 class="Ranks">SCHOOL RANKS</h3>
     <div class="Repeat_Grid">
       <div *ngFor="let school of schools" class="Group_Class" (click)="selectSchool(school)">
         <div class="Component_11__1_Class">
           <div class="School_Rectangle">
-            <div class="Ranking_Flexbox">
+            <div class="Ranking_Box">
               <span>{{ school.ranking }}</span>
             </div>
             <div class="School_Name_Flexbox">
@@ -28,8 +15,11 @@
         </div>
       </div>
     </div>
-    <div class="selected-school">
-      <app-school [school]="selectedSchool"></app-school>
-     </div>
   </div>
+  <div class="selected-school">
+    <app-school [school]="selectedSchool"></app-school>
+  </div>
+</div>
+ 
+  
 

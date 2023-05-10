@@ -1,21 +1,16 @@
 @import '~bootstrap/dist/css/bootstrap.css';
+@import '@angular/material/theming';
 
-//@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
-$primary-color: #1a1a1a;
-$secondary-color: #7b7b7b;
-$tertiary-color: #c5c5c5;
-$accent-color: #ffcc00;
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto-Regular.ttf');
+}
 
-// Import Angular Material pre-built themes
-// @import '~@angular/material/theming';
+$primary-color: #2e2e2e;
+$secondary-color: #050505;
+$tertiary-color: #000000;
+$accent-color: #6f00ff;
 
-// // Define your custom theme
-// $my-app-primary: mat-palette($mat-blue);
-// $my-app-accent: mat-palette($mat-pink, A200, A100, A400);
-// $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
-
-// // Apply the theme to the Angular Material components
-// @include angular-material-theme($my-app-theme);
 
 html,
 body {
@@ -47,57 +42,68 @@ hr {
   border-top: 1px solid $tertiary-color;
 }
 
-.resume-container {
-  margin-top: 5%;
-  padding: 5%;
-  background-color: $secondary-color;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
-}
 
-.resume-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5%;
-}
 
-.resume-header h2 {
-  color: $tertiary-color;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-}
 
-.resume-header p {
-  color: $accent-color;
-  font-size: 1.5rem;
-}
+///////////////theme attempt Unsure why this didn't work will try again later
+/// 
+// @include mat-core();
 
-.resume-section {
-  margin-bottom: 5%;
-}
+// $dark-palette-primary:(
+//   50: #fcfcfc,
+//   100: #f8f8f8,
+//   200: #f3f3f3,
+//   300: #eeeeee,
+//   400: #cdcdcd,
+//   500: #b0b0b0,
+//   600: #858585,
+//   700: #707070,
+//   800: #505050,
+//   900: #2e2e2e,
+//   contrast: (
+//     50: rgba(black, 0.87),
+//     100: rgba(black, 0.87),
+//     200: rgba(black, 0.87),
+//     300: rgba(black, 0.87),
+//     400: rgba(black, 0.87),
+//     500: rgba(black, 0.87),
+//     600: rgba(black, 0.87),
+//     700: white,
+//     800: white,
+//     900: white
+//   )
+// );
+// $dark-palette-secondary:(
+//   50: #f5f5f5,
+//   100: #e9e9e9,
+//   200: #d9d9d9,
+//   300: #c4c4c4,
+//   400: #9d9d9d,
+//   500: #7b7b7b,
+//   600: #555555,
+//   700: #434343,
+//   800: #262626,
+//   900: #000000,
+//   contrast: (
+//     50: rgba(black, 0.87),
+//     100: rgba(black, 0.87),
+//     200: rgba(black, 0.87),
+//     300: rgba(black, 0.87),
+//     400: rgba(black, 0.87),
+//     500: rgba(black, 0.87),
+//     600: rgba(black, 0.87),
+//     700: white,
+//     800: white,
+//     900: white
+//   )
+// );
 
-.resume-section h3 {
-  color: $accent-color;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  margin-bottom: 5%;
-}
+// // Dark Mode
+// $theme-primary-dark: mat-palette($dark-palette-primary);
+// $theme-secondary-dark: mat-palette($dark-palette-secondary, A200, A100, A400);
 
-.resume-subsection {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3%;
-}
+// $dark-theme: mat-dark-theme($theme-primary-dark,$theme-secondary-dark);
 
-.resume-subsection p {
-  color: $tertiary-color;
-  font-size: 1.2rem;
-  margin-right: 5%;
-}
-
-.resume-subsection span {
-  color: $accent-color;
-  font-size: 1.2rem;
-}
+// // Apply the theme to the Angular Material components
+// @include angular-material-theme($dark-theme);
 

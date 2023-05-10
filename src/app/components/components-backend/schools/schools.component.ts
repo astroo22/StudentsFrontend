@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,SimpleChanges, OnInit } from '@angular/core';
 import { SchoolService } from '../../../services/school.service';
 import { School } from '../../../models/school.model';
 
@@ -19,12 +19,18 @@ export class SchoolsComponent {
 
   getAllSchools(): void {
     this.schoolService.getAllSchools()
-      .subscribe(schools => this.schools = schools);
+      .subscribe(schools => {
+        this.schools = schools;
+        if (this.schools.length > 0) {
+          this.selectedSchool = this.schools[0];
+      }
+    });
   }
 
 
   selectSchool(school: School): void {
     this.selectedSchool = school;
   }
+
 }
 
