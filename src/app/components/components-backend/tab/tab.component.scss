@@ -1,0 +1,30 @@
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 500px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tab:hover {
+    background-color: #ebebeb;
+  }
+  
+  .tab.active {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+:host {
+    display: none;
+  }
+  
+  :host(.active) {
+    display: block;
+  }

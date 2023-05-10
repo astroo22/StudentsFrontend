@@ -1,49 +1,108 @@
-.schools {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
-    height: 100vh;
-    background-color: #222;
-    color: #fff;
-    padding: 2rem;
-    box-sizing: border-box;
+// .schools {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: stretch;
+//     height: 100vh;
+//     background-color: #222;
+//     color: #fff;
+//     padding: 2rem;
+//     box-sizing: border-box;
   
-    .schools-list {
-      flex: 1;
-      margin-right: 2rem;
+//     .schools-list {
+//       flex: 1;
+//       margin-right: 2rem;
   
-      .school-card {
-        border: 1px solid #333;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        cursor: pointer;
+//       .school-card {
+//         border: 1px solid #333;
+//         padding: 1rem;
+//         margin-bottom: 1rem;
+//         cursor: pointer;
   
-        &:hover {
-          background-color: #333;
-        }
+//         &:hover {
+//           background-color: #333;
+//         }
   
-        h3 {
-          margin: 0;
-        }
+//         h3 {
+//           margin: 0;
+//         }
   
-        p {
-          margin: 0.5rem 0;
-        }
-      }
-    }
-    .schools-container {
+//         p {
+//           margin: 0.5rem 0;
+//         }
+//       }
+//     }
+//     .schools-container {
        
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 300px;
-        background-color: #222;
-        color: black;
-        padding: 20px;
+//         top: 0;
+//         left: 0;
+//         bottom: 0;
+//         width: 450px;
+//         background-color: #222;
+//         color: black;
+//         padding: 10px;
        
-      }
-    .selected-school {
-      flex: 2;
-    }
-  }
+//       }
+//     .selected-school {
+//       flex: 2;
+//     }
+//   }
+.Group_Class {
+  position: relative;
+  width: 388px;
+  height: 61px;
+  overflow: visible;
+}
+
+.Scroll_Group {
+  mix-blend-mode: normal;
+  position: relative;
+  width: 388px;
+  height: 729px;
+  overflow: hidden;
+}
+
+.Repeat_Grid {
+  position: relative;
+  width: 388px;
+  height: 1695px;
+  overflow: hidden;
+}
+
+.Component_11__1_Class {
+  position: relative;
+  width: 388px;
+  height: 61px;
+  overflow: visible;
+}
+
+.School_Rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fffdfd;
+  color: #fff;
+  padding: 10px;
+}
+
+.Ranking_Flexbox {
+  width: 42px;
+  height: 35px;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  color: #067FFF;
+}
+
+.School_Name_Flexbox {
+  width: 314px;
+  height: 24px;
+  text-align: left;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+}

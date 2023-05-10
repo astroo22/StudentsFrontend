@@ -30,6 +30,10 @@ import { SchoolsComponent } from './components/components-backend/schools/school
 import { SchoolComponent } from './components/components-backend/school/school.component';
 import { ClassesComponent } from './components/components-backend/classes/classes.component';
 import { SchoolCardComponent } from './components/components-backend/school-card/school-card.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TabsComponent } from './components/components-backend/tabs/tabs.component';
+import { TabComponent } from './components/components-backend/tab/tab.component';
+
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
 @NgModule({
@@ -48,7 +52,10 @@ import { SchoolCardComponent } from './components/components-backend/school-card
     SchoolsComponent,
     SchoolComponent,
     ClassesComponent,
-    SchoolCardComponent
+    SchoolCardComponent,
+    TabsComponent,
+    TabComponent
+
    
    // PopupRectDirective
   ],
@@ -64,7 +71,8 @@ import { SchoolCardComponent } from './components/components-backend/school-card
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

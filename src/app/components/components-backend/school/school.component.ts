@@ -58,11 +58,7 @@ export class SchoolComponent implements OnInit {
   updateVisibleProfessors() {
     this.visibleProfessors = this.topProfessors.slice(this.currentIndex, this.currentIndex + this.pageSize);
   }
-  /*ngOnChanges(changes: SimpleChanges){
-    if (changes['schoolID']){
-      this.GetClasses(this.schoolID)
-    }
-  }*/ 
+  
   scrollProfessors(direction: number): void {
     const maxIndex = this.topProfessors.length - this.pageSize;
     this.currentIndex += direction;
