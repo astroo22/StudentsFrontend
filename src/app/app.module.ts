@@ -74,6 +74,8 @@ import { PersonalPageComponent } from './components/personal-page/personal-page.
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    ScrollingModule,
+    MatCardModule,
     ScrollingModule
   ],
   providers: [],

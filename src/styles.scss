@@ -12,6 +12,17 @@ $tertiary-color: #000000;
 $accent-color: #6f00ff;
 
 
+// Import Angular Material pre-built themes
+// @import '~@angular/material/theming';
+
+// // Define your custom theme
+// $my-app-primary: mat-palette($mat-blue);
+// $my-app-accent: mat-palette($mat-pink, A200, A100, A400);
+// $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+// // Apply the theme to the Angular Material components
+// @include angular-material-theme($my-app-theme);
+
 html,
 body {
   height: 100%;
