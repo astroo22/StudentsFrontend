@@ -11,6 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { TabsComponent } from './components/components-backend/tabs/tabs.compone
 import { TabComponent } from './components/components-backend/tab/tab.component';
 import { PersonalPageComponent } from './components/personal-page/personal-page.component';
 import { LoginPageComponent } from './components/components-main/login-page/login-page.component';
+import { CreateAccComponent } from './components/components-main/create-acc/create-acc.component';
 
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
@@ -58,8 +60,8 @@ import { LoginPageComponent } from './components/components-main/login-page/logi
     TabsComponent,
     TabComponent,
     PersonalPageComponent,
-    LoginPageComponent
-
+    LoginPageComponent,
+    CreateAccComponent
    
    // PopupRectDirective
   ],
@@ -78,7 +80,8 @@ import { LoginPageComponent } from './components/components-main/login-page/logi
     MatCardModule,
     ScrollingModule,
     MatCardModule,
-    ScrollingModule
+    ScrollingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

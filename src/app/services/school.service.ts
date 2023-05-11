@@ -4,13 +4,13 @@ import { forkJoin,Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { School } from '../models/school.model';
 import { Professor } from '../models/professor.model';
-
+import { environment } from './config';
 @Injectable({
   providedIn: 'root'
 })
 export class SchoolService {
-  private apiSchUrl = 'http://localhost:3000/schools';
-  private apiTelUrl = `http://localhost:3000/telemetry`
+  private apiSchUrl = environment.apiBaseUrl +'/schools';
+  private apiTelUrl = environment.apiBaseUrl +`/telemetry`
 
   constructor(private http: HttpClient) { }
 

@@ -3,12 +3,13 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Student } from '../models/student.model';
+import { environment } from './config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
-  private apiUrl = 'http://localhost:3000/students';
+  private apiUrl = environment.apiBaseUrl +'/students';
 
   constructor(private http: HttpClient) { }
 

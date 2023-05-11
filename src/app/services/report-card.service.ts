@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ReportCard } from '../models/report-card.model';
-
+import { environment } from './config';
 @Injectable({
   providedIn: 'root'
 })
 export class ReportCardService {
-  private apiUrl = 'http://localhost:3000/reportcard';
+  private apiUrl = environment.apiBaseUrl +'/reportcard';
 
   constructor(private http: HttpClient) { }
 

@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { environment } from './config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClassService {
-  private apiUrl = 'http://localhost:3000/classes';
+  private apiUrl = environment.apiBaseUrl + `/classes`;
 
   constructor(private http: HttpClient) { }
-
+  // TODO: the below isn't set up yet
   createClass(classData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}`, classData);
   }

@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-//import jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 import { User } from '../models/user.model';
+import { environment } from './config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = '/api/auth';
+  private apiUrl =  environment.apiBaseUrl;
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -30,25 +31,25 @@ export class AuthService {
     localStorage.removeItem('access_token');
   }
 
-  // isAuthenticated(): boolean {
-  //   const token = localStorage.getItem('access_token');
-  //   if (token) {
-  //     const { exp } = jwt_decode(token);
-  //     if (Date.now() < exp * 1000) {
-  //       return true;
-  //     } else {
-  //       localStorage.removeItem('access_token');
-  //     }
-  //   }
-  //   return false;
-  // }
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      const decodedToken = jwt_decode(token) as { exp: number, sub: string, owner_id: string, email?: string };
+      if (Date.now() < decodedToken.exp * 1000) {
+        return true;
+      } else {
+        localStorage.removeItem('access_token');
+      }
+    }
+    return false;
+  }
 
-  // getCurrentUser(): User {
-  //   const token = localStorage.getItem('access_token');
-  //   if (token) {
-  //     const { sub } = jwt_decode(token);
-  //     return { id: sub } as User;
-  //   }
-  //   return null;
-  // }
+  getCurrentUser(): User {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      const decodedToken = jwt_decode(token) as { sub: string, owner_id: string, email?: string };
+      return { user_name: decodedToken.sub, owner_id: decodedToken.owner_id, email: decodedToken.email } as User;
+    }
+    return { user_name: '', owner_id: '', email: '' } as User;
+  }
 }
