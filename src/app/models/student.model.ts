@@ -1,5 +1,5 @@
 export interface Student {
-  student_id: string;
+    student_id: string;
     name: string;
     current_year: number;
     graduation_year: number;

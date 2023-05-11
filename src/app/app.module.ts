@@ -34,6 +34,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TabsComponent } from './components/components-backend/tabs/tabs.component';
 import { TabComponent } from './components/components-backend/tab/tab.component';
 import { PersonalPageComponent } from './components/personal-page/personal-page.component';
+import { LoginPageComponent } from './components/components-main/login-page/login-page.component';
 
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
@@ -56,7 +57,8 @@ import { PersonalPageComponent } from './components/personal-page/personal-page.
     SchoolCardComponent,
     TabsComponent,
     TabComponent,
-    PersonalPageComponent
+    PersonalPageComponent,
+    LoginPageComponent
 
    
    // PopupRectDirective
