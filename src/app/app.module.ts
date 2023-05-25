@@ -34,9 +34,13 @@ import { SchoolCardComponent } from './components/components-backend/school-card
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TabsComponent } from './components/components-backend/tabs/tabs.component';
 import { TabComponent } from './components/components-backend/tab/tab.component';
-import { PersonalPageComponent } from './components/personal-page/personal-page.component';
+import { PersonalPageComponent } from './components/components-backend/personal-page/personal-page.component';
 import { LoginPageComponent } from './components/components-main/login-page/login-page.component';
 import { CreateAccComponent } from './components/components-main/create-acc/create-acc.component';
+import { PersonalSchoolsScrollbarComponent } from './components/components-backend/personal-schools-scrollbar/personal-schools-scrollbar.component';
+import { PersonalDashboardComponent } from './components/components-backend/personal-dashboard/personal-dashboard.component';
+import { PersonalSchoolComponent } from './components/components-backend/personal-school/personal-school.component';
+import { PersonalSchoolDataBoxComponent } from './components/components-backend/personal-school-data-box/personal-school-data-box.component';
 
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
@@ -61,7 +65,11 @@ import { CreateAccComponent } from './components/components-main/create-acc/crea
     TabComponent,
     PersonalPageComponent,
     LoginPageComponent,
-    CreateAccComponent
+    CreateAccComponent,
+    PersonalSchoolsScrollbarComponent,
+    PersonalDashboardComponent,
+    PersonalSchoolComponent,
+    PersonalSchoolDataBoxComponent
    
    // PopupRectDirective
   ],

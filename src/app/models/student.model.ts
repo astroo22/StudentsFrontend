@@ -7,4 +7,5 @@ export interface Student {
     age: number;
     dob: Date;
     enrolled: boolean;
+    expanded: boolean;
   }

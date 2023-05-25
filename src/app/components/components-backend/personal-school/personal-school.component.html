@@ -1,0 +1,73 @@
+<div class = "personal-school-container" *ngIf="school">
+    <div class="alignment-div">
+        <div class = "school-title-bar">
+            <div class = "title-name">{{school.school_name || '-' }}</div>
+        </div>
+        <div class = "secondary-info">
+            <div class="info-item">STUDENT GPA: {{school.avg_gpa || '-'}} |     </div>
+            <div class="info-item">NUMBER OF STUDENTS: {{numberOfStudents || '-'}}  |   </div>
+            <div class="info-item">RANKING: {{school.ranking || '-'}}</div>
+        </div>
+    </div>
+    <div class = "data-box">
+        <div class="student-component">
+            <div class="dropdowns"> 
+            <!-- Grade selector dropdown -->
+                <div class="grade">
+                    <label for="grade-select">SELECT GRADE: </label>
+                    <select id="grade-select" [(ngModel)]="selectedGrade"(ngModelChange)="filterStudentsByGrade()" >
+                        <option value="0">ALL</option>
+                        <option value="1">Grade 1</option>
+                        <option value="2">Grade 2</option>
+                        <option value="3">Grade 3</option>
+                        <option value="4">Grade 4</option>
+                        <option value="5">Grade 5</option>
+                        <option value="6">Grade 6</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </div>
+                <div class ="sort-by">
+                <!-- Sort by dropdown -->
+                <label for="sort-select">Sort By: </label>
+                <select id="sort-select" [(ngModel)]="selectedSort" (ngModelChange)="sortStudentsBy()">
+                    <option value="name">Name</option>
+                    <option value="gpa">GPA</option>
+                    <!-- <option value="grade">Current Grade</option> -->
+                </select>
+                </div>
+            </div>
+          
+            <div class="title-bar">
+              <div class="title">STUDENT NAME</div>
+              <div class="title">GPA</div>
+              <div class="title">CURRENT GRADE</div>
+              <div class="title">EXPEL</div>
+            </div>
+          
+            <div class="student-list" *ngIf="filteredStudents">
+              <!-- Student records -->
+              <div class="student-record" *ngFor="let student of filteredStudents" (click)="toggleRecord(student)">
+
+                <div class="record-toggle-arrow">
+                    <img class="icon-arrow" [src]="arrowIcon" [ngClass]="{ 'rotate': student.expanded }" alt="arrow" />
+                    <!-- <img class="icon-arrow" src="{{arrowIcon}}" alt="arrow"/> -->
+                </div>
+
+                <div class="record-title">{{ student.name }}</div>
+                <div class="record-info-gpa">{{ student.avg_gpa }}</div>
+                <div class="record-info-year">{{ getGradeLabel(student.current_year) }}</div>
+                <div class="record-info-icon">
+                    <img class="icon-trash" src="{{trashIcon}}" alt ="trash"/>
+                </div>
+                <div class="expanded-info" *ngIf="student.expanded"></div>
+                <!-- Additional information or expansion here -->
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

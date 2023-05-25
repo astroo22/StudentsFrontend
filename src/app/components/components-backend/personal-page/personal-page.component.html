@@ -1,0 +1,11 @@
+
+<!-- I need to create scroll bar  -->
+<div class="page-div">
+    <!-- <div class = "title-bar">
+        this may or may not stay it will be the title or header area
+    </div> -->
+    
+        <!-- this will be the scroll bar -->
+    <app-personal-schools-scrollbar (selectedSchoolChange)="onSelectSchool($event)"></app-personal-schools-scrollbar>
+    <app-personal-school [school]="selectedSchool"></app-personal-school>
+</div>

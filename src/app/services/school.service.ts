@@ -19,8 +19,16 @@ export class SchoolService {
       map((response:any)=>response as School)
     );
   }
+  getAllSchoolsForUser(owner_id: string): Observable<any> {
+    return this.http.get(`${this.apiSchUrl}/${owner_id}`).pipe(
+      map((response:any)=>response as School)
+    );
+  }
   getClassesForSchool(school_id: string): Observable<any> {
-    return this.http.get(`${this.apiSchUrl}/${school_id}/classes`);
+    return this.http.get(`${this.apiSchUrl}/school/${school_id}/classes`);
+  }
+  getStudentsForSchool(school_id: string): Observable<any> {
+    return this.http.get(`${this.apiSchUrl}/school/${school_id}/students`);
   }
 
   getSchool(school_id: string): Observable<any> {

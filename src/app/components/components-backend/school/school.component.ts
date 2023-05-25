@@ -12,7 +12,6 @@ import { Grade } from '../../../models/grade.model';
 })
 export class SchoolComponent implements OnInit {
   @Input() school: School;
- // @Input() schoolID: string;
   numberOfStudents: number;
   averageGPA: number;
   schoolRanking: number;

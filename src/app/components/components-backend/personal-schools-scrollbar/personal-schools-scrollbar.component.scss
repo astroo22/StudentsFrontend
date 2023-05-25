@@ -1,0 +1,87 @@
+.component-container{
+    display:flex;
+    flex-direction: row;
+    .selected_school{
+        display: flex;
+        flex: 2;
+       // margin-top: 60px;
+    }
+}
+.Scroll_Group {
+    position: relative;
+    width: 388px;
+    height: 729px;
+    overflow: hidden;
+}
+.Repeat_Grid {
+    //mix-blend-mode: normal;
+    position: relative;
+    margin-top:  30px;
+    margin-right: 10px;
+    width: 400px;
+    left: 30px;
+    height: 675px;
+    overflow-y: scroll;
+    background-color: #221e1e;
+}
+
+.Group_Class {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 375px;
+    height: 61px;
+    //overflow: visible;
+}
+
+.Component_11__1_Class {
+    position: relative;
+    width: 388px;
+    height: 61px;
+    overflow: visible;
+    //background-color: #000;
+}
+.Ranks{
+    top: 257px;
+    left: 52px;
+    width: 420px;
+    height: 37px;
+    margin-left: 10px; 
+    font-weight: bold;
+    text-align: left;
+    font-family: Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+  
+.School_Rectangle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fffdfd;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .Ranking_Box {
+    width: 42px;
+    height: 35px;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: #067FFF;
+  }
+  
+  .School_Name_Flexbox {
+    width: 314px;
+    height: 24px;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+  }

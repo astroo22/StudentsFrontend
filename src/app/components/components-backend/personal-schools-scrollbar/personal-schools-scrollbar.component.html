@@ -1,0 +1,23 @@
+<div class="componenet-container">
+    <div class="Scroll_Group selected-school">
+      <h3 class="Ranks">MY SCHOOLS</h3>
+      <div class="Repeat_Grid">
+        <div *ngFor="let school of schools" class="Group_Class" (click)="selectSchool(school)">
+          <div class="Component_11__1_Class">
+            <div class="School_Rectangle">
+              <div class="Ranking_Box">
+                <span>{{ school.ranking }}</span>
+              </div>
+              <div class="School_Name_Flexbox">
+                <span>{{ school.school_name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!schools">
+            <div class="Component_11__1_Class"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
