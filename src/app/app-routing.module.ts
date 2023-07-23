@@ -6,14 +6,18 @@ import { ContactComponent } from './components/components-main/contact/contact.c
 import { ResumeComponent } from './components/components-main/resume/resume.component';
 import { LoginPageComponent } from './components/components-main/login-page/login-page.component';
 import { CreateAccComponent } from './components/components-main/create-acc/create-acc.component';
+import { AccPageComponent } from './components/components-main/acc-page/acc-page.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'project', component: ProjectComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'login', component: LoginPageComponent},
-  { path: 'create-account', component: CreateAccComponent}
+  { path: 'create-account', component: CreateAccComponent},
+  { path: 'account-settings', component: AccPageComponent,canActivate: [AuthGuard] }
 ];
 
 @NgModule({

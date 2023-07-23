@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
+import { AuthService } from './auth.service';
 import { environment } from './config';
 
 @Injectable({
@@ -9,32 +10,47 @@ import { environment } from './config';
 })
 export class UserService {
   private apiUrl = environment.apiBaseUrl + '/users';
-
-  constructor(private http: HttpClient) { }
-
-  login(username: string, password: string): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(environment.apiBaseUrl+ '/login', { username, password });
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
-
-  logout(): Observable<any> {
-    return this.http.post('/api/auth/logout', {});
+  constructor(private http: HttpClient,private as: AuthService) { }
+  createUser(user: User): Observable<any> {
+    console.log(user)
+    return this.http.post<any>(`${this.apiUrl}/create_user`, user, this.httpOptions);
   }
-
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}`, user);
-  }
-
-  getUser(ownerId: string): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${ownerId}`);
-  }
-
+ 
+  // also this one
   updateUser(ownerId: string, user: User): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${ownerId}`, user);
+    this.as.isAuthenticated();
+    const token = localStorage.getItem('access_token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    const formData = new FormData();
+    if(user.user_name) {
+      formData.append('user_name', user.user_name);
+      console.log(user.user_name)
+    }
+    if(user.email) {
+      formData.append('email', user.email);
+      console.log(user.email)
+    }
+    if(user.password){
+      formData.append('password', user.password);
+      console.log(user.password)
+    }
+    console.log(user)
+    return this.http.put(`${this.apiUrl}/update_user/${ownerId}`,formData,{ headers: headers });
   }
 
-  deleteUser(ownerId: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${ownerId}`);
-  }
+   deleteUser(ownerId: string): Observable<any> {
+    this.as.isAuthenticated();
+    const token = localStorage.getItem('access_token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+     return this.http.delete(`${this.apiUrl}/${ownerId}`, { headers: headers });
+   }
 
  
 }

@@ -1,11 +1,32 @@
 
-<!-- I need to create scroll bar  -->
+<!-- <div class = "centered-message" *ngIf="!isBackendRunning"></div> -->
+
 <div class="page-div">
     <!-- <div class = "title-bar">
         this may or may not stay it will be the title or header area
     </div> -->
     
         <!-- this will be the scroll bar -->
-    <app-personal-schools-scrollbar (selectedSchoolChange)="onSelectSchool($event)"></app-personal-schools-scrollbar>
-    <app-personal-school [school]="selectedSchool"></app-personal-school>
+        <div></div>
+    <app-personal-schools-scrollbar 
+        #schoolsScrollbar
+        [disabled]="isCreatingSchool"
+        (selectedSchoolChange)="onSelectSchool($event)" 
+        (createSchoolEvent)="createSchool()">
+    </app-personal-schools-scrollbar>
+    <app-personal-school 
+        [school]="selectedSchool" 
+        *ngIf="state === 'view' && selectedSchool"
+        (schoolDeleted)="schoolsScrollbar.removeSchool($event)">
+    </app-personal-school>
+    <app-personal-create-school 
+        *ngIf="state === 'view' && !selectedSchool">
+    </app-personal-create-school>
+    <!-- <app-personal-school-default
+        *ngIf="state === 'view' && !selectedSchool">
+    </app-personal-school-default> -->
+    <app-personal-create-school 
+        *ngIf="state === 'create'"
+        (schoolCreationStatus)="isCreatingSchool = $event">
+    </app-personal-create-school>
 </div>

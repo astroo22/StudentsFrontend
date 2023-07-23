@@ -1,17 +1,17 @@
 .school-container {
   background-color: #f2f2f2;
   color: #333;
-  padding: 20px;
-  margin-top: 60px;
-  margin-left: 70px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 1000px; /* Adjust the maximum width as needed */
-  height: 700px;
-  // margin: 0 auto; /* Center the container horizontally */
+  padding: 1vh;
+  margin-top: 4.3vh;
+  margin-left: 5.2vh;
+  border-radius: 0.8vh;
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+  width: 76vh; 
+  height: 53vh;
+  // margin: 0 auto; 
   .data-container {
     justify-content: space-between;
-    margin: 10px 25px;
+    margin: 1vh 2vh;
   }
 }
 .bar {
@@ -19,20 +19,20 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 4vh;
  // background-color: #ddd;
 
   .button {
     position: relative;
-    width: 100px; // Adjust the width as needed
-    height: 40px;
+    width: 10vh; 
+    height: 4vh;
     //border: none;
-    border-radius: 4px;
+    border-radius: 1vh;
     cursor: pointer;
     background-color: #aaa;
     color: white;
     text-align: center;
-    line-height: 30px;
+    line-height: 3vh;
     cursor: pointer;
 
     &.previous {
@@ -43,12 +43,12 @@
   }
 
   .button-1 {
-    left: 40px;
-    width: 100px;
+    left: 4vh;
+    width: 9vh;
     position: absolute;
-    top: 50%; // Set the top position to 50% of the parent container
-    left: 10%; // Set the left position to 50% of the parent container
-    transform: translate(-50%, -50%); // Move the button to the center
+    top: 50%; 
+    left: 10%; 
+    transform: translate(-50%, -50%); 
   }
   .previous-placeholder {
     flex-grow: 1;
@@ -56,29 +56,29 @@
   
   .button-2 {
     flex-grow: 1;
-    width: 100px;
+    width: 9vh;
     position: absolute;
-    top: 50%; // Set the top position to 50% of the parent container
-    left: 25%; // Set the left position to 50% of the parent container
-    transform: translate(-50%, -50%); // Move the button to the center
+    top: 50%; 
+    left: 25%; 
+    transform: translate(-50%, -50%); 
   }
   
   .button-3 {
     flex-grow: 1;
-    width: 100px;
+    width: 9vh;
     position: absolute;
-    top: 50%; // Set the top position to 50% of the parent container
-    left: 72%; // Set the left position to 50% of the parent container
-    transform: translate(-50%, -50%); // Move the button to the center
+    top: 50%; 
+    left: 72%;
+    transform: translate(-50%, -50%);
   }
   
   .button-4 {
     flex-grow: 1;
-    width: 100px;
+    width: 9vh;
     position: absolute;
-    top: 50%; // Set the top position to 50% of the parent container
-    left: 87%; // Set the left position to 50% of the parent container
-    transform: translate(-50%, -50%); // Move the button to the center
+    top: 50%; 
+    left: 87%; 
+    transform: translate(-50%, -50%); 
   }
   .button-1,
   .button-2,
@@ -87,11 +87,16 @@
     height: 100%;
     font-size: 18px;
     font-weight: bold;
-    
-    color: #fff;
-    background-color: #337ab7;
+
     border: none;
-    border-radius: 4px;
+
+    box-shadow: 0 0.7em 1.5em -0.5em #2dbafc98;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    
+    border-radius: 20em;
+    // box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    background-color: #a6bbf7;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -121,21 +126,22 @@
 
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 4vh;
+  height: 4vh;
 }
 h2 {
-  font-size: 40px;
-  margin-top: 10px;
-  margin-left: 20px;
+  font-size: 3.5vh;
+  margin-top: 1vh;
+  margin-left: 2vh;
+  margin-bottom: 1vh;
 }
 h4 {
   font-size: 15px;
   font-weight: bold;
   text-align: left;
-  padding-top: 10px;
-  padding-left: 10px;
-  margin-bottom: 10px;
+  padding-top: 1vh;
+  padding-left: 1vh;
+ 
 }
 
 .stats-line {
@@ -151,17 +157,19 @@ h4 {
   flex-direction: column;
   position: relative;
  // align-items: center;
+ box-shadow: 0 0.7em 1.5em -0.5em #2dbafcec;
+  padding: 1em;
   background: #D5EAFF;
-  height: 70px;
+  height: 5vh;
   flex: 0 0 250px;
   .students-item-label{
     position: absolute;
     text-align: right;
-    top: 10px;
-    left: 170px;
-    margin-right: 15px;
-    margin-bottom: 5px;
-    font-size: 35px;
+    top: 1vh;
+    left: 14vh;
+    margin-right: .5vh;
+    
+    font-size: 30px;
     font-family: Roboto;
     font-weight: bold;
     color: #000000;
@@ -169,10 +177,10 @@ h4 {
   .gpa-item-label{
     position: absolute;
     text-align: right;
-    top: 10px;
-    left: 170px;
-    margin-right: 15px;
-    margin-bottom: 5px;
+    top: 1vh;
+    left: 12vh;
+    margin-right: 1vh;
+
     font-size: 35px;
     font-family: Roboto;
     font-weight: bold;
@@ -182,10 +190,10 @@ h4 {
   .ranking-item-label{
     position: absolute;
     text-align: right;
-    top: 10px;
-    left: 170px;
-    margin-right: 15px;
-    margin-bottom: 5px;
+    top: 1vh;
+    left: 12vh;
+    margin-right: 1vh;
+
     font-size: 35px;
     font-family: Roboto;
     font-weight: bold;

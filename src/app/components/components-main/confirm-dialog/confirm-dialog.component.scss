@@ -1,0 +1,58 @@
+$form-text-title-font: normal normal normal 25px/25px Roboto;
+.dialog-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #message{
+    font: $form-text-title-font; 
+    margin-bottom: 3vh;
+
+  }
+  .confirm-buttons{
+    padding: 1vh;
+    font-size: 16px;
+    min-width: 10vh;   
+    min-height: 4vh; 
+    #yes{
+       // background-color: rgb(252, 73, 73);
+        margin-right: 9vh;
+    }
+    // #no{
+    //     background-color: #D5EAFF;
+    // }
+  }
+  
+  .dialog-container {
+    background-color: #ffffff;
+    padding: 3vh;
+    border-radius: 1vh;
+    max-width: 60%;
+    margin-bottom: 15vh;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

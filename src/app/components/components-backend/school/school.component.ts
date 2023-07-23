@@ -4,7 +4,6 @@ import { School } from '../../../models/school.model';
 import { Professor } from '../../../models/professor.model';
 import { Grade } from '../../../models/grade.model';
 
-
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
@@ -15,10 +14,14 @@ export class SchoolComponent implements OnInit {
   numberOfStudents: number;
   averageGPA: number;
   schoolRanking: number;
-  topProfessors: Professor[] = [];
-  topGrades: Grade[] = [];
+ 
   iconPaths: string[] = ['assets/icons/gold.png', 'assets/icons/silver.png', 'assets/icons/bronze.png'];
   professorIcons: string[] = this.iconPaths;
+  
+
+  // pageination
+  topProfessors: Professor[] = [];
+  topGrades: Grade[] = []; 
   visibleProfessors: Professor[] = [];
   visibleGrades: Grade[] = [];
   currentIndexGrades: number = 0;
@@ -26,6 +29,8 @@ export class SchoolComponent implements OnInit {
   gradeSize: number =5;
   pageSize: number = 10;
   scrollSize: number =5;
+
+  // flags
   isPreviousDisabledGrades: boolean = true;
   isNextDisabledGrades: boolean = false;
   isPreviousDisabledProfessors: boolean = true;
@@ -38,9 +43,12 @@ export class SchoolComponent implements OnInit {
   ];
   currentGradeState: number = 0;
 
-  constructor(private schoolService: SchoolService) {}
+  constructor(
+      private schoolService: SchoolService
+      ) {}
 
   ngOnInit(): void {
+
     
   }
   ngOnChanges(changes: SimpleChanges){

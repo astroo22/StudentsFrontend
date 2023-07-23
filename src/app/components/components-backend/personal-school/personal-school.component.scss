@@ -1,19 +1,78 @@
+$color-primary: #f2f2f2;
+$color-secondary:#707070;
+$font-primary: normal normal bold 15px/18px Roboto;
+$color-tertiary:#D5EAFF;
+$color-black: #000000;
+
 .personal-school-container{
     display: flex;
-    background-color: #f2f2f2;
+    background-color: $color-primary;
     flex-direction: column;
-    padding: 20px;
-    margin-top: 60px;
-    margin-left: 70px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 1000px; /* Adjust the maximum width as needed */
-    height: 700px;
+    padding: 1vh;
+    margin-top: 4.3vh;
+    margin-left: 5.2vh;
+    border-radius: 0.8vh;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    width: 76vh; 
+    height: 53vh;
 
 }
+#checkbox{
+    padding-right: 2vh;
+    margin-left: -2vh; 
+}
+.checkbox-and-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+.button-no-border{
+    border: none;
+    margin-bottom: 1vh;
+    margin-right:3vh;
+}
+
+.button-styling{
+    display: flex;
+   
+    flex-direction: row;
+    
+    
+    .save-changes{
+        margin-top: 2vh;
+        border: none;
+
+        box-shadow: 0 0.7em 1.5em -0.5em #2dbafc98;
+        padding: 0.7em 1.4em 0.7em 1.1em;
+        
+        border-radius: 20em;
+       // box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+        background-color: #a6bbf7;
+        color: white;
+    }
+    .delete-school{
+        padding: 0.7em 1.4em 0.7em 1.1em;
+        border: none;
+        border-radius: 20em;
+        margin-top: 2vh;
+        margin-left: 3vh;
+        margin-right: 46vh;
+        box-shadow: 0 0.7em 1.5em -0.5em #f5818198;
+        background-color: red;
+        color: rgb(255, 255, 255);
+    }
+}
+.icon{
+    height: 2vh;
+    width: 2vh;
+    border:none;
+}
+
+
 .alignment-div{
-    margin-left: 30px;
-    margin-top: 25px;
+    margin-left: 3vh;
+    margin-top: 2.5vh;
 }
 .school-title-bar{
     display: flex;
@@ -23,24 +82,35 @@
         text-align: left;
         font: normal normal bold 40px/47px Roboto;
         letter-spacing: 0px;
-        color: #000000;
+        color: $color-black;
         opacity: 1;
-    }  
+    } 
+    .title-input-box{
+        text-align: left;
+        font: normal normal bold 40px/47px Roboto;
+        letter-spacing: 0px;
+        color: $color-black;
+        opacity: 1;
+        width: 70vh;
+    } 
 }
 .secondary-info{
     display: flex;
     flex-direction: row;
-    /* UI Properties */
     text-align: left;
-    font: normal normal bold 15px/18px Roboto;
+    font: $font-primary;
     letter-spacing: 1px;
-    color: #7B7B7B;
+    color: $color-secondary;
     opacity: 1;
     .info-item{
         justify-content: space-between;
         margin-right: 10px;
     }
 }
+.unenrolled {
+    color: gray;
+    background-color: lightgray;
+ }
 
 
 .data-box{
@@ -48,6 +118,7 @@
 }
 .student-component {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -67,7 +138,7 @@
             text-align: left;
             left: 0%;
             #grade-select{
-                border: 1px solid #707070;
+                border: 1px solid $color-secondary;
                 border-radius: 5px;
                 opacity: 1;
             }
@@ -75,20 +146,24 @@
         .sort-by{
             text-align: left;
             right: 8%;
+            
             #sort-select{
-                border: 1px solid #707070;
+                border: 1px solid $color-secondary;
                 border-radius: 5px;
                 opacity: 1;
+                
             }
       }
     }
   
     .title-bar {
       display: flex;
-      background-color: #D5EAFF;
+      background-color: $color-tertiary;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px;
       font-weight: bold;
-      width: 900px; /* Adjust the width as needed */
+      width: 900px;
       margin-bottom: 10px;
     }
   
@@ -101,75 +176,151 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 900px; /* Adjust the width as needed */
-      height: 400px;
-      max-height: 300px; /* Adjust the max height as needed */
+      width: 900px;
+      height: 600px;
+      max-height: 375px;
       overflow-y: auto;
       overflow-x: hidden;
     }
   
     .student-record {
-      display: flex;
-      align-items: center;
-      background-color: #ffffff;
-      width: 900px;
-      font: normal normal bold 20px/31px Roboto;
-      padding: 10px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #f0f0f0;
-      }
-      .record-title {
-        flex: 1;
-        margin-left: 2.25%;
-        text-align: left;
-      }
+        display: flex;
+        flex-direction: column; 
+        //align-items: stretch;
+        background-color: #ffffff;
+        width: 900px;
+        font: normal normal bold 18px/25px Roboto;
+        padding: 10px;
+        margin-bottom: 7px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: #f0f0f0;
+        }
+        .student-record-content {
+            display: flex;
+            flex-direction: row;
+            
+            .record-title {
+            flex: 1;
+            margin-left: 2.25%;
+            text-align: left;
+            }
     
-      .record-info-gpa {
-        flex: 1;
-        margin-left: 9.5%;
-        text-align: left;
-      }
-      .record-info-year {
-          flex: 1;
-          margin-left: 0%;
-         // margin-left: 50%;
-          //text-align: center;
-      }
-      .record-info-icon {
-          flex: 1;
-        
-        .icon-trash {
-            width: 30px;
-            height: 30px;
-            margin-left: 65px;
+            .record-info-gpa {
+            flex: 1;
+            margin-left: 9.5%;
+            text-align: left;
+            }
+            .record-info-year {
+                flex: 1;
+                margin-left: 0%;
+            }
+            .record-info-icon {
+                flex: 1;
+                .icon-trash {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 65px;
+                }
+            }
+            .record-toggle-arrow{
+                flex: 0;
+                margin-right: 5px;
+                .icon-arrow {
+                    width: 20px;
+                    height: 20px;
+                    //margin-left: 15px;
+                    transition: transform 0.3s ease;
+                    transform: rotate(30deg);
+                }
+                .rotate {
+                    transform: rotate(120deg); /* Set initial rotation state */
+                }
+            }
         }
-      }
-      .record-toggle-arrow{
-        flex: 0;
-        .icon-arrow {
-            width: 20px;
-            height: 20px;
-            margin-left: 15px;
-            transition: transform 0.3s ease;
-            transform: rotate(30deg);
-        }
-        .rotate {
-            transform: rotate(120deg); /* Set initial rotation state */
-        }
-      }
-      .expanded-info {
-        display: none; /* Hide expanded info by default */
-      }
-      &.expanded {
         .expanded-info {
-          display: block; /* Show expanded info when record is expanded */
+            display: none; // Hide by default
+            flex-direction: column;
         }
-      }
+       
+        &.expanded {
+            .expanded-info {
+                display: flex;
+                position: relative;
+                width: 100%; 
+                background-color: #ffffff; 
+                padding-bottom: 10px; 
+                padding-left: 10px;
+                transition: max-height 0.6s ease, padding 0.3s ease;
+                .expanded-basic-info-bar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 75%;
+
+                    font: normal normal bold 15px/18px Roboto;
+                    letter-spacing: 1px;
+                    color: #7B7B7B;
+                    opacity: 1;
+                    padding-top: 10px;
+                    padding-left:10px;
+                    padding: 10px;
+            
+                    .bar-item-gradyear{
+                        flex: 1;
+                    }
+                    .bar-item-age{
+                        flex: 1;
+                    }
+                    .bar-item-dob{
+                        flex: 1;
+                    }
+                }
+                .expanded-reportcard{
+                    display: flex;
+                    //padding-top: 10px;
+                    padding-bottom: 5px;
+                    .report-card-title{
+                        padding-left: 10px;
+                        font: normal normal bold 15px/15px Roboto;
+                    }
+                    .report-card{
+                        top: 624px;
+                        left: 735px;
+                        
+                        margin-left: 25px;
+                        //width: 188px;
+                        //height: 114px;
+                        /* UI Properties */
+                        background: $color-tertiary 0% 0% no-repeat padding-box;
+                        
+                        opacity: 1;
+                        width: 25%;
+                        border-collapse: collapse;
+                    
+                        th{
+                            font: normal normal bold 18px/25px Roboto;
+                            padding: 10px;
+                            text-align: left;
+                            border-bottom: 1px solid #ddd;
+                        }
+                        td{
+                            font: normal normal bold 14px/12px Roboto;
+                            padding: 10px;
+                            
+                            border-bottom: 1px solid #ddd;
+                            
+                        }
+                        .grade{
+                            text-align: left;
+                            padding-left: 10px;
+                        }
+                    
+                    }
+                    
+                }
+            }
+        }
     }
-  
-    
   }

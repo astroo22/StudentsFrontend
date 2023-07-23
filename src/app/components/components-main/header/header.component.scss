@@ -7,31 +7,93 @@
   background-color: #333;
   color: #fff;
 }
-
-
-.logo-container {
+.navbar {
+  height: 60px; 
+  padding: 0 20px;  
+  display: flex;
+  justify-content: space-between; 
+}
+#or-text{
+  font-weight: bold;
+}
+.navbar-nav {
   display: flex;
   align-items: center;
+  
+  .nav-item {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    .right{
+      margin-right: 10vh;
+    }
+    .btn-outline-primary {
+      // Additional styles for login button here
+      color: #000000;
+      border-color: rgba(231, 231, 231, 0.5);
+      font-weight: bold;
+      font-family: Roboto;
+      letter-spacing: 0px;
+
+      &:hover{
+        background-color: #ebebeb;
+      }
+    }
+    
+    .btn-primary {
+      // Additional styles for create account button here
+      color: #ffffff;
+      &:hover{
+        
+      }
+    }
+  }
+  .dropdown {
+    margin-right: 1rem; 
+  }
+}
+.dropdown-toggle::after {
+  display: none;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-right: 1rem;
+
+.welcome-message {
+  margin-right: 1rem;  // Add some margin to separate the welcome message from the avatar
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.avatar-icon {
+  width: 30px;  // Set a width for the avatar
+  height: 30px;  // Set a height for the avatar
 }
 
-.nav-link {
-  margin-left: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  transition: all 0.2s ease-in-out;
-}
+// .logo-container {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .logo {
+//   font-size: 2rem;
+//   font-weight: bold;
+//   margin-right: 1rem;
+// }
+
+// .nav-links {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .nav-link {
+//   margin-left: 1rem;
+//   font-size: 1.2rem;
+//   font-weight: bold;
+//   text-transform: uppercase;
+//   color: #fff;
+//   transition: all 0.2s ease-in-out;
+//   .nav-link-login{
+    
+//   }
+// }

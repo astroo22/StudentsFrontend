@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SchoolsComponent } from './components/components-backend/schools/schools.component';
 import { SchoolComponent } from './components/components-backend/school/school.component';
 import { ClassesComponent } from './components/components-backend/classes/classes.component';
-import { SchoolCardComponent } from './components/components-backend/school-card/school-card.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TabsComponent } from './components/components-backend/tabs/tabs.component';
 import { TabComponent } from './components/components-backend/tab/tab.component';
@@ -38,9 +38,12 @@ import { PersonalPageComponent } from './components/components-backend/personal-
 import { LoginPageComponent } from './components/components-main/login-page/login-page.component';
 import { CreateAccComponent } from './components/components-main/create-acc/create-acc.component';
 import { PersonalSchoolsScrollbarComponent } from './components/components-backend/personal-schools-scrollbar/personal-schools-scrollbar.component';
-import { PersonalDashboardComponent } from './components/components-backend/personal-dashboard/personal-dashboard.component';
 import { PersonalSchoolComponent } from './components/components-backend/personal-school/personal-school.component';
-import { PersonalSchoolDataBoxComponent } from './components/components-backend/personal-school-data-box/personal-school-data-box.component';
+import { PersonalCreateSchoolComponent } from './components/components-backend/personal-create-school/personal-create-school.component';
+import { AccPageComponent } from './components/components-main/acc-page/acc-page.component';
+import { ConfirmDialogComponent } from './components/components-main/confirm-dialog/confirm-dialog.component';
+import { UserInactiveComponent } from './components/components-main/user-inactive/user-inactive.component';
+
 
 //import { PopupRectDirective } from './directives/popup-rect.directive';
 
@@ -60,16 +63,17 @@ import { PersonalSchoolDataBoxComponent } from './components/components-backend/
     SchoolsComponent,
     SchoolComponent,
     ClassesComponent,
-    SchoolCardComponent,
     TabsComponent,
     TabComponent,
     PersonalPageComponent,
     LoginPageComponent,
     CreateAccComponent,
     PersonalSchoolsScrollbarComponent,
-    PersonalDashboardComponent,
     PersonalSchoolComponent,
-    PersonalSchoolDataBoxComponent
+    PersonalCreateSchoolComponent,
+    AccPageComponent,
+    ConfirmDialogComponent,
+    UserInactiveComponent,
    
    // PopupRectDirective
   ],
@@ -86,10 +90,12 @@ import { PersonalSchoolDataBoxComponent } from './components/components-backend/
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     ScrollingModule,
     MatCardModule,
     ScrollingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

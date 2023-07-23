@@ -1,10 +1,23 @@
-<app-tabs>
-    <app-tab label="HIGHSCORES">
-      <!-- Content for the HighScores tab goes here -->
-      <app-schools class="app-schools"></app-schools>
-    </app-tab>
-    <app-tab label="MY SCHOOLS">
-      <!-- Content for the Schools tab goes here -->
-      <app-personal-page></app-personal-page>
-    </app-tab>
-  </app-tabs>
+<div class="content">
+  <app-tabs>
+      <app-tab label="HIGHSCORES">
+        <!-- Content for the HighScores tab goes here -->
+        <app-schools class="app-schools"></app-schools>
+      </app-tab>
+      <app-tab label="MY SCHOOLS">
+        <!-- Content for the Schools tab goes here -->
+        <!-- here I will put an if that route gards the personal page but will give a blank page with a message -->
+        <app-personal-page *ngIf="isLoggedIn(); else notLoggedIn"></app-personal-page>
+        <ng-template #notLoggedIn>
+          <div class="info-container">
+            <div id="info-text">You are not logged in! Please log in to view your schools.</div>
+            <div class="button-container">
+              <button class="info-button" id="login-button" (click)="loginButton()">Login</button>
+              <button class="info-button" id="create-account-button"  (click)="createAccountButton()">Create Account</button>
+            </div>
+          </div>
+          <!-- Maybe include a login button here -->
+        </ng-template>
+      </app-tab>
+    </app-tabs>
+</div>

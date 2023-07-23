@@ -30,6 +30,13 @@ export class TabsComponent implements AfterContentInit {
       this.tabs.first.active = true;
     }
   }
+  selectTabByLabel(label: string): void {
+    const tabToActivate = this.tabs.find(tab => tab.label === label);
+
+    if (tabToActivate) {
+      this.selectTab(tabToActivate);
+    }
+  }
 
   selectTab(tab: TabComponent) {
     this.tabs.forEach(t => (t.active = false));

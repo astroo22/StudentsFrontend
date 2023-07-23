@@ -1,126 +1,117 @@
 .componenet-container{
   display: flex;
-  gap: 25px;
   flex-direction: row;
- // justify-content: flex-start;
-  width: 1900px;
+
+  width: 190vh;
 }
 
-.schools {
-    align-items: stretch;
-    height: 100vh;
-    background-color: #222;
-    color: #fff;
-    padding: 2rem;
-    margin-top: 60px;
-    box-sizing: border-box;
-  
-    .schools-list {
-      flex: 2;
-      margin-right: 2rem;
-  
-      .school-card {
-        border: 1px solid #333;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #333;
-        }
-  
-        h3 {
-          margin: 0;
-        }
-  
-        p {
-          margin: 0.5rem 0;
-        }
-      }
-    }
-    .selected-school {
-      flex: 2;
-      margin-top: 60px;
-    }
-  }
- 
-
+.scroll-bar-container{
+  position: relative;
+  width: 29vh;
+  height: 70vh;
+}
 
 .Group_Class {
   position: relative;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 375px;
-  height: 61px;
+  margin-top: 1vh;
+  margin-bottom: 1.5vh;
+  width: 35vh;
+  height: 4vh;
   //overflow: visible;
 }
 
 .Scroll_Group {
- 
-  position: relative;
-  width: 388px;
-  height: 729px;
-  overflow: hidden;
+ margin-top:2vh;
+ overflow: hidden;
+  
+}
+#background{
+  background-color: #221e1e;
+  height: 52vh;
+  width: 27vh;
+  padding-top: .5vh;
+  border-radius: 0.8vh;
+  margin-left:1vh;
+}
+.Repeat_Grid::-webkit-scrollbar {
+  display: none;
 }
 
 .Repeat_Grid {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
   //mix-blend-mode: normal;
   position: relative;
-  margin-top:  30px;
-  margin-right: 10px;
-  width: 400px;
-  left: 30px;
-  height: 675px;
+  margin-top: 1vh;
+  //padding-top:  2vh;
+  width: 25vh;
+  padding-left: 1vh;
+  height: 48vh;
   overflow-y: scroll;
+  
+  
+  // border: 1vh solid;
 }
 
 .Component_11__1_Class {
   position: relative;
-  width: 388px;
-  height: 61px;
-  overflow: visible;
+  width: 25vh;
+  height: 6vh;
+  left: 1vh;
+  //overflow: visible;
 }
 .Ranks{
-  top: 257px;
-  left: 52px;
-  width: 420px;
-  height: 37px;
-  margin-left: 10px; 
+  width: 42vh;
+  height: 3vh;
+  margin-left: 1vh; 
   font-weight: bold;
   text-align: left;
   font-family: Roboto;
-  letter-spacing: 0px;
   color: #FFFFFF;
   opacity: 1;
 }
 
 .School_Rectangle {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   background-color: #fffdfd;
   color: #fff;
-  padding: 10px;
+  padding: .5vh;
+  border-radius: 0.3vh;
+  width: 23vh;
+  .Ranking_Box {
+    width: 3vh;
+    height: 3vh;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    align-items: center;
+    font-size: 2.5vh;
+    color: #067FFF;
+  }
+  
+  .School_Name_Flexbox {
+    width: 18vh;
+    height: 2vh;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5vh;
+    color: #000;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+  } 
+}
+.user-owned {
+  display: flex;
+  align-items: center;
+  background-color: #D5EAFF;
+  // color: #fff;
+  //border: 2px solid #fff;
+  padding: .5vh;
 }
 
-.Ranking_Box {
-  width: 42px;
-  height: 35px;
-  text-align: left;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  color: #067FFF;
-}
-
-.School_Name_Flexbox {
-  width: 314px;
-  height: 24px;
-  text-align: left;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  color: #000;
-}

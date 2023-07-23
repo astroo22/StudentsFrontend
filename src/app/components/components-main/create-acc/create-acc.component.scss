@@ -1,3 +1,6 @@
+$form-text-title-font: normal normal bold 35px/25px Roboto;
+$form-text-font: normal normal bold 16px/25px Roboto;
+
 .create-account-container {
     display: flex;
     flex-direction: column;
@@ -9,17 +12,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #a57979;
-      width: 325px; // Adjust the width as needed
-      height: 400px;
+      background-color: #5c5858;
+      width: 32vh; 
+      height: 40vh;
       padding: 8px 16px;
       border-radius: 10px;
+    }
+    .form-control{
+      width: 25vh;
+      height: 3vh;
+    }
+    #title{
+      margin-top: 2vh;
+      margin-bottom:2vh;
+      font: $form-text-title-font
     }
   
     form {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      font:$form-text-font;
   
       input {
         padding: 8px;
@@ -30,8 +43,9 @@
       }
   
       button {
-        background-color: #008000;
+        margin-top: 1vh;
         color: #fff;
+        background-color: #4b4b4b;
         border: none;
         border-radius: 4px;
         padding: 8px 16px;
@@ -40,7 +54,7 @@
         transition: background-color 0.3s ease;
   
         &:hover {
-          background-color: #006600;
+          background-color: #a0a1a0;
         }
       }
     }

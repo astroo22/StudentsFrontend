@@ -1,0 +1,165 @@
+$color-primary: #f2f2f2;
+$color-secondary:#707070;
+$font-primary: normal normal normal 15px/18px Roboto;
+$font-title: normal normal bold 40px/47px Roboto;
+$color-tertiary:#D5EAFF;
+$color-black: #000000;
+.personal-create-school-container{
+    display: flex;
+    background-color: $color-primary;
+    flex-direction: column;
+    padding: 1vh;
+    margin-top: 4.3vh;
+    margin-left: 5.2vh;
+    border-radius: 0.8vh;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    width: 76vh; 
+    height: 53vh;
+    
+
+}
+#status-container{
+    margin-top:2vh;
+    height: 2vh;
+    display: flex;
+    flex-direction: row;
+    #spinner-container{
+        display: flex;
+        margin-right: 1vh;
+        align-items: center;
+    } 
+    #spinner{
+        margin-right: 1vh;
+    }   
+}
+.alignment-div{
+    margin-left: 3vh;
+    margin-top: 2.5vh;
+}
+.icon{
+    width: 1vh;
+    height: 1vh; 
+}
+.info-box {
+    position: absolute;
+    top: 21vh; 
+    left: 34vw; 
+    right: 8vw; 
+    bottom: 15vh; 
+    background-color: rgba(51, 51, 51, 1);
+    color: white;
+    padding: 1vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    z-index: 1; // Ensure this element is above others
+  }
+.info-button{
+    border: none;
+    background-color: transparent;
+}
+.info-button-container {
+    display: flex;
+    justify-content: flex-end; 
+}
+.school-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    //margin-left: 5.2vh;
+    justify-content: left;
+    align-items: left;
+    //padding: 8px 16px;
+    border-radius: 10px;
+    .school-name{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //gap: 16px;
+    }
+    .input-box-container{
+        display: flex;
+
+        width: 50vh;
+        height: 2vh;
+        margin-top: 2vh;
+        .input-box-title{
+            padding-right: 2vh;
+            padding-top: .3vh;
+            font: normal normal bold 15px/20px Roboto;
+            margin-left: 3vh;
+            
+        }
+        .input-box-input-box{
+            padding-right: 2vh;
+        }
+    }
+    .super-fancy-button{
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        margin-top:3vh;
+        margin-left: 3vh;
+        padding: 3px 20px;
+        border-radius: 3vh;
+        background-color: #002E69 ;
+        color: #FFFFFF;
+        letter-spacing: 2px;
+        &:hover {
+            
+            background-color: #0851af;
+            .button-plus {
+              transform: rotate(30deg);  // Rotates the icon 30 degrees on hover
+            }
+          }
+        
+          &:active {
+            .button-plus {
+              transform: rotate(90deg);  // Rotates the icon 90 degrees on click
+            }
+          }
+    }
+     
+    .button-plus{
+        transition: transform 0.3s ease; 
+        font: normal normal bold 36px/42px Roboto;
+    }
+    .button-text{
+        margin-left: 1vh;
+        font: normal normal bold 15px/20px Roboto;
+    }
+     
+}
+#checkmark{
+    height:2vh;
+    width:2vh;
+    margin-left:2vh
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+
+    .header-title{
+        font: $font-title;
+    }
+    .header-introduction{
+        font: $font-primary;
+        color:#707070;
+        width: 50vh;
+    }
+}
+.text-ribbon{
+    padding-top: 1.5vh;
+    background-color: #D5EAFF;
+    height: 5vh;
+    width: 68vh;
+    margin-top:1vh;
+    .ribbon-title-box{
+        //padding-top: 1vh;
+        margin-left: 3vh;
+    }
+    
+}
+.error-pin{
+    margin-left: 5vh;
+    color: red;
+}

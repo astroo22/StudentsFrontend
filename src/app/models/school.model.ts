@@ -7,4 +7,5 @@ export interface School{
     professor_list: string[];
     class_list: string[];
     student_list: string[];
+    userOwned?: boolean;
 }

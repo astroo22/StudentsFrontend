@@ -1,17 +1,18 @@
 
 <div class="login-container">
   <div class="login-box">
-    <h2>Login</h2>
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" >
-      <div class="input-box-container">
-        <label class="email" for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    <div id="title">Login</div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+      <div>
+        <label class="email" for="email">Username:</label>
+        <input type="text" id="email" formControlName="username" class="form-control"  required>
       </div>
-      <div class="input-box-container">
+      <div>
         <label class="password"  for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        <input type="password" id="password" formControlName="password" class="form-control" required>
+          <div id="error-container"><div class="error-pin" *ngIf="getErrorMessage()">{{getErrorMessage()}}</div></div>
       </div>
-      <button type="submit">Login</button>
+      <button id="submit" type="submit">Login</button>
     </form>
   </div>
 </div>

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  public phone: string = '(918) 899-5212';
   public email: string = 'astroo22@gmail.com';
   public linkedin: string = 'https://www.linkedin.com/in/jonathan-starkey-0ba9ba171/';
   public github: string = 'https://github.com/astroo22';

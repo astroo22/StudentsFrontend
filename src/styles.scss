@@ -52,7 +52,31 @@ body {
 hr {
   border-top: 1px solid $tertiary-color;
 }
-
+.custom-dialog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .mat-dialog-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    padding: 0 !important;
+    overflow: hidden;
+    
+    .dialog-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+    }
+  }
+}
 
 
 

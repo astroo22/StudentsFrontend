@@ -1,0 +1,194 @@
+$form-text-title-font: normal normal bold 15px/15px Roboto;
+$form-text-font: normal normal normal 15px/15px Roboto;
+.account-settings {
+    position: relative;
+    display: flex;
+    //justify-content: center;
+    flex-direction: column;
+    //padding: 2vh;
+    margin-top: 12vh;
+    margin-left: 27vh;
+    margin-bottom: 17.5vh;
+    border-radius: 0.8vh;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    width: 76vh; 
+    height: 53vh;
+    background-color: #f4f4f4; 
+  }
+  #parent-title{
+    margin-top: 4vh;
+    margin-left: 5vh;
+    font: normal normal bold 40px/45px Roboto;
+    margin-bottom: 2vh;
+  }
+  
+  #account-title{
+    
+   margin-left: 2vh;
+    font: normal normal bold 18px/20px Roboto;
+  }
+  #account-title-box{
+    
+    display: flex;
+    background-color: #D5EAFF;
+    align-items: center;
+    height: 5vh;
+    margin-left: 5vh;
+    margin-right:5vh;
+  }
+  #password-box{
+    padding-top: 2vh;
+    padding-bottom:2vh;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+  }
+  #password-label{
+    margin-bottom:1vh;
+    margin-top:1vh;
+  }
+  .password-input-box{
+    //margin-top: 1vh;
+    // align-items: center;
+    flex: 3;
+    height: 3vh;
+    width: 5vh;
+    margin-right: 6vh;
+    margin-left: 1vh;
+  }
+  .line{
+    height:0px;
+    border: 1px solid #707070;
+    margin-right:6vh;
+    margin-left:1vh;
+  }
+  .form-style{
+    margin-top: 2vh;
+    margin-left: 5vh;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  .edit-row{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    margin-left: 2vh;
+    margin-top: 1vh;
+}
+  h2 {
+    color: #333; 
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  label {
+    align-items: center;
+    display: block;
+    font: $form-text-title-font;
+    color: #333;
+  }
+  .icon{
+    height: 2vh;
+    width: 2vh;
+    border:none;
+}
+.user-profile-text{
+    font: $form-text-font;
+    margin-left: 3vh;
+}
+
+.user-name-unedited{
+    font: $form-text-font;
+    margin-left: 3vh;
+}
+.user-email-unedited{
+    font: $form-text-font;
+} 
+  
+  input {
+    display: block;
+    height: 3vh;
+    padding: 0.5em;
+    font: normal normal bold 30px/35px Roboto;
+    border: 1px solid #ccc; 
+    border-radius: 0.3em;
+  }
+  .input-field {
+    align-items: center;
+    flex: 3;
+    height: 3vh;
+    width: 10vh;
+    margin-left: 2vh;
+    margin-right: 15vh;
+    padding: 1em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+  }
+  .edit-row{
+    display: flex;
+    flex-direction: row;
+  }
+  .edit-button {
+    background-color: #f4f4f4;
+    border: none;
+    margin-left: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    color: rgb(2, 0, 0);
+    background-color: #D5EAFF;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .button-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .cancel-button{
+    margin-left: 2vh;
+    margin-right: 5vh;
+    margin-top:1vh;
+    box-shadow: 0 0.7em 1.5em -0.5em #f5818198;
+    border-radius: 20em;
+    border: none;
+  }
+  .bottom-button-box{
+    display: flex;
+    flex-direction: row;
+    margin-top:5vh;
+  }
+  .bottom-button{
+    margin-right:10vh;
+    
+    button{
+        background-color: red;
+        box-shadow: 0 0.7em 1.5em -0.5em #f5818198;
+        border-radius: 20em;
+        border: none;
+    }
+    button:hover{
+        background-color:#df0000 ;
+    }
+  }
+
+  button:hover {
+    background-color: #b3d8fd; 
+  }
+
+  button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+  }
+  .error-pin{
+    margin-left: 3vh;
+    color:#df0000;
+  }

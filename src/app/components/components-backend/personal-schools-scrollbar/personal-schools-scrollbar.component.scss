@@ -1,6 +1,7 @@
 .component-container{
     display:flex;
     flex-direction: row;
+    
     .selected_school{
         display: flex;
         flex: 2;
@@ -10,34 +11,50 @@
 .Scroll_Group {
     position: relative;
     width: 388px;
-    height: 729px;
+    height: 700px;
     overflow: hidden;
 }
 .Repeat_Grid {
     //mix-blend-mode: normal;
+    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
     position: relative;
     margin-top:  30px;
     margin-right: 10px;
     width: 400px;
     left: 30px;
-    height: 675px;
+    height: 625px;
     overflow-y: scroll;
     background-color: #221e1e;
+    .disabled {
+      pointer-events: none;
+  }
 }
+.disabled-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;  
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); // semi-transparent overlay
+}
+
 
 .Group_Class {
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 375px;
+    width: 350px;
     height: 61px;
     //overflow: visible;
 }
 
 .Component_11__1_Class {
     position: relative;
-    width: 388px;
+    width: 340px;
     height: 61px;
+    left:10px;
     overflow: visible;
     //background-color: #000;
 }
@@ -84,4 +101,53 @@
     font-weight: bold;
     font-size: 20px;
     color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+  
+  }
+  .add-school-button-container {
+    position: sticky; 
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vh;
+    //background-color: #221e1e;
+  }
+  .add-school-button {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    width: 340px;
+    height: 45px;
+    color: #000;
+    background-color: #D5EAFF;
+    border: none;
+    //padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    .icon {
+        width: 50px; 
+        height: 50px;  
+        margin-right: 5px;  
+        transition: transform 0.3s ease;  
+      }
+    
+      &:hover {
+        
+        background-color: #dbdbdb;
+        .icon {
+          transform: rotate(30deg);  // Rotates the icon 30 degrees on hover
+        }
+      }
+    
+      &:active {
+        .icon {
+          transform: rotate(90deg);  // Rotates the icon 90 degrees on click
+        }
+      }
   }

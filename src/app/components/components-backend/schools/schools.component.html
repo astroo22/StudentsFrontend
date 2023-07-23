@@ -1,15 +1,19 @@
 <div class="componenet-container">
-  <div class="Scroll_Group selected-school">
+  <div class="scroll-bar-container">
     <h3 class="Ranks">SCHOOL RANKS</h3>
-    <div class="Repeat_Grid schools-list">
-      <div *ngFor="let school of schools" class="Group_Class " (click)="selectSchool(school)">
-        <div class="Component_11__1_Class">
-          <div class="School_Rectangle">
-            <div class="Ranking_Box">
-              <span>{{ school.ranking }}</span>
-            </div>
-            <div class="School_Name_Flexbox">
-              <span>{{ school.school_name }}</span>
+    <div class="Scroll_Group">
+      <div id="background">
+        <div class="Repeat_Grid schools-list">
+          <div *ngFor="let school of schools" class="Group_Class"  (click)="selectSchool(school)">
+            <div class="Component_11__1_Class">
+              <div class="School_Rectangle" [ngClass]="{'user-owned': isUserOwned(school)}">
+                <div class="Ranking_Box">
+                  <span>{{ school.ranking }}</span>
+                </div>
+                <div class="School_Name_Flexbox">
+                  <span>{{ school.school_name }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -20,5 +24,3 @@
     <app-school [school]="selectedSchool"></app-school>
   </div>
 </div>
- 
-  

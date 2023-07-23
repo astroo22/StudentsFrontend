@@ -1,12 +1,12 @@
 <div class="componenet-container">
     <div class="Scroll_Group selected-school">
       <h3 class="Ranks">MY SCHOOLS</h3>
-      <div class="Repeat_Grid">
-        <div *ngFor="let school of schools" class="Group_Class" (click)="selectSchool(school)">
+      <div class="Repeat_Grid" [ngClass]="{'disabled': disabled}">
+        <div *ngFor="let school of schools ; let i = index" class="Group_Class" (click)="selectSchool(school)">
           <div class="Component_11__1_Class">
             <div class="School_Rectangle">
               <div class="Ranking_Box">
-                <span>{{ school.ranking }}</span>
+                <span>{{ i + 1 }}</span>
               </div>
               <div class="School_Name_Flexbox">
                 <span>{{ school.school_name }}</span>
@@ -14,10 +14,13 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!schools">
-            <div class="Component_11__1_Class"></div>
-        </div>
       </div>
+      <div *ngIf="disabled" class="disabled-overlay"></div>
+    </div>
+    <div class="add-school-button-container">
+      <button class="add-school-button" (click)="createSchoolHelper()">
+        <img src="assets/icons/plus.png" alt="Create School" class="icon" />
+        Create School
+      </button>
     </div>
   </div>
-   

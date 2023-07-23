@@ -1,5 +1,5 @@
-import { Component, Input,SimpleChanges,OnInit} from '@angular/core';
-import { SchoolService } from '../../../services/school.service';
+import { Component,ViewChild  } from '@angular/core';
+import { PersonalSchoolsScrollbarComponent } from '../personal-schools-scrollbar/personal-schools-scrollbar.component';
 import { School } from '../../../models/school.model';
 
 @Component({
@@ -8,9 +8,17 @@ import { School } from '../../../models/school.model';
   styleUrls: ['./personal-page.component.scss']
 })
 export class PersonalPageComponent {
-  selectedSchool: School;
+  selectedSchool: School | null = null;
+  isCreatingSchool: boolean = false;
+  @ViewChild('schoolsScrollbar') schoolsScrollbar: PersonalSchoolsScrollbarComponent;
+  public state: 'list' | 'view' | 'create' = 'view';
 
   onSelectSchool(value: School){
     this.selectedSchool = value;
+    this.state = 'view';
   }
+  createSchool() {
+    this.state = 'create';
+  }
+  
 }

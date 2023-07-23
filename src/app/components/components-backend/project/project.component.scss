@@ -1,13 +1,61 @@
+$font-title: normal normal normal 25px/30px Roboto;
 
 
 
 
 
-// this creates the black line
 .app-schools {
  // background-color: #2b2a2a;
   padding: 20px;
 }
 
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1vh;
+  margin-top: 6vh;
+  margin-left: 34vh;
+  border-radius: 0.8vh;
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+  width: 76vh; 
+  height: 53vh;
+  background-color: #ddd;
+  
+  #info-text {
+    font: $font-title;
+    margin-bottom:4vh;
+  }
 
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; // space between buttons
 
+    .info-button {
+      // Styles for the buttons go here
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      &:active {
+        background-color: #aaa;
+      }
+    }
+    
+    #login-button {
+      // Specific styles for login button if needed
+    }
+
+    #create-account-button {
+      // Specific styles for create account button if needed
+    }
+  }
+}

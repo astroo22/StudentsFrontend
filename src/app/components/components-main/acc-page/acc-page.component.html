@@ -1,0 +1,98 @@
+<app-user-inactive *ngIf="showUserInactiveComponent"></app-user-inactive>
+<div class="account-settings">
+    <div id="parent-title">
+        <span id="user-profile">User Profile</span>
+    </div>
+    <div id="account-title-box">
+        <span id="account-title">My Account</span>
+    </div>
+    <form class="form-style" [formGroup]="settingsForm">
+        <div class="form-group" formGroupName="usernameGroup">
+          
+          <div class="edit-row">
+            <label class="user-name" for="username">Username:</label>
+            <div *ngIf="!editUserNameFlag" class="user-profile-text">{{username || '-'}}</div>
+            <input class="input-field input-username" *ngIf="editUserNameFlag" type="text" id="username" formControlName="updatedUserName" [readonly]="!usernameGroup.controls['editMode'].value">
+            <button class="edit-button" *ngIf="!usernameGroup.controls['editMode'].value" (click)="editMode('username')"><img [src]="editIcon" class="icon"/></button>
+        </div>
+            <div *ngIf="usernameGroup.controls['editMode'].value">
+                <div class="button-box">
+                    <button class="cancel-button" (click)="cancelEdit('username')">Cancel</button>
+                    <button (click)="saveChanges('username')">Save</button>
+                    <div *ngIf="submitAttempted && errUsernameMsg" class="error-pin">* {{errUsernameMsg||'invalid username'}}</div>
+                </div>
+            </div>
+            
+        </div>
+    <div class="line"></div>
+        <div class="form-group" formGroupName="emailGroup">
+            <div class="edit-row">
+                <label for="email">Email:</label>
+                <div *ngIf="!editEmailFlag" class="user-profile-text">{{email || '-'}}</div>
+                <input class="input-field input-email"  *ngIf="editEmailFlag" type="email" id="email" formControlName="updatedEmail" [readonly]="!emailGroup.controls['editMode'].value">
+                <button class="edit-button" *ngIf="!emailGroup.controls['editMode'].value" (click)="editMode('email')"><img [src]="editIcon" class="icon"/></button>
+            </div>
+          <div *ngIf="emailGroup.controls['editMode'].value">
+            <div class="button-box">
+                <button class="cancel-button" (click)="cancelEdit('email')">Cancel</button>
+                <button class="cancel-button" (click)="saveChanges('email')">Save</button>
+                <div *ngIf="submitAttempted && errEmailMsg" class="error-pin">* {{errEmailMsg||'invalid email'}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+    
+        <div class="form-group" formGroupName="passwordGroup">
+            <div class="edit-row password-box">
+                <label id="password-label" for="password">Password:</label>
+                <div *ngIf="!editPasswordFlag" class="user-profile-text">{{password || '-'}}</div>
+                <!-- password -->
+                    <input class="password-input-box input-password" *ngIf="editPasswordFlag" type="password" id="updatedpassword" formControlName="updatedPassword" [readonly]="!passwordGroup.controls['editMode'].value">
+                    <label *ngIf="editConfirmPasswordFlag" for="confirmPassword">Confirm Password:</label>
+                    <input class="password-input-box input-confirm" *ngIf="editConfirmPasswordFlag" type="password" id="confirmPassword" formControlName="confirmPassword" [readonly]="!passwordGroup.controls['editMode'].value">
+                <button class="edit-button" *ngIf="!passwordGroup.controls['editMode'].value" (click)="editMode('password')"><img [src]="editIcon" class="icon"/></button>
+            </div>
+          <div *ngIf="passwordGroup.controls['editMode'].value">
+            <div class="button-box">
+                <button class="cancel-button" (click)="cancelEdit('password')">Cancel</button>
+                <button (click)="saveChanges('password')">Save</button>
+                <div *ngIf="submitAttempted && errPasswordMsg" class="error-pin">* {{errPasswordMsg||'invalid password'}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="form-group">
+           <div class="bottom-button-box">
+                <app-confirm-dialog 
+                            *ngIf="showAccConfirmDialog" 
+                            [message]="confirmAccountDeleteDialogMessage" 
+                            (confirm)="handleAccDeleteConfirm($event)">
+                    </app-confirm-dialog>
+                <div class="bottom-button">
+                    
+                    <button (click)="openAccConfirmDialog()">Delete Account</button>
+                </div>
+                <div class="bottom-button">
+                    <div *ngIf="!emailGroup.controls['editMode'].value">
+                        <app-confirm-dialog 
+                            *ngIf="showEmailConfirmDialog" 
+                            [message]="confirmEmailDeleteDialogMessage" 
+                            (confirm)="handleEmailDeleteConfirm($event)">
+                          </app-confirm-dialog>
+                        <button (click)="openEmailConfirmDialog()">
+                            Delete Email
+                        </button>
+                        <div *ngIf="emailVerificationRequired">
+                            <button (click)="sendVerificationEmail()">Verify Email</button>
+                            <div *ngIf="verificationEmailSent">Verification email has been sent!</div>
+                        </div>
+                        <div *ngIf="emailVerificationRequired">
+                            <span >Email is verified!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    

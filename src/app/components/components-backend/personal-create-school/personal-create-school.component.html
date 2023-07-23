@@ -1,0 +1,66 @@
+<div class = "personal-create-school-container" >
+    <div class="alignment-div">
+        <!-- Checking if there is a message to display -->
+        <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+        <!-- Display the form if the user is authenticated -->
+        <div *ngIf="!errorMessage">
+            <div class="header-container">
+                <h2 class="header-title">School Creator</h2>
+                <div class="header-introduction">
+                    <p>
+                        Welcome to the School Creator! This component is more than just a playful digital environment—it's 
+                        a demonstration of my proficiency in managing large datasets, creating status updates, and handling 
+                        complex operations. Here, you have the power to generate an entire school from scratch, complete 
+                        with randomly-generated students, professors, classes, and report cards. Once your school is created,
+                        you can customize it, edit its name, expel students, and more. 
+                    </p>
+                </div>
+            </div>
+            <div class="text-ribbon">
+                 <h4 class="ribbon-title-box">Create your School Below</h4>
+            </div>
+            <div class="school-form">
+                <form [formGroup]="schoolForm" (ngSubmit)="onSubmit()" >
+                    
+                    <div class="input-box-container">
+                        <span class="input-box-title">Enter School Name:</span>
+                        <!-- <label for="schoolName">School Name:</label> -->
+                        <input class="input-box-input-box" id="schoolName" type="text" formControlName="schoolName" [ngClass]="{'disabled-input': isLoading}">
+                    </div>
+                    
+                    <div class="input-box-container">
+                        <!-- <label for="studentsPerGrade"></label> -->
+                        <span class="input-box-title">Students per Grade:</span>
+                        <select id="studentsPerGrade" formControlName="studentsPerGrade"  [ngClass]="{'disabled-input': isLoading}">
+                            <option *ngFor="let number of [10, 20, 30, 40, 50]">{{ number }}</option>
+                        </select>
+                    </div>
+                    
+                    <div id="status-container" >
+                        <div *ngIf="isLoading">
+                            <div  id="spinner-container" >
+                                <div *ngIf="schoolStatus !== 'Complete'" class="spinner-border text-dark" id="spinner" role="status"></div>
+                                <div *ngIf="schoolStatus === 'Complete'" ><img [src]="imgCheck" id="checkmark"> </div> 
+                                
+                                <div id="creation-status">
+                                    <span class="current-status">School Creation Status: {{schoolStatus}}</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="error-container">
+                            <div class="error-pin" *ngIf="getErrorMessage()">{{getErrorMessage()}}</div>
+                        </div>                          
+                    </div>
+                    <div *ngIf="!isLoading">
+                        <button class="super-fancy-button" type="submit">
+                            <span class="button-plus"> +  </span> 
+                            <span class="button-text">Create School</span> 
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

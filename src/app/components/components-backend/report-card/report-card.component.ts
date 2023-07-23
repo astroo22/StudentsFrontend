@@ -17,8 +17,7 @@ export class ReportCardComponent {
     console.log("did hit yes no maybeso?")
     if (this.studentID.length>0){
       this.reportCardService.getReportCard(this.studentID).subscribe((data: ReportCard) => {
-        console.log(data); // Log the report card data to the console for debugging purposes
-        // Display the report card data however you would like in the HTML template});
+        console.log(data); 
       this.reportCard = data
       this.showReportCard = !this.showReportCard;
     }); 

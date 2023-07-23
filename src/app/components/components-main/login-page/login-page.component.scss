@@ -1,3 +1,6 @@
+$form-text-title-font: normal normal bold 35px/25px Roboto;
+$form-text-font: normal normal bold 16px/25px Roboto;
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -11,46 +14,43 @@
       flex-direction: column;
       align-items: center;
       background-color: #5c5858;
-      width: 425px; // Adjust the width as needed
-      height: 275px;
+       width: 32vh; 
+      height: 25vh;
       padding: 8px 16px;
       border-radius: 10px;
+    }
+    .form-control{
+      width: 25vh;
+      height: 3vh;
+    }
+    #title{
+      margin-top: 2vh;
+      margin-bottom:2vh;
+      font: $form-text-title-font
     }
   
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
       gap: 16px;
-      .input-box-container{
-        width: 350px;
-        height: 40px;
-        
+
+      #submit{
+        position: absolute;
       }
-      // label {
-      //   // text-align: left;
-        
-        
-      // }
-      .email{
-        font-weight: bold;
-        font-family: Roboto;
-        margin-right: 19%;
-      }
-      .password{
-        font-weight: bold;
-        font-family: Roboto;
-        margin-right: 10%;
-      }
+
       input {
         padding: 8px;
         font-size: 16px;
         border: none;
-        border-radius: 5px;
+        border-radius: 4px;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
       }
   
       button {
+        //margin-top:1vh;
+        
         background-color: #4b4b4b;
         color: #fff;
         border: none;
@@ -59,10 +59,19 @@
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        bottom: -4.5vh;
   
         &:hover {
           background-color: #a0a1a0;
         }
       }
+    }
+  }
+  #error-container{
+    height: 1.5vh;
+    .error-pin{
+      //margin-left: 3vh;
+      color:#ff0000;
+     
     }
   }

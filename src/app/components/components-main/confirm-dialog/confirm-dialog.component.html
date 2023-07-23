@@ -1,0 +1,12 @@
+
+<div class="dialog-background" (click)="onConfirm(false)">
+    <div class="dialog-container" (click)="$event.stopPropagation()">
+      <div id="message">{{ message }}</div>
+      <div class="dialog-actions">
+        <div class="confirm-buttons">
+            <button id="yes" (click)="onConfirm(true)">Yes</button>
+            <button id="no" (click)="onConfirm(false)">No</button>
+        </div>
+      </div>
+    </div>
+  </div>

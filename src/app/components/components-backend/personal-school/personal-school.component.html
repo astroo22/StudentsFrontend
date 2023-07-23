@@ -1,10 +1,15 @@
 <div class = "personal-school-container" *ngIf="school">
     <div class="alignment-div">
         <div class = "school-title-bar">
-            <div class = "title-name">{{school.school_name || '-' }}</div>
+            <div *ngIf="!editSchoolNameFlag" class = "title-name">{{school.school_name || '-' }}</div>
+            <input [(ngModel)]="updatedSchoolName" *ngIf="editSchoolNameFlag" class="title-input-box"/>
+            <button *ngIf="!editSchoolNameFlag"(click)="editSchoolName()" class="button-no-border"><img [src]="updateNameIcon" class="icon"/></button>
+            <button *ngIf="editSchoolNameFlag && !isNameConfirmed" (click)="confirmSchoolName()" class="button-no-border" ><img [src]="confirmIcon"class="icon"/></button>
+            <button *ngIf="editSchoolNameFlag && !isNameConfirmed" (click)="cancelSchoolName()" class="button-no-border" ><img [src]="cancelIcon"class="icon"/></button>
+            <button *ngIf="editSchoolNameFlag && isNameConfirmed" disabled class="button-no-border"><img [src]="lockIcon" class="icon"/></button>
         </div>
         <div class = "secondary-info">
-            <div class="info-item">STUDENT GPA: {{school.avg_gpa || '-'}} |     </div>
+            <div class="info-item">STUDENT AVG GPA: {{school.avg_gpa || '-'}} |     </div>
             <div class="info-item">NUMBER OF STUDENTS: {{numberOfStudents || '-'}}  |   </div>
             <div class="info-item">RANKING: {{school.ranking || '-'}}</div>
         </div>
@@ -32,42 +37,92 @@
                     </select>
                 </div>
                 <div class ="sort-by">
-                <!-- Sort by dropdown -->
-                <label for="sort-select">Sort By: </label>
-                <select id="sort-select" [(ngModel)]="selectedSort" (ngModelChange)="sortStudentsBy()">
-                    <option value="name">Name</option>
-                    <option value="gpa">GPA</option>
-                    <!-- <option value="grade">Current Grade</option> -->
-                </select>
+                    <div class="checkbox-and-sort-container">
+                        <div id="checkbox">
+                            <input type="checkbox"  [(ngModel)]="showUnenrolled" (ngModelChange)="filterStudentsByGrade(); sortStudentsBy()"> Unenrolled students          
+                        </div>
+                        <label for="sort-select">Sort By: </label>
+                        <select id="sort-select" [(ngModel)]="selectedSort" (ngModelChange)="sortStudentsBy()">
+                            <option value="name">Name</option>
+                            <option value="gpa">GPA</option>
+                            <!-- <option value="grade">Current Grade</option> -->
+                        </select>
+                    </div>
                 </div>
             </div>
           
             <div class="title-bar">
-              <div class="title">STUDENT NAME</div>
-              <div class="title">GPA</div>
-              <div class="title">CURRENT GRADE</div>
-              <div class="title">EXPEL</div>
+              <th class="title">STUDENT NAME</th>
+              <th class="title">GPA</th>
+              <th class="title">CURRENT GRADE</th>
+              <th class="title">EXPEL</th>
             </div>
           
             <div class="student-list" *ngIf="filteredStudents">
               <!-- Student records -->
-              <div class="student-record" *ngFor="let student of filteredStudents" (click)="toggleRecord(student)">
+               <div class="student-record" *ngFor="let student of filteredStudents" 
+                    (click)="toggleRecord(student)"
+                    [class.expanded]="student.expanded"
+                    [ngClass]="{'unenrolled': !student.enrolled}">
+                    <div class="student-record-content">
+                        <div class="record-toggle-arrow">
+                            <img class="icon-arrow" [src]="arrowIcon" [class.rotate]="student.expanded" alt="arrow" />
+                        </div>
+                        
+                        <div class="record-title">{{ student.name }}</div>
+                        <div class="record-info-gpa">{{ student.avg_gpa }}</div>
+                        <div class="record-info-year">{{ getGradeLabel(student.current_year) }}</div>
+                        <div class="record-info-icon">
+                            <img class="icon-trash" src="{{trashIcon}}" alt ="trash" *ngIf="student.enrolled" (click)="trashStudent(student); $event.stopPropagation()"/>
+                            <img class="icon-trash" src="{{wingsIcon}}" alt ="trash" *ngIf="!student.enrolled" (click)="trashStudent(student); $event.stopPropagation()"/>
 
-                <div class="record-toggle-arrow">
-                    <img class="icon-arrow" [src]="arrowIcon" [ngClass]="{ 'rotate': student.expanded }" alt="arrow" />
-                    <!-- <img class="icon-arrow" src="{{arrowIcon}}" alt="arrow"/> -->
+                        </div>
+                    </div>
+                    <div class="expanded-info" *ngIf="student.expanded">
+                        <div class="expanded-basic-info-bar">
+                            <!--TODO: Need to format graduation year but datageneration for dobs didn't work this run for some reason?-->
+                            <div class="bar-item-gradyear">GRADUATION YEAR: {{student.graduation_year}}</div>
+                            <div class="bar-item-age">AGE: {{student.age}}</div>
+                            <div class="bar-item-dob">DOB: {{student.dob}}</div>
+                        </div>
+                        <div class="expanded-reportcard">
+                            <!-- TODO: Need to add report card title lable to left of report card -->
+                            <div class="report-card-title">Report Card:</div>
+                            <div class="report-card">
+                                <tr>
+                                    <th> Subject</th>
+                                    <th> Grade</th>
+                                </tr>
+                                <tr>
+                                    <td> Math:</td>
+                                    <td class="grade">{{student.reportCard?.math || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Science:</td>
+                                    <td class="grade">{{student.reportCard?.science || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td> English:</td>
+                                    <td class="grade">{{student.reportCard?.english || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Lunch:</td>
+                                    <td class="grade">{{student.reportCard?.lunch || "-"}}</td>
+                                </tr>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="record-title">{{ student.name }}</div>
-                <div class="record-info-gpa">{{ student.avg_gpa }}</div>
-                <div class="record-info-year">{{ getGradeLabel(student.current_year) }}</div>
-                <div class="record-info-icon">
-                    <img class="icon-trash" src="{{trashIcon}}" alt ="trash"/>
-                </div>
-                <div class="expanded-info" *ngIf="student.expanded"></div>
-                <!-- Additional information or expansion here -->
-              </div>
             </div>
           </div>
+          <div class="button-styling">
+                <app-confirm-dialog 
+                            *ngIf="showDeleteConfirmDialog" 
+                            [message]="confirmDeleteDialogMessage" 
+                            (confirm)="deleteSchool($event)">
+                </app-confirm-dialog>
+            <button class="delete-school" (click)="openDeleteConfirmDialog()" >Delete School</button>
+            <button class="save-changes" *ngIf="hasChanges"  (click)="saveChanges()">Save Changes</button>
+        </div>
     </div>
 </div>

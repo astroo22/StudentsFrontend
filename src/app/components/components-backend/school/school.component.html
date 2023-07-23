@@ -62,8 +62,7 @@
               </div>
             </div>
           </div> 
-          
-          
+
           <div class="top-grades-container">
             <div class="grade-column">
               
@@ -100,17 +99,7 @@
     <div class="previous-placeholder" ></div>
     <button class="button-4" [class.disabled]="isNextDisabledGrades"(click)="scrollGrades(5)" >Next</button>  
     <div class="previous-placeholder"></div>
-  </div>
-    <!-- <div class="bar">
-      <button *ngIf="currentIndex > 0" class="scroll-button" (click)="scrollProfessors(-5)">Previous</button>
-      <button  class="next-button" (click)="scrollProfessors(5)">Next</button>
-    </div> -->
-    
-    <!-- <div class="scroll-buttons">
-      <button class="scroll-button" [class.disabled]="currentIndex === 0" (click)="scrollGrades(-1)">Previous</button>
-      <button class="scroll-button" [class.disabled]="currentIndex + pageSize >= topGrades.length" (click)="scrollGrades(1)">Next</button>
-    </div> -->
-    
+  </div>   
 </div>
   
 

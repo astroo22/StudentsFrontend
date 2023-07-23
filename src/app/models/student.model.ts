@@ -1,3 +1,5 @@
+import { ReportCard } from "./report-card.model";
+
 export interface Student {
     student_id: string;
     name: string;
@@ -8,4 +10,5 @@ export interface Student {
     dob: Date;
     enrolled: boolean;
     expanded: boolean;
+    reportCard?: ReportCard
   }
