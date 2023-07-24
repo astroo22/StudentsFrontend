@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import jwt_decode from 'jwt-decode';
 import { User } from '../models/user.model';
-import { environment } from './config';
+import { environment } from '../../environments/environment';
 import { BehaviorSubject, throwError, Subject  } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 

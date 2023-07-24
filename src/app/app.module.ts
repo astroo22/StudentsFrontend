@@ -44,9 +44,6 @@ import { AccPageComponent } from './components/components-main/acc-page/acc-page
 import { ConfirmDialogComponent } from './components/components-main/confirm-dialog/confirm-dialog.component';
 import { UserInactiveComponent } from './components/components-main/user-inactive/user-inactive.component';
 
-
-//import { PopupRectDirective } from './directives/popup-rect.directive';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,8 +71,6 @@ import { UserInactiveComponent } from './components/components-main/user-inactiv
     AccPageComponent,
     ConfirmDialogComponent,
     UserInactiveComponent,
-   
-   // PopupRectDirective
   ],
   imports: [
     BrowserModule,

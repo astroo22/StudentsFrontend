@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { School } from '../models/school.model';
 import { Professor } from '../models/professor.model';
 import { AuthService } from './auth.service';
-import { environment } from './config';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
