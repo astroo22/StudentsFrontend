@@ -1,6 +1,13 @@
 version: 0.2
 
 phases:
+pre_build:
+    commands:
+      - curl -sL https://deb.nodesource.com/setup_20.0 | bash -
+      - apt-get install -y nodejs
+      - echo Checking node and npm versions
+      - node -v
+      - npm -v
   install:
     runtime-versions:
       nodejs: 14
