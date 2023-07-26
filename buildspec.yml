@@ -3,10 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
-      - apt-get install -y nodejs
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 16
+      - nvm alias default 16
       - echo Checking node and npm versions
-      - node -v
+      - which node
+      - node --version
       - npm -v
       - echo Installing source NPM...
       - npm install -g @angular/cli@15.2.5
