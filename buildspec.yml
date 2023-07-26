@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 14
     commands:
+      - n 16
       - echo Installing source NPM...
       - npm install -g @angular/cli
       - echo Installing project NPM dependencies...
