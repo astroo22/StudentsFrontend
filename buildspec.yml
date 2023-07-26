@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing source NPM...
+      - npm install -g @angular/cli
+  pre_build:
+    commands:
+      - echo Installing project NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the Angular app...
+      - ng build --prod
+  post_build:
+    commands:
+      - echo Syncing built app to S3...
+      - aws s3 sync dist/resume-frontend s3://resume-frontend --delete
