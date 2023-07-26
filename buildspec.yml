@@ -14,7 +14,7 @@ phases:
   build:
     commands:
       - echo Building the Angular app...
-      - ng build --prod
+      - ng build --configuration production
   post_build:
     commands:
       - echo Syncing built app to S3...
