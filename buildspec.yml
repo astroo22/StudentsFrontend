@@ -1,21 +1,15 @@
 version: 0.2
 
 phases:
-pre_build:
+  install:
     commands:
-      - curl -sL https://deb.nodesource.com/setup_20.0 | bash -
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
       - apt-get install -y nodejs
       - echo Checking node and npm versions
       - node -v
       - npm -v
-  install:
-    runtime-versions:
-      nodejs: 14
-    commands:
       - echo Installing source NPM...
       - npm install -g @angular/cli
-  pre_build:
-    commands:
       - echo Installing project NPM dependencies...
       - npm install
   build:
