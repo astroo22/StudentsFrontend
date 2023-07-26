@@ -9,7 +9,7 @@ phases:
       - node -v
       - npm -v
       - echo Installing source NPM...
-      - npm install -g @angular/cli
+      - npm install -g @angular/cli@15.2.5
       - echo Installing project NPM dependencies...
       - npm install
   build:
