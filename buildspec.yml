@@ -2,17 +2,11 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 14
     commands:
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-      - . ~/.nvm/nvm.sh && nvm install 16 && nvm alias default 16
-      - nvm install 16
-      - nvm alias default 16
-      - echo Checking node and npm versions
-      - which node
-      - node --version
-      - npm -v
       - echo Installing source NPM...
-      - npm install -g @angular/cli@15.2.5
+      - npm install -g @angular/cli
       - echo Installing project NPM dependencies...
       - npm install
   build:
