@@ -17,4 +17,4 @@ phases:
   post_build:
     commands:
       - echo Syncing built app to S3...
-      - aws s3 sync dist/resume-frontend s3://resume-frontend --delete
+      - aws s3 sync dist/resume-frontend s3://resume-frontend/resume-frontend --delete
