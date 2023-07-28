@@ -13,7 +13,9 @@ phases:
   build:
     commands:
       - echo Building the Angular app...
-      - ls -la src/environments/
+        - echo "Printing the content of environment.ts and environment.prod.ts files..."
+        - cat src/environments/environment.ts
+        - cat src/environments/environment.prod.ts
       - ng build --configuration production
   post_build:
     commands:
