@@ -10,11 +10,6 @@ phases:
       - npm install -g @angular/cli
       - echo Installing project NPM dependencies...
       - npm install
-  pre_build:
-    commands:
-      - echo "Printing the content of environment.ts and environment.prod.ts files..."
-      - cat src/environments/environment.ts
-      - cat src/environments/environment.prod.ts
   build:
     commands:
       - echo Building the Angular app...
