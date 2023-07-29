@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class SchoolService {
-  private apiSchUrl = environment.apiBaseUrl +'schools';
+  private apiSchUrl = environment.apiBaseUrl +'/schools';
   private apiTelUrl = environment.apiBaseUrl +`/telemetry`
 
   constructor(private http: HttpClient,private as: AuthService) { }
