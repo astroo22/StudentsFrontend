@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
     envName: 'production',
-    apiBaseUrl: 'https://www.hiremeresume.com/',
+    apiBaseUrl: 'https://api.hiremeresume.com:8080/',
   };

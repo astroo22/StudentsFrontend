@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiBaseUrl: 'https://www.hiremeresume.com',
+    apiBaseUrl: 'https://www.hiremeresume.com/',
   };
