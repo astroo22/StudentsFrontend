@@ -24,11 +24,13 @@ export class SchoolService {
    getSchoolData(school_id: string,professorList: string[]): Observable<any> {
     const schoolUrl = `${this.apiTelUrl}/${school_id}/classes/avg_gpa`;
     const professorsUrl = `${this.apiTelUrl}/best-professors`;
-    const params = new HttpParams().set('professor_ids', professorList.join(','));
+    const professorData = {
+      professor_ids: professorList
+    };
     
     return forkJoin([
       this.http.get(schoolUrl),
-      this.http.get<Professor[]>(professorsUrl, {params: params })
+      this.http.post<Professor[]>(professorsUrl, professorData)
     ]);
   }
 
