@@ -62,7 +62,7 @@ export class SchoolService {
     return this.http.get(`${this.apiTelUrl}/creation_status/${operation_id}`);
   }
 
-  getAllSchoolsForUser( owner_id: string): Observable<any> {
+  getAllSchoolsForUser(owner_id: string): Observable<any> {
     this.as.isAuthenticated();
     const token = localStorage.getItem('access_token');
     // prepare headers
