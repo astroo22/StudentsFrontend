@@ -67,7 +67,6 @@ export class SchoolService {
     const token = localStorage.getItem('access_token');
     // prepare headers
     const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
     });
 
