@@ -53,7 +53,7 @@ export class SchoolComponent implements OnInit {
   }
   ngOnChanges(changes: SimpleChanges){
     if (changes['school']){
-      this.getSchoolData(this.school.school_id,this.school.professor_list)
+      this.getSchoolData(this.school.school_id)
       this.numberOfStudents = this.school.student_list.length
       this.isPreviousDisabledGrades = true;
       this.isNextDisabledGrades = false;
@@ -66,8 +66,8 @@ export class SchoolComponent implements OnInit {
     
   }
 
-  getSchoolData(schoolID:string,professorList:string[]): void {
-    this.schoolService.getSchoolData(schoolID,professorList).subscribe((data: any) => {
+  getSchoolData(schoolID:string): void {
+    this.schoolService.getSchoolData(schoolID).subscribe((data: any) => {
       const schoolData = data[0];
       const professorsData = data[1];
       this.topProfessors = professorsData;

@@ -21,16 +21,13 @@ export class SchoolService {
       map((response:any)=>response as School)
     );
   }
-   getSchoolData(school_id: string,professorList: string[]): Observable<any> {
+   getSchoolData(school_id: string): Observable<any> {
     const schoolUrl = `${this.apiTelUrl}/${school_id}/classes/avg_gpa`;
-    const professorsUrl = `${this.apiTelUrl}/best-professors`;
-    const professorData = {
-      professor_ids: professorList
-    };
+    const professorsUrl = `${this.apiTelUrl}/${school_id}/best-professors`;
     
     return forkJoin([
       this.http.get(schoolUrl),
-      this.http.post<Professor[]>(professorsUrl, professorData)
+      this.http.get(professorsUrl)
     ]);
   }
 
