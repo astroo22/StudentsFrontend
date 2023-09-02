@@ -60,7 +60,7 @@
     margin-right: 1rem; 
   }
   .dropdown-item{
-    color: #ffffff;
+    color: #000000;
   }
 }
 .dropdown-toggle::after {
@@ -68,41 +68,13 @@
 }
 
 
-.welcome-message {
-  margin-right: 1rem;  // Add some margin to separate the welcome message from the avatar
+#welcome-banner {
+  margin-right: 1rem;
+  color: #ffffff;
 }
 
 .avatar-icon {
-  width: 30px;  // Set a width for the avatar
-  height: 30px;  // Set a height for the avatar
+  width: 30px;  
+  height: 30px;  
 }
 
-// .logo-container {
-//   display: flex;
-//   align-items: center;
-// }
-
-// .logo {
-//   font-size: 2rem;
-//   font-weight: bold;
-//   margin-right: 1rem;
-// }
-
-// .nav-links {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-
-// .nav-link {
-//   margin-left: 1rem;
-//   font-size: 1.2rem;
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   color: #fff;
-//   transition: all 0.2s ease-in-out;
-//   .nav-link-login{
-    
-//   }
-// }
