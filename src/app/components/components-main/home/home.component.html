@@ -1,19 +1,60 @@
 <!-- home.component.html -->
-<div class="container-fluid bg-dark text-white">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h1>Welcome to my Resume</h1>
-        <p> My name is Jonathan R. Starkey and I am a Backend Engineer with almost three years of experience. 
-            I have worked with a variety of back-end and front-end technologies and am proficient in Golang, C#, and Java. 
-            I am also experienced with database systems like PostgreSQL, in-memory systems like Redis, and cloud platforms like AWS.</p>
-
-        <p> In my previous roles, I have designed and implemented multiple repositories and systems for large-scale web panels as well as refactoring old repositories to be more performant and general bug fixing. 
-            I have also worked on large-scale back-end projects, documented security management plans, and used AWS to host cloud applications with CI/CD pipelines.</p>
-            
-        <p> I am a quick learner and can adapt well to new technologies, which has allowed me to switch stacks as needed. Currently, I am working on this website as a project to showcase my skills, all code of which is available on my Github repository at https://github.com/astroo22/StudentsBackend. </p>
-            
-        <p> If you want to learn more about my work history and job duties, please check out my resume. I am excited to be sharing my skills and experiences with you and look forward to hearing from you.</p>
-        <button type="button" class="btn btn-primary">View My Resume</button> <button type="button" class="btn btn-primary">View My Project</button>
+<meta charset="UTF-8">
+<div id="container">
+    <div id="intro-container">
+      <div id="intro-title">Hello World, my name is...</div>
+      <!-- intro -->
+      <div id="intro-content-box">
+        <div id="name-title">Jonthan Starkey</div>
+        <div id="job-title">> Full Stack Engineer</div>
+        <div id="intro"> My name is Jonathan Starkey and I am a Full Stack Engineer with three years of experience.
+            I have created this website as a general showcase of things a company would commonly want in a website dashboard. 
+            As a result this website is also a basic full stack application so I hope you will take your time and look around.</div>
       </div>
+      <!-- resume button wont glow fix later -->
+      <button type="button" class="button1" routerLink="/resume">View My Resume</button> <button type="button" class="button-85" routerLink="/project">View My Project</button>
+    </div>
+    <div id="tech-used-container">
+      <!-- tech used -->
+      <div id ="tools-title">Technologies & Tools Used 🔧</div>
+      <div class="text-highlight">Frontend:</div>
+      <ul>
+        <li>Angular</li>
+        <li>Hosted on AWS S3 Bucket</li>
+        <li>Integrated with CloudFront</li>
+      </ul>
+
+      <div class="text-highlight">Backend:</div>
+      <ul>
+        <li>Golang</li>
+        <li>Hosted on AWS EC2</li>
+        <li>Integrated with CloudFront</li>
+      </ul>
+    
+      <div class="text-highlight">Database:</div>  
+      <ul>
+          <li>PostgreSQL</li>
+          <li>Hosted on AWS</li>
+      </ul>
+
+      <div class="text-highlight">API:</div>
+      <ul>
+        <li>RESTful Architecture</li>
+      </ul>
+      <div class="text-highlight">Middleware & Security:</div>
+      <ul>
+        <li>Gorilla Mux for Routing</li>
+        <li>Custom middleware for CORS management</li>
+        <li>JWT (JSON Web Token) for authentication and authorization</li>
+        <li>HTTPS using AWS route 53 for certification</li>
+      </ul>
+
+
+      <div class="text-highlight">Continuous integration & Development:</div>
+       <ul>
+          <li>Frontend & Backend CI/CD pipes using AWS CodePipeline, CodeBuild and CodeDeploy</li>
+       </ul>
+
+      
     </div>
   </div>

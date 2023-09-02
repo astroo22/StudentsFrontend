@@ -4,17 +4,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #333;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff;
 }
 .navbar {
-  height: 60px; 
+  height: 80px; 
   padding: 0 20px;  
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
+  background-color: #000000; 
 }
 #or-text{
   font-weight: bold;
+  color: #ffffff
 }
 .navbar-nav {
   display: flex;
@@ -25,20 +27,24 @@
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-
+    .nav-link{
+      color: #ffffff;
+    }
     .right{
       margin-right: 10vh;
     }
     .btn-outline-primary {
       // Additional styles for login button here
-      color: #000000;
-      border-color: rgba(231, 231, 231, 0.5);
+      color: #ffffff;
+      border-color: rgba(231, 231, 231, 0.219);
       font-weight: bold;
       font-family: Roboto;
       letter-spacing: 0px;
+      
 
       &:hover{
-        background-color: #ebebeb;
+        background-color: #000000;
+        color: #6f00ff;
       }
     }
     
@@ -52,6 +58,9 @@
   }
   .dropdown {
     margin-right: 1rem; 
+  }
+  .dropdown-item{
+    color: #ffffff;
   }
 }
 .dropdown-toggle::after {

@@ -1,5 +1,16 @@
-.container {
-    margin-top: 50px;
+#container {
     color: #FFF;
-    min-height: 83vh;  // Adjust as needed
+    min-height: 83vh; 
+    background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    display:flex;
+    flex-direction: column;
   }
+#title{
+ padding-top: 3vh;
+  display:flex;
+  justify-content: center;
+}
+#column-container{
+  margin-left:25vh;
+  margin-right: 25vh;
+}

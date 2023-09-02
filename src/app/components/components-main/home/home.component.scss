@@ -1,8 +1,78 @@
 /* home.component.scss */
-.container-fluid {
+$primary-text-color: #ffffff;
+$secondary-text-color: #0372FF;
+$tertiary-color: #000000;
+#container {
     min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // ha gradients are neat. I should try this on a button or two
+    background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    #intro-container{
+      //margin-left: 10vh;
+      margin-top: 20vh;
+      margin-right: 20vh;
+      #intro-title{
+        color: $primary-text-color; 
+        font: normal normal normal 24px/38px Source;
+        text-align: left;
+      }
+      #intro-content-box{
+        margin-left: 5vh;
+        flex-direction: column;
+        width: 50vh;
+        #name-title{
+          padding-top:3vh;
+          font: normal normal bold 60px/70px Source;
+          color: $secondary-text-color;
+        }
+        #job-title{
+          color: $primary-text-color; 
+          font: normal normal bold 36px/70px Source ;
+        }
+        #intro{
+          padding-top: 1vh;
+          color: $primary-text-color; 
+          font: normal normal normal 18px/21px Roboto;
+          letter-spacing: 1px;
+        }
+      }
+      
+    }
+    #tech-used-container{
+      margin-top: 12vh;
+      margin-left: 5vh;
+      width: 31vh;
+      color: $primary-text-color;
+    }
+    #tools-title{
+      font: normal normal bold 24px/30px Source;
+    }
   }
-  
+  ul {
+    list-style-type: none;  
+    padding-left: 0;  
+      
+  }
+  li{
+    font: normal normal normal 18px/21px Roboto;
+  }
+
+  ul li::before {
+      content: ">";          
+      margin-right: 10px;     
+  }
+
+
+  .text-highlight{
+    font: normal normal bold 18px/21px Roboto;
+    color: $secondary-text-color;
+    margin-top:1vh;
+    margin-bottom:1vh;
+  }
+ 
+    
   h1 {
     font-size: 3rem;
   }
@@ -11,8 +81,141 @@
     font-size: 1.5rem;
     line-height: 2rem;
   }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+
+  .button1 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    margin-left: 5vh;
+    margin-top: 5vh;
+    margin-right:5vh;
+    background: #111;
+    cursor: pointer;
+    border-radius: 10px;
+    color: $primary-text-color;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
+
+  .button1:before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: btn-primary-background 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    
+  }
+  .button1:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  @keyframes btn-primary-background {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+/* Button by CSS Scan, From: getcssscan.com/css-button-examples */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}

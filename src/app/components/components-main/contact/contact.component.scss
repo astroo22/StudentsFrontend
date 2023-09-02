@@ -1,23 +1,17 @@
-.container {
-    margin-top: 50px;
+#container {
+    display: flex;
+    background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
+  }
+  #info{
+    padding-top: 50px;
     color: #FFF;
-    min-height: 83vh;  // Adjust as needed
+    min-height: 83vh; 
+    margin-left:40vh;
+    margin-top: 20vh;
+    
   }
   
   h2 {
     margin-bottom: 20px;
   }
   
-  label {
-    font-weight: bold;
-  }
-  
-  .btn-primary {
-    background-color: #FF4500;
-    border-color: #FF4500;
-  }
-  
-  .btn-primary:hover {
-    background-color: #8B2500;
-    border-color: #8B2500;
-  }
