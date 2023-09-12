@@ -46,8 +46,6 @@ export class LoginPageComponent {
     if (this.loginForm.valid){
       this.as.login(this.username, this.password).subscribe(
         response => {
-          console.log("hit1")
-          console.log(response);
           // navigate to home page or user dashboard
           // should auto move
         },
@@ -55,10 +53,8 @@ export class LoginPageComponent {
           console.log(error);
           if (error.error) {
             let err = error.error;
-            console.log("hit2");
             this.errorMessage = "* " + err.message;
             if (err.errorType ==='IncorrectPassword'){
-              console.log("hit3");
               console.log(this.errorMessage);
             }
           } else {

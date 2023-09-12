@@ -20,5 +20,9 @@ export class PersonalPageComponent {
   createSchool() {
     this.state = 'create';
   }
-  
+  newSchoolCreated(event: boolean){
+    if (event) {
+        this.schoolsScrollbar.getAllSchools();
+    }
+  }
 }

@@ -27,6 +27,7 @@
     </app-personal-school-default> -->
     <app-personal-create-school 
         *ngIf="state === 'create'"
-        (schoolCreationStatus)="isCreatingSchool = $event">
+        (schoolCreationStatus)="isCreatingSchool = $event"
+        (schoolCreatedStatus)="newSchoolCreated($event)">
     </app-personal-create-school>
 </div>

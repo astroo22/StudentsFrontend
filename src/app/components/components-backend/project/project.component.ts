@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { TabsComponent } from '../tabs/tabs.component'; 
+import { SchoolsComponent } from '../schools/schools.component';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { TabsComponent } from '../tabs/tabs.component';
 })
 export class ProjectComponent implements AfterViewInit  {
   @ViewChild(TabsComponent) tabsComponent: TabsComponent;
+  @ViewChild(SchoolsComponent) schools: SchoolsComponent;
   constructor(
      private authService: AuthService,
      private router: Router,
@@ -37,5 +39,9 @@ export class ProjectComponent implements AfterViewInit  {
 
   createAccountButton(){
     this.router.navigate(['/create-account'])
+  }
+  refreshHighScores(){
+    console.log("refresh");
+    this.schools.refreshSchools();
   }
 }

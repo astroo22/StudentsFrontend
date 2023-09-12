@@ -23,18 +23,17 @@ export class SchoolsComponent implements OnInit, OnDestroy  {
   ngOnInit(): void {
     let userSchoolIds = localStorage.getItem('userSchoolIds');
     this.userOwnedSchoolIds = userSchoolIds ? JSON.parse(userSchoolIds) : [];
-    
+
     this.getAllSchools();
     this.subscription = this.authService.userLoggedOut.subscribe(() => {
       this.userOwnedSchoolIds = [];
     });
-    console.log(this.schools)
   }
 
   getAllSchools(): void {
     this.schoolService.getAllSchools()
       .subscribe(schools => {
-        this.schools = schools.sort((a: { avg_gpa: number; }, b: { avg_gpa: number; }) => b.avg_gpa - a.avg_gpa);
+        this.schools = schools.sort((a: { avg_gpa: number; }, b: { avg_gpa: number; }) => b.avg_gpa - a.avg_gpa).slice(0,25);
         this.schools.forEach((school, index) => {
           school.ranking = index + 1;
           if(this.authService.isAuthenticatedPub() && this.userOwnedSchoolIds.includes(school.school_id)) {
@@ -57,6 +56,30 @@ export class SchoolsComponent implements OnInit, OnDestroy  {
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+  refreshSchools(): void {
+    this.checkForUserData();
+    this.schoolService.getAllSchools()
+      .subscribe(schools => {
+        this.schools = schools.sort((a: { avg_gpa: number; }, b: { avg_gpa: number; }) => b.avg_gpa - a.avg_gpa).slice(0,25);
+        this.schools.forEach((school, index) => {
+          school.ranking = index + 1;
+          if(this.authService.isAuthenticatedPub() && this.userOwnedSchoolIds.includes(school.school_id)) {
+          schools.userOwned = true; 
+        }
+        });
+        
+        if (this.schools.length > 0) {
+          this.selectedSchool = this.schools[0];
+      }
+    });
+  }
+  checkForUserData():void{
+    if(this.authService.isAuthenticatedPub()){
+      console.log("checking user data")
+      let userSchoolIds = localStorage.getItem('userSchoolIds');
+      this.userOwnedSchoolIds = userSchoolIds ? JSON.parse(userSchoolIds) : [];
+    }
   }
 
 }

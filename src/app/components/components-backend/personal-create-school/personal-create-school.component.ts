@@ -32,7 +32,7 @@ import {School} from '../../../models/school.model';
 })
 export class PersonalCreateSchoolComponent implements OnInit {
   @Output() schoolCreationStatus: EventEmitter<boolean> = new EventEmitter();
-  
+  @Output() schoolCreatedStatus: EventEmitter<boolean> = new EventEmitter();
   name: string;
   ownerID: string | null;
   numStdGrade: number;
@@ -146,8 +146,11 @@ export class PersonalCreateSchoolComponent implements OnInit {
             this.f['schoolName'].setValue("");
             this.submitted = false;
             this.schoolCreationStatus.emit(false);
+            this.schoolCreatedStatus.emit(true);
             setTimeout(() => {
               this.setLoadingState(false);
+              // could be needed could be bad?
+              //this.schoolCreatedStatus.emit(false);
           }, 3000);
           }
           else if (response.status === 'Failed') {
@@ -173,7 +176,7 @@ export class PersonalCreateSchoolComponent implements OnInit {
           }
         }
       });
-    }, 3000); // might drop this to .5 or 1 for low traffic. 
+    }, 1000); // might drop this to .5 or 1 for low traffic. 
   }
 
   stopCheckingSchoolCreation() {

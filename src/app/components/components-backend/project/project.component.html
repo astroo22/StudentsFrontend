@@ -1,6 +1,6 @@
 <div class="content">
   <app-tabs>
-      <app-tab label="HIGHSCORES">
+      <app-tab label="HIGHSCORES" (tabClick)="refreshHighScores()">
         <!-- Content for the HighScores tab goes here -->
         <app-schools class="app-schools"></app-schools>
       </app-tab>
@@ -16,7 +16,6 @@
               <button class="info-button" id="create-account-button"  (click)="createAccountButton()">Create Account</button>
             </div>
           </div>
-          <!-- Maybe include a login button here -->
         </ng-template>
       </app-tab>
     </app-tabs>
