@@ -3,7 +3,7 @@
         <div id="selection-column">
             <div class="column-option" (click)="displayInfo('about-project')">About The Project</div>
             <div class="column-option" (click)="displayInfo('about-me')">About Me</div>
-            <div class="column-option" (click)="displayInfo('past-me')">Past Work Experience</div>
+            <!-- <div class="column-option" (click)="displayInfo('past-me')">Past Work Experience</div> -->
         </div>
         <div id="information-container">
             <div id="information-display" #scrollableDiv>
@@ -39,10 +39,10 @@
                         <div class="body-text">{{ aboutMeHome}}</div>
                     </div> 
                 </div>
-                <div *ngIf="currentDisplay === 'past-me'" id="past-me">Your past work experiences go here.</div>
+                <!-- <div *ngIf="currentDisplay === 'past-me'" id="past-me">Your past work experiences go here.</div> -->
 
                 <div class="scroll-indicator" *ngIf="isScrollable">
-                    <img src="assets/icons/scroll-arrow.png" alt="Scroll Indicator"/>
+                    <img src="assets/icons/arrow-down.png" alt="Scroll Indicator"/>
                 </div>
             </div>
         </div>
