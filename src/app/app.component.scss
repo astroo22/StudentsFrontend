@@ -22,5 +22,6 @@ app-footer {
 .footer {
     position: fixed;  /* or 'sticky' */
     bottom: 0;
+    max-height: var(--footer-max-height);
     width: 100%;
 }

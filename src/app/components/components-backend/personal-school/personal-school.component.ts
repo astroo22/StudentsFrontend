@@ -105,6 +105,28 @@ export class PersonalSchoolComponent {
     const suffix = suffixes[digit] || suffixes[0];
     return `${year}${suffix} Grade`;
   }
+  // yo the errors on this are nuts????? why are date objects such an issue in js?
+  // TODO: Ok so the data type is being reported as both a string and Date object
+  // this is due to the model being date object but for some reason it becomes a string between its
+  // scan and arriving at the frontend but still considers itself a date object.
+  // I can find and fix this but I might just change the model to be string as well and convert from backend
+  // but do it later as there might be logic collisions. 
+  getFormattedDate(dob: string | Date): string {
+    let date: Date;
+
+    // If dob is a string, convert it to a Date object
+    if (typeof dob === 'string') {
+        date = new Date(dob);
+    } else {
+        date = dob;
+    }
+
+    let year = date.getFullYear();
+    let month = (1 + date.getMonth()).toString().padStart(2, '0');
+    let day = date.getDate().toString().padStart(2, '0');
+    return year + '-' + month + '-' + day;
+}
+
 
   toggleRecord(student: Student): void {
     if (!student.expanded) {

@@ -60,9 +60,8 @@
   left: 1vh;
   //overflow: visible;
 }
-.Ranks{
-  width: 42vh;
-  height: 3vh;
+#title{
+  font-size:2vh;
   margin-left: 1vh; 
   font-weight: bold;
   text-align: left;
@@ -74,6 +73,7 @@
 .School_Rectangle {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   background-color: #fffdfd;
   color: #fff;
@@ -81,20 +81,21 @@
   border-radius: 0.3vh;
   width: 23vh;
   .Ranking_Box {
-    width: 3vh;
-    height: 3vh;
-    text-align: left;
+    width: 4vh;
+    height: 3.5vh;
+    text-align: center;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    align-items: center;
+    //align-items: center;
     font-size: 2.5vh;
     color: #067FFF;
   }
   
   .School_Name_Flexbox {
-    width: 18vh;
-    height: 2vh;
+    width: 20vh;
+    height: 3vh;
+    padding-top: .3vh;
     text-align: left;
     font-family: Roboto;
     font-style: normal;

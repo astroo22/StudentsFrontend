@@ -8,12 +8,14 @@ import { LoginPageComponent } from './components/components-main/login-page/logi
 import { CreateAccComponent } from './components/components-main/create-acc/create-acc.component';
 import { AccPageComponent } from './components/components-main/acc-page/acc-page.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { AboutComponent } from './components/components-main/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'project', component: ProjectComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent},
   { path: 'resume', component: ResumeComponent },
   { path: 'login', component: LoginPageComponent},
   { path: 'create-account', component: CreateAccComponent},

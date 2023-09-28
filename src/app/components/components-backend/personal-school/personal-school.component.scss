@@ -35,17 +35,13 @@ $color-black: #000000;
 
 .button-styling{
     display: flex;
-   
     flex-direction: row;
-    
-    
     .save-changes{
         margin-top: 2vh;
         border: none;
 
         box-shadow: 0 0.7em 1.5em -0.5em #2dbafc98;
-        padding: 0.7em 1.4em 0.7em 1.1em;
-        
+        padding: 0.7em 1.4em 0.7em 1vh;
         border-radius: 20em;
        // box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
         background-color: #a6bbf7;
@@ -127,7 +123,7 @@ $color-black: #000000;
     .dropdowns {
       display: flex;
       justify-content: space-between;
-      width: 900px; /* Adjust the width as needed */
+      width: 66vh; /* Adjust the width as needed */
       margin-bottom: 20px;
       
         label{
@@ -163,22 +159,23 @@ $color-black: #000000;
       align-items: center;
       padding: 10px;
       font-weight: bold;
-      width: 900px;
+      width: 66vh;
       margin-bottom: 10px;
     }
   
     .title {
       flex: 1;
       text-align: center;
+      font-size: 1.3vh;
     }
   
     .student-list {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 900px;
-      height: 600px;
-      max-height: 375px;
+      width: 66vh;
+      height: var(--student-list-max-height);
+      max-height: 28vh;
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -188,8 +185,8 @@ $color-black: #000000;
         flex-direction: column; 
         //align-items: stretch;
         background-color: #ffffff;
-        width: 900px;
-        font: normal normal bold 18px/25px Roboto;
+        width: 66vh;
+        font: normal normal bold 1.3vh Roboto;
         padding: 10px;
         margin-bottom: 7px;
         cursor: pointer;
@@ -255,11 +252,11 @@ $color-black: #000000;
                 transition: max-height 0.6s ease, padding 0.3s ease;
                 .expanded-basic-info-bar{
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
-                    width: 75%;
+                    width: 100%;
 
-                    font: normal normal bold 15px/18px Roboto;
+                    font: normal normal bold 1vh Roboto;
                     letter-spacing: 1px;
                     color: #7B7B7B;
                     opacity: 1;
@@ -283,11 +280,11 @@ $color-black: #000000;
                     padding-bottom: 5px;
                     .report-card-title{
                         padding-left: 10px;
-                        font: normal normal bold 15px/15px Roboto;
+                        font: normal normal bold 1.2vh Roboto;
                     }
                     .report-card{
-                        top: 624px;
-                        left: 735px;
+                        // top: 60vh;
+                        // left: 73vh;
                         
                         margin-left: 25px;
                         //width: 188px;
@@ -300,13 +297,13 @@ $color-black: #000000;
                         border-collapse: collapse;
                     
                         th{
-                            font: normal normal bold 18px/25px Roboto;
+                            font: normal normal bold 1.3vh Roboto;
                             padding: 10px;
                             text-align: left;
                             border-bottom: 1px solid #ddd;
                         }
                         td{
-                            font: normal normal bold 14px/12px Roboto;
+                            font: normal normal bold 1.1vh Roboto;
                             padding: 10px;
                             
                             border-bottom: 1px solid #ddd;

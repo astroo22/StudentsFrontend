@@ -80,10 +80,10 @@
                     </div>
                     <div class="expanded-info" *ngIf="student.expanded">
                         <div class="expanded-basic-info-bar">
-                            <!--TODO: Need to format graduation year but datageneration for dobs didn't work this run for some reason?-->
+                            <!--TODO: Need to format graduation year -->
                             <div class="bar-item-gradyear">GRADUATION YEAR: {{student.graduation_year}}</div>
                             <div class="bar-item-age">AGE: {{student.age}}</div>
-                            <div class="bar-item-dob">DOB: {{student.dob}}</div>
+                            <div class="bar-item-dob">DOB: {{getFormattedDate(student.dob)}}</div>
                         </div>
                         <div class="expanded-reportcard">
                             <!-- TODO: Need to add report card title lable to left of report card -->

@@ -47,9 +47,10 @@ export class UserService {
     this.as.isAuthenticated();
     const token = localStorage.getItem('access_token');
     const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-     return this.http.delete(`${this.apiUrl}/${ownerId}`, { headers: headers });
+     return this.http.delete(`${this.apiUrl}/delete_user/${ownerId}`, { headers: headers });
    }
 
  

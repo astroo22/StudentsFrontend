@@ -49,6 +49,27 @@ export class PersonalSchoolsScrollbarComponent {
     });
   }
 
+  refreshSchools():void{
+    console.log("refresh hit")
+    if(this.authService.isAuthenticated()){
+      this.schoolService.getAllSchoolsForUser(localStorage.getItem('ownerID')!)
+        .subscribe(schools => {
+          console.log(schools);
+          this.schools = schools.sort((a: { avg_gpa: number; }, b: { avg_gpa: number; }) => b.avg_gpa - a.avg_gpa);
+          // this.schools.forEach((school, index) => {
+          //   school.ranking = index + 1;
+          // });
+          const schoolIds = this.schools.map(school => school.school_id);
+          localStorage.setItem('userSchoolIds', JSON.stringify(schoolIds));
+  
+          if (this.schools.length > 0) {
+            this.selectedSchool = this.schools[0];
+            this.selectedSchoolChange.emit(this.schools[0]);
+        }
+      });
+    }
+  }
+
   createSchoolHelper(){
     this.createSchoolEvent.emit();
   }

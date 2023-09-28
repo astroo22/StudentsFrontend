@@ -6,12 +6,11 @@
   margin-left: 5.2vh;
   border-radius: 0.8vh;
   box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
-  width: 76vh; 
-  height: 53vh;
-  // margin: 0 auto; 
+  width: var(--school-container-width); 
+  height: var(--school-container-height);
   .data-container {
     justify-content: space-between;
-    margin: 1vh 2vh;
+    margin: .5vh 2vh;
   }
 }
 .bar {
@@ -20,27 +19,6 @@
   justify-content: center;
   align-items: center;
   height: 4vh;
- // background-color: #ddd;
-
-  .button {
-    position: relative;
-    width: 10vh; 
-    height: 4vh;
-    //border: none;
-    border-radius: 1vh;
-    cursor: pointer;
-    background-color: #aaa;
-    color: white;
-    text-align: center;
-    line-height: 3vh;
-    cursor: pointer;
-
-    &.previous {
-      background-color: #ccc;
-      cursor: default;
-      opacity: 0.5;
-    }
-  }
 
   .button-1 {
     left: 4vh;
@@ -85,7 +63,7 @@
   .button-3,
   .button-4 {
     height: 100%;
-    font-size: 18px;
+    font-size: var(--font-size-highscore-button);
     font-weight: bold;
 
     border: none;
@@ -129,14 +107,15 @@
   width: 4vh;
   height: 4vh;
 }
-h2 {
-  font-size: 3.5vh;
+#school-name {
+  font-size: var(--font-size-school-name);
+  font-weight: 600;
   margin-top: 1vh;
   margin-left: 2vh;
   margin-bottom: 1vh;
 }
-h4 {
-  font-size: 15px;
+.stats-title {
+  font-size: var(--font-size-stats-title);
   font-weight: bold;
   text-align: left;
   padding-top: 1vh;
@@ -147,59 +126,39 @@ h4 {
 .stats-line {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 30px;
+  box-shadow: .5em 0.7em 1.5em -0.5em #2dbafcec;
 }
 
 .stats-item {
   display: flex;
-  flex-direction: column;
   position: relative;
- // align-items: center;
- box-shadow: 0 0.7em 1.5em -0.5em #2dbafcec;
+  flex-direction: row;
+  //border: 1px solid #000000;
   padding: 1em;
   background: #D5EAFF;
   height: 5vh;
-  flex: 0 0 250px;
-  .students-item-label{
+  flex-grow: 1;
+  
+  .students-item-label,
+  .gpa-item-label,
+  .ranking-item-label {
     position: absolute;
-    text-align: right;
     top: 1vh;
     left: 14vh;
-    margin-right: .5vh;
-    
-    font-size: 30px;
-    font-family: Roboto;
-    font-weight: bold;
-    color: #000000;
-  }
-  .gpa-item-label{
-    position: absolute;
-    text-align: right;
-    top: 1vh;
-    left: 12vh;
     margin-right: 1vh;
-
-    font-size: 35px;
-    font-family: Roboto;
-    font-weight: bold;
-    color: #000000;
-    
-  }
-  .ranking-item-label{
-    position: absolute;
+    padding-left: 1vh;
     text-align: right;
-    top: 1vh;
-    left: 12vh;
-    margin-right: 1vh;
-
-    font-size: 35px;
+    font-size: var(--font-size-stats-value);
     font-family: Roboto;
     font-weight: bold;
     color: #000000;
   }
 }
+//?????????????????????????????????????????????????????????????
 .top-prof-grades-container {
   display: flex;
   flex-wrap: nowrap;
@@ -207,50 +166,45 @@ h4 {
   width: 100%;
 }
 
-.ranking_box {
-  width: 42px;
-  height: 35px;
+.ranking-box {
+  width: var(--ranking-box-width);
+  height: var(--ranking-box-height);
   text-align: left;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: var(--font-size-ranking-box);
   color: #000000;
 }
 
 .top-professors-container {
   margin-bottom: 20px;
-  margin-right: 10px;
- 
-  
+
   .title-bar {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: var(--title-bar-height);
+    
     .top-prof-title{
-      font-size: 25px;
+      font-size: var(--font-size-highscore-title-bar);
+      display:inline-block;
       font-weight: bold;
       text-align: left;
       font-family: Roboto;
-      //text-align:center;
       position: absolute;
-      left: 0%;
-      
+      left: 2%; 
     }
     .top-grade-title{
-      font-size: 25px;
+      font-size: var(--font-size-highscore-title-bar);
+      display:inline-block;
       font-weight: bold;
       text-align: left;
       font-family: Roboto;
       position: absolute;
-      text-align:center;
-      right: 8%;
+      right: 7%;
     }
-  }
-  h3{
-    display:inline-block;
   }
   .top-row-container{
     display: flex;
@@ -259,12 +213,6 @@ h4 {
       vertical-align: top;
       margin-left: 20px;
       margin-right: 20px;
-      //border: 1px solid #969696; 
-     // width: 45%;
-      // maybe prob below
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       .professor-column-2 {
         margin-top: 42px; // Add margin right to the first column to create space between the columns
       }
@@ -272,47 +220,36 @@ h4 {
     .grade-column {
       flex: 50%;
       vertical-align: top;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   } 
-  .top-professors-container h3 {
-    font-size: 18px;
+  .top-professors-container{
     margin-bottom: 10px;
   }
 }
 .top-grades-container {
   flex: 35%;
-  //margin-top: 15px;
-  margin-left: 30px;
-  .top-grades-title{
-    font-size: 25px;
-    font-weight: bold;
-    text-align: left;
-    font-family: Roboto;
-  } 
+  margin-left: 2.5vh;
   .grade-box{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    margin-left: 20px;
   }
   
   .grade-info {
     display: flex;
     flex-direction: column;
     //margin-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     text-align: left;
     .grade-title{
-      font-size: 25px;
+      font-size: var(--font-size-highscore-items);
       font-weight: bold;
       font-family: Roboto;
+      flex-wrap: nowrap;
   
     }
     .grade-gpa{
-      font-size: 15px;
+      font-size: var(--font-size-highscore-sub-items);
       align-items: center;
       color: #7B7B7B;
       display: block;
@@ -325,19 +262,17 @@ h4 {
   }
 }
 
-
-
-
-
 .professor-item {
   display: flex;
   align-items: center;
+  justify-content: left;
   margin-bottom: 10px;
+  width: var(--professor-item-width);
 }
 
 .professor-ranking {
-  margin-right: 10px;
-  width: 40px;
+  padding-right: 1vh;
+  width: 3.5vh;
   text-align: center;
 }
 
@@ -345,13 +280,16 @@ h4 {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 20px;
+  overflow: hidden;
+  padding-left: 1vh;
   .prof-name{
-    font-size: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    font-size: var(--font-size-highscore-items);
     font-weight: bold;
   }
   .student-gpa{
-    font-size: 15px;
+    font-size:var(--font-size-highscore-sub-items);
     color: #7B7B7B;
   }
   

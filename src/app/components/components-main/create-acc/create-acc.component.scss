@@ -1,4 +1,4 @@
-$form-text-title-font: normal normal bold 35px/25px Roboto;
+$form-text-title-font: normal normal bold 3vh Roboto;
 $form-text-font: normal normal bold 16px/25px Roboto;
 
 .create-account-container {
@@ -14,8 +14,8 @@ $form-text-font: normal normal bold 16px/25px Roboto;
       align-items: center;
       background-color: #5c5858;
       width: 32vh; 
-      height: 40vh;
-      padding: 8px 16px;
+      min-height: 40vh;
+      padding: 1vh 2vh;
       border-radius: 10px;
     }
     .form-control{
@@ -23,20 +23,19 @@ $form-text-font: normal normal bold 16px/25px Roboto;
       height: 3vh;
     }
     #title{
-      margin-top: 2vh;
-      margin-bottom:2vh;
+      margin: 1vh 0;
       font: $form-text-title-font
     }
   
     form {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 2vh;
       font:$form-text-font;
   
       input {
-        padding: 8px;
-        font-size: 16px;
+        padding: 1vh;
+        font-size: 1.5vh;
         border: none;
         border-radius: 4px;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
@@ -48,8 +47,8 @@ $form-text-font: normal normal bold 16px/25px Roboto;
         background-color: #4b4b4b;
         border: none;
         border-radius: 4px;
-        padding: 8px 16px;
-        font-size: 16px;
+        padding: 1vh 2vh;
+        font-size: 2vh;
         cursor: pointer;
         transition: background-color 0.3s ease;
   

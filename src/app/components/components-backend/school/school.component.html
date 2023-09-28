@@ -1,16 +1,16 @@
 <div class="school-container"*ngIf="school">
-  <h2>{{ school.school_name }}</h2>
+  <span id="school-name">{{ school.school_name }}</span>
   <div class="stats-line">
     <div class="stats-item">
-      <span><h4>Number of Students: </h4></span>
+      <span class="stats-title">Number of Students: </span>
       <span class="students-item-label">{{ numberOfStudents }}</span>
     </div>
     <div class="stats-item ">
-      <span><h4>Average GPA:</h4></span>
-      <span class="gpa-item-label gpa-number">{{ school.avg_gpa | number:'1.2-2' || '-' }}</span>
+      <span class="stats-title">Average GPA:</span>
+      <span class="gpa-item-label">{{ school.avg_gpa | number:'1.2-2' || '-' }}</span>
     </div>
     <div class="stats-item">
-      <span><h4>School Ranking:</h4></span>
+      <span class="stats-title">School Ranking:</span>
       <span class="ranking-item-label">{{ school.ranking  || '-' }}</span>
     </div>
   </div>
@@ -20,7 +20,7 @@
       <div class="top-professors-container">
         <!--title -->
         <div class="title-bar">
-          <h3 class="top-prof-title">Top Professors</h3><h3 class="top-grade-title">Top Grades</h3>
+          <span class="top-prof-title">Top Professors</span><span class="top-grade-title">Top Grades</span>
         </div>
         <!--professor scoreboard -->
         <div class="top-row-container">
@@ -37,7 +37,7 @@
                 <span *ngIf="professor.rank === 1">
                   <img class="icon"src="{{ professorIcons[0] }}" alt="Professor Icon" />
                 </span>
-                <span class="ranking_box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
+                <span class="ranking-box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
               </div>
               <div class="professor-info">
                 <span class="prof-name"> {{ professor.name }}</span>
@@ -54,7 +54,7 @@
                 <span *ngIf="professor.rank <= 3">
                   <img class="icon"src="{{ professorIcons[i] }}" alt="Professor Icon" />
                 </span>
-                <span class="ranking_box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
+                <span class="ranking-box" *ngIf="professor.rank > 3">{{ professor.rank }}</span>
               </div>
               <div class="professor-info">
                 <span class="prof-name"> {{ professor.name }}</span>
@@ -65,7 +65,6 @@
 
           <div class="top-grades-container">
             <div class="grade-column">
-              
                 <div class="grade-box" *ngFor="let grade of visibleGrades let i = index">
                   <div class="grade-ranking">
                     <span *ngIf="grade?.rank === 3">
@@ -77,7 +76,7 @@
                     <span *ngIf="grade?.rank === 1">
                       <img class="icon"src="{{ professorIcons[0] }}" alt="grade Icon" />
                     </span>
-                    <span class="ranking_box" *ngIf="grade.rank > 3">{{ grade?.rank || '-'}}</span>
+                    <span class="ranking-box" *ngIf="grade.rank > 3">{{ grade?.rank || '-'}}</span>
                   </div>
                   <div class = "grade-info">
                     <span class="grade-title">Grade: {{ grade.grade || '-' }} </span>

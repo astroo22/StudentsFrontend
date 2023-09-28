@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/components-main/header/header.component';
+import { HeaderComponent } from './components/components-main/footer/header/header.component';
 import { FooterComponent } from './components/components-main/footer/footer.component';
 import { HomeComponent } from './components/components-main/home/home.component';
 import { ResumeComponent } from './components/components-main/resume/resume.component';
@@ -43,6 +43,7 @@ import { PersonalCreateSchoolComponent } from './components/components-backend/p
 import { AccPageComponent } from './components/components-main/acc-page/acc-page.component';
 import { ConfirmDialogComponent } from './components/components-main/confirm-dialog/confirm-dialog.component';
 import { UserInactiveComponent } from './components/components-main/user-inactive/user-inactive.component';
+import { AboutComponent } from './components/components-main/about/about.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { UserInactiveComponent } from './components/components-main/user-inactiv
     AccPageComponent,
     ConfirmDialogComponent,
     UserInactiveComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

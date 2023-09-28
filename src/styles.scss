@@ -33,6 +33,7 @@ body {
 }
 
 body {
+  overflow: hidden;
   background-color: $primary-color;
   color: $tertiary-color;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,11 +87,383 @@ hr {
   width: 32px;
   height:32px;
 }
+:root {
+  // general
+  --footer-max-height: 200px;
+
+  // home
+  --home-top-margin: 12vh;
+  --home-middle-margin:20vh;
+
+
+  // about
+  --info-display-column-height: 675px;
+  --info-display-max-height: 640px;
+  --info-display-paragraph-length: 800px;
+  --scroll-button-offset: 50px;
+
+  // schools at 2560x1440
+  --font-size-school-name: 3em;
+  --font-size-stats-title: 1em;
+  --font-size-stats-value: 3vh;
+    //school container
+    --school-container-width: 76vh;
+    --school-container-height: 53vh;
+      // below stats items
+      --font-size-ranking-box: 2em;
+      --font-size-highscore-title-bar: 1.5em;
+      --font-size-highscore-items: 1.5em;
+      --font-size-highscore-sub-items: 1em;
+      --font-size-highscore-button:1em;
+      --ranking-box-width: 3.7vh;
+      --ranking-box-height: 3vh;
+      --title-bar-height: 4.5vh;
+      --professor-item-width: 20vh;
+    
+    //personal schools
+    --student-list-max-height: 28vh;
+}
+// have not used any general tags yet hoping to add a bunch for font etc
+@media (500px <= width <= 699px){
+  :root {
+    // general
+      --base-padding: 5px; 
+      --base-font-size: 16px;
+    // about
+
+      --info-display-paragraph-length: 300px;
+
+      //--container-padding-left: 100px;
+  }
+}
+@media (700px <= width <=1079px){
+  :root {
+    
+    // general
+      --base-padding: 5px; 
+      --base-font-size: 16px;
+
+    // home
+      --home-middle-margin:10vh;
+    // about
+
+      --info-display-paragraph-length: 400px;
+  }
+}
+@media (1080px <= width <=1439px) {
+  :root {
+    // general
+      --base-padding: 20px; 
+      --base-font-size: 16px;
+    //about
+      --info-display-paragraph-length: 500px;
+  }
+}
+//Medium Desktops and above
+@media (1440px <= width <=1679px) {
+  :root {
+    // general
+      --base-padding: 30px; 
+      --base-font-size: 18px;
+
+    //about
+      --info-display-paragraph-length: 600px;
+  }
+}
+@media (1680px <= width <=1919px) {
+  :root {
+    // general
+      --base-padding: 30px; 
+      --base-font-size: 18px;
+
+    //about
+      --info-display-paragraph-length: 700px;    
+  }
+}
+// Large Desktops and above
+
+@media (min-width: 1920px) {
+  :root {
+      --info-display-paragraph-length: 800px;
+  }
+}
+
+@media (500px <= height <=599px){
+  :root{
+    //general
+    --footer-max-height: 100px;
+    //home
+    --home-top-margin: 4vh;
+     //about
+     --info-display-max-height: 350px;
+     --info-display-column-height: 400px;
+     --scroll-button-offset: 50px;
+      //schools
+      --font-size-stats-value: 1.2em;
+      --font-size-school-name: 2.1em;
+      --font-size-stats-title: 0.7em;
+      --font-size-ranking-box: 1.4em;
+      --font-size-highscore-title-bar: 1.05em;
+      --font-size-highscore-items: 0.8em;
+      --font-size-highscore-sub-items: 0.5em;
+      --font-size-highscore-button:.8em;
+
+    //personal schools
+    --student-list-max-height: 14vh;
+  }
+}
+@media (600px <= height <=700px){
+  :root{
+    //general
+    --footer-max-height: 100px;
+    //home
+    --home-top-margin: 6vh;
+     //about
+     --info-display-max-height: 450px;
+     --info-display-column-height: 500px;
+     --scroll-button-offset: 50px;
+      //schools
+      --font-size-stats-value: 1.2em;
+      --font-size-school-name: 2.1em;
+      --font-size-stats-title: 0.7em;
+      --font-size-ranking-box: 1.4em;
+      --font-size-highscore-title-bar: 1.05em;
+      --font-size-highscore-items: 0.8em;
+      --font-size-highscore-sub-items: 0.5em;
+      --font-size-highscore-button:.8em;
+      
+      //personal schools
+      --student-list-max-height: 16vh;
+  }
+}
+@media (700px <= height <=799px){
+  :root{
+    //general
+    --footer-max-height: 100px;
+    //home
+    --home-top-margin: 7vh;
+     //about
+     --info-display-max-height: 550px;
+     --info-display-column-height: 600px;
+     --scroll-button-offset: 50px;
+      //schools
+     // --font-size-stats-value: 1.2em;
+      --font-size-school-name: 1.9em;
+      --font-size-stats-title: 0.7em;
+      --font-size-ranking-box: 1.3em;
+      --font-size-highscore-title-bar: 0.9em;
+      --font-size-highscore-items: 0.6em;
+      --font-size-highscore-sub-items: 0.5em;
+      --font-size-highscore-button:.7em;
+
+    //personal schools
+    --student-list-max-height: 18vh;
+     
+  }
+}
+@media (800px <= height <=899px){
+  :root{
+    //general
+    --footer-max-height: 100px;
+    //home
+    --home-top-margin: 9vh;
+     //about
+     --info-display-max-height: 650px;
+     --info-display-column-height: 700px;
+     --scroll-button-offset: 50px;
+     //schools
+    // --font-size-stats-value: 1.2em;
+     --font-size-school-name: 2.0em;
+     --font-size-stats-title: 0.7em;
+     --font-size-ranking-box: 1.4em;
+     --font-size-highscore-title-bar: 0.95em;
+     --font-size-highscore-items: 0.7em;
+     --font-size-highscore-sub-items: 0.5em;
+     --font-size-highscore-button:.7em;
+
+    //personal schools
+    --student-list-max-height: 20vh;
+    
+  }
+}
+@media (900px <= height <=999px){
+  :root{
+    //general
+    --footer-max-height: 125px;
+    //home
+    --home-top-margin: 10vh;
+     //about
+     --info-display-max-height: 700px;
+     --info-display-column-height: 750px;
+     --scroll-button-offset: 75px;
+
+     //schools
+     --font-size-school-name: 2.1em;
+     --font-size-stats-title: 0.6em;
+     --font-size-ranking-box: 1.2em;
+     --font-size-highscore-title-bar: 1.05em;
+     --font-size-highscore-items: 0.8em;
+     --font-size-highscore-sub-items: 0.5em;
+     --font-size-highscore-button:.8em;
+     
+      //personal schools
+    --student-list-max-height: 22vh;
+    
+  }
+}
+@media (1000px <= height <=1099px){
+  :root{
+    //general
+    --footer-max-height: 150px;
+    //home
+    --home-top-margin: 11vh;
+     //about
+     --info-display-max-height: 800px;
+     --info-display-column-height: 850px;
+     --scroll-button-offset: 75px;
+     //schools
+     --font-size-school-name: 2.25em;
+     --font-size-stats-title: 0.75em;
+     --font-size-ranking-box: 1.5em;
+     --font-size-highscore-title-bar: 1.125em;
+     --font-size-highscore-items: 1.125em;
+     --font-size-highscore-sub-items: 0.75em;
+
+    //personal schools
+    --student-list-max-height: 24vh;
+     
+  }
+}
+@media (1100px <= height <=1199px){
+  :root{
+    //general
+    --footer-max-height: 150px;
+     //about
+     --info-display-max-height: 900px;
+     --info-display-column-height: 950px;
+     --scroll-button-offset: 75px;
+      //schools
+      --font-size-school-name: 2.25em;
+      --font-size-stats-title: 0.75em;
+      --font-size-ranking-box: 1.5em;
+      --font-size-highscore-title-bar: 1.125em;
+      --font-size-highscore-items: 1.125em;
+      --font-size-highscore-sub-items: 0.75em;
+
+    //personal schools
+    --student-list-max-height: 26vh;
+  }
+}
+@media (1200px <= height <=1299px){
+  :root{
+    //general
+    --footer-max-height: 150px;
+     //about
+     --info-display-max-height: 1000px;
+     --info-display-column-height: 1050px;
+     --scroll-button-offset: 75px;
+
+      //schools
+      --font-size-school-name: 3em;
+      --font-size-stats-title: 1em;
+      --font-size-stats-value: 3vh;
+        //school container
+          // below stats items
+          --font-size-ranking-box: 2em;
+          --font-size-highscore-title-bar: 1.5em;
+          --font-size-highscore-items: 1.5em;
+          --font-size-highscore-sub-items: 1em;
+          --ranking-box-width: 3.7vh;
+          --ranking-box-height: 3vh;
+          --title-bar-height: 4.5vh;
+          --professor-item-width: 20vh;
+      
+    //personal schools
+    --student-list-max-height: 26vh;
+  }
+}
+@media (1300px <= height <=1399px){
+  :root{
+    //general
+    --footer-max-height: 200px;
+     //about
+     --info-display-max-height: 1050px;
+     --info-display-column-height: 1100px;
+     --scroll-button-offset: 75px;
+      //schools
+      --font-size-school-name: 3em;
+      --font-size-stats-title: 1em;
+      --font-size-stats-value: 3vh;
+        //school container
+          // below stats items
+          --font-size-ranking-box: 2em;
+          --font-size-highscore-title-bar: 1.5em;
+          --font-size-highscore-items: 1.5em;
+          --font-size-highscore-sub-items: 1em;
+          --ranking-box-width: 3.7vh;
+          --ranking-box-height: 3vh;
+          --title-bar-height: 4.5vh;
+          --professor-item-width: 20vh;
+  }
+}
+@media (1400px <= height <=1599px){
+  :root{
+    //general
+    --footer-max-height: 150px;
+     //about
+     --info-display-max-height: 1200px;
+     --info-display-column-height: 1250px;
+     --scroll-button-offset: 75px;
+      //schools
+      --font-size-school-name: 3em;
+      --font-size-stats-title: 1em;
+      --font-size-stats-value: 3vh;
+        //school container
+          // below stats items
+          --font-size-ranking-box: 2em;
+          --font-size-highscore-title-bar: 1.5em;
+          --font-size-highscore-items: 1.5em;
+          --font-size-highscore-sub-items: 1em;
+          --ranking-box-width: 3.7vh;
+          --ranking-box-height: 3vh;
+          --title-bar-height: 4.5vh;
+          --professor-item-width: 20vh;
+  }
+}
+@media (min-height: 1600px){
+  :root{
+    //general
+    --footer-max-height: 150px;
+     //about
+     --info-display-max-height: 1300px;
+     --info-display-column-height: 1350px;
+     --scroll-button-offset: 75px;
+      //schools
+      --font-size-school-name: 3em;
+      --font-size-stats-title: 1em;
+      --font-size-stats-value: 3vh;
+        //school container
+          // below stats items
+          --font-size-ranking-box: 2em;
+          --font-size-highscore-title-bar: 1.5em;
+          --font-size-highscore-items: 1.5em;
+          --font-size-highscore-sub-items: 1em;
+          --ranking-box-width: 3.7vh;
+          --ranking-box-height: 3vh;
+          --title-bar-height: 4.5vh;
+          --professor-item-width: 20vh;
+  }
+}
+
+
+
+
 
 
 ///////////////theme attempt 
 /// Issue was a dependency issue with angular not being v16+ this should be fixed by now 
-/// but as everything was localized this is not needed
+/// but as everything was localized this is not needed. In a later update I will probably update to house alot of css objects from other pages
+/// but as is right now I will leave this here as this is code that should work and will eventually be used. 
 // @include mat-core();
 
 // $dark-palette-primary:(

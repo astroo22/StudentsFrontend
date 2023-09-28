@@ -64,9 +64,10 @@ export class SchoolsComponent implements OnInit, OnDestroy  {
         this.schools = schools.sort((a: { avg_gpa: number; }, b: { avg_gpa: number; }) => b.avg_gpa - a.avg_gpa).slice(0,25);
         this.schools.forEach((school, index) => {
           school.ranking = index + 1;
-          if(this.authService.isAuthenticatedPub() && this.userOwnedSchoolIds.includes(school.school_id)) {
-          schools.userOwned = true; 
-        }
+          // Test if schools still properly show up
+          // if(this.authService.isAuthenticatedPub() && this.userOwnedSchoolIds.includes(school.school_id)) {
+          // schools.userOwned = true; 
+          // }
         });
         
         if (this.schools.length > 0) {

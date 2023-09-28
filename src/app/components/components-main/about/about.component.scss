@@ -1,0 +1,176 @@
+$primary-text-color: #ffffff;
+$secondary-text-color: #0372FF;
+$tertiary-color: #000000;
+$button-primary-color:#ffffffd8;
+$button-secondary-color:#006effc5;
+
+// $width1: 1280px;
+// $size-s: 640px;
+
+// Small Desktops and above
+// :root {
+//     --info-display-column-height: #{$size-s};
+// }
+// @media (min-width: $width1) {
+//     :root {
+//         --base-padding: 20px; 
+//         --base-font-size: 16px;
+//         --info-display-max-height: 675px;
+//         --info-display-column-height: #{$size-s};
+//         //--container-padding-left: 100px;
+//     }
+// }
+
+// Medium Desktops and above
+// @media (min-width: 1440px) {
+//     :root {
+//         --base-padding: 30px; 
+//         --base-font-size: 18px;
+//         --info-display-min-height: 675px;
+//         --container-padding-left: 150px;
+//     }
+// }
+
+// // Large Desktops and above
+// @media (min-width: 1920px) {
+//     :root {
+//         --base-padding: 40px; 
+//         --base-font-size: 20px;
+//         --info-display-min-height: 300px; 
+//         --container-padding-left: 200px;
+//     }
+// }
+//#2375e098
+#background{
+   background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
+   min-height: 85vh;
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10vh;
+    width: 100%;
+    padding: 20px;
+    #selection-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 20px;
+        border-right: none; 
+        padding-right: 20px; // edit this maybe margin right tho
+        color: $primary-text-color; 
+        font: normal normal normal 24px/38px Source;
+        text-align: left;
+        justify-content: center;
+        padding-left: 50px;
+        max-height: var(--info-display-column-height);
+
+        
+        // for the fading border right effect
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10%; 
+            bottom: 10%; 
+            right: -3vh;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #ffffff70, transparent);
+        }
+        
+        .column-option {
+            padding: 10px;
+            cursor: pointer; 
+            border: 1px solid transparent;
+            border-radius: 5px;
+            border: 1px solid $button-primary-color;
+            position: relative;
+            overflow: hidden;
+           
+
+            &:hover {
+                box-shadow: 1px 1px 20px 3px $button-primary-color;
+            }
+            &:before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                120deg,
+                transparent,
+                $button-primary-color,
+                $button-secondary-color,
+                transparent
+                );
+                transition: all 650ms;
+            }
+            &:hover:before{
+                left: 100%;
+            }
+        }
+    }
+    #information-container {
+        position: relative;
+        flex: 4; 
+        padding-left: 150px; // Some spacing to the left of the information sections
+        max-height: var(--info-display-max-height);
+    }
+
+    #information-display {
+        flex: 4; 
+        overflow-y: auto;
+        max-height: var(--info-display-max-height);
+        //padding-bottom: 64px;
+        
+        overflow-y: auto !important; 
+    }
+    .scroll-indicator {
+        position: absolute;
+        width: 30px; // Set as needed
+        height: 30px;
+        bottom: var(--scroll-button-offset); // Adjust as needed
+        left: 33%;
+        //transform: translateX(-50%); // Center the icon horizontally
+        cursor: pointer;
+        z-index: 1000;
+    }
+}
+#about-project{
+    padding-top: 1vh;
+    color: $primary-text-color; 
+    font: normal normal normal 18px/21px Roboto;
+    letter-spacing: 1px;
+}
+#about-me{
+    padding-top: 1vh;
+    color: $primary-text-color; 
+    font: normal normal normal 18px/21px Roboto;
+    letter-spacing: 1px;
+}
+#past-me{
+    padding-top: 1vh;
+    color: $primary-text-color; 
+    font: normal normal normal 18px/21px Roboto;
+    letter-spacing: 1px;
+}
+.sub-title{
+    color: $primary-text-color; 
+    font: normal normal bold 36px/70px Source ;
+}
+.sub-title-small{
+    font: normal normal bold 30px/48px Source ;
+}
+
+.paragraph {
+    max-width: var(--info-display-paragraph-length); // Adjust to your design needs, it defines the maximum width of the paragraph.
+    margin: 1em 0; // Adds some vertical space above and below the paragraph
+}
+
+.body-text{
+    font: normal normal normal 18px/30px Roboto; // Increased line height for better readability
+    letter-spacing: 1px;
+    text-align: justify; // Justify the text, you can use 'left' if you don't like justified text
+}

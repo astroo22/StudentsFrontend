@@ -1,9 +1,9 @@
 <div class="componenet-container">
   <div class="scroll-bar-container">
-    <h3 class="Ranks">TOP 25 SCHOOLS</h3>
+    <span id="title">TOP 25 SCHOOLS</span>
     <div class="Scroll_Group">
       <div id="background">
-        <div class="Repeat_Grid schools-list">
+        <div class="Repeat_Grid">
           <div *ngFor="let school of schools" class="Group_Class"  (click)="selectSchool(school)">
             <div class="Component_11__1_Class">
               <div class="School_Rectangle" [ngClass]="{'user-owned': isUserOwned(school)}">

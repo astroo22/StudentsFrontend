@@ -1,0 +1,143 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ // align-items: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+}
+#navbar-contents {
+  display: flex;
+  justify-content: space-between;
+ // align-items: center;
+  width: 100%;
+}
+.navbar {
+  height: 80px; 
+  //padding: 0 20px;  
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  align-items: center;
+  flex-direction: row;
+  
+}
+.navbar-nav {
+  display: flex;
+  //align-items: center;
+  position: relative;
+  background-color: #000;
+  .nav-item-left{
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+   
+    .nav-link{
+      color: #ffffff;
+    }
+    .btn-outline-primary {
+      // Additional styles for login button here
+      color: #ffffff;
+      border-color: rgba(231, 231, 231, 0.219);
+      font-weight: bold;
+      font-family: Roboto;
+      letter-spacing: 0px;
+      &:hover{
+        background-color: #000000;
+        color: #6f00ff;
+      }
+    }
+  }
+  .nav-item-right {
+    justify-content: right;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    align-items: center;
+    
+    .nav-link{
+      color: #ffffff;
+    }
+    .btn-outline-primary {
+      // Additional styles for login button here
+      color: #ffffff;
+      border-color: rgba(231, 231, 231, 0.219);
+      font-weight: bold;
+      font-family: Roboto;
+      letter-spacing: 0px;
+      white-space: nowrap; 
+      min-width: 150px; 
+      &:hover{
+        background-color: #000000;
+        color: #6f00ff;
+      }
+    }
+    
+    .btn-primary {
+      // Additional styles for create account button here
+      color: #ffffff;
+    }
+  }
+  .dropdown {
+    margin-right: auto; 
+  }
+  .dropdown-item{
+    color: #000000;
+  }
+}
+
+#or-text{
+  font-weight: bold;
+  color: #ffffff
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+#welcome-banner {
+  margin-right: 1rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.avatar-icon {
+  width: 30px;  
+  height: 30px;  
+}
+.navbar-toggler {
+  // Apply styles when the navbar is collapsed
+  margin-right:auto;
+  &:focus + .navbar-collapse .navbar-nav {
+    //flex-direction: row;
+  }
+  border: none; // removes default border
+  &:focus {
+    outline: none; // removes focus outline
+  }
+  &:before {
+    content: '\2261'; // Unicode character for hamburger icon
+    color: white; // makes it white
+    font-size: 2.5rem; // adjust size as required
+  }
+}
+.navbar-collapse {
+  width: 100%;
+  justify-content: left;
+  background-color: #000; // Your preferred background color
+  z-index: 1000; // To make sure it’s above other elements
+}
+
+.navbar-nav.ml-auto {
+  position: absolute;
+  z-index: 1001; 
+  right: 20px; // Adjust as per your design needs
+  top: 1.9vh;
+  align-items: center;
+  flex-direction: row;
+}
+

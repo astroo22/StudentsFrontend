@@ -145,12 +145,10 @@ export class PersonalCreateSchoolComponent implements OnInit {
             this.returnSchool = response.school;
             this.f['schoolName'].setValue("");
             this.submitted = false;
-            this.schoolCreationStatus.emit(false);
+            //this.schoolCreationStatus.emit(false);
             this.schoolCreatedStatus.emit(true);
             setTimeout(() => {
               this.setLoadingState(false);
-              // could be needed could be bad?
-              //this.schoolCreatedStatus.emit(false);
           }, 3000);
           }
           else if (response.status === 'Failed') {
@@ -160,19 +158,18 @@ export class PersonalCreateSchoolComponent implements OnInit {
           }
         },
         error: (err) => {
-          // if err idk display error list here probably could be failed data gen doubt tho
-          // I could if i set up the status's with the active data gen funcs 
-          //this.stopCheckingSchoolCreation();
+          // if err idk display error list here
+          this.stopCheckingSchoolCreation();
 
           if(err.status === 0){
             // A client-side or network error occurred.
-            //this.errorMessage = 'Unable to reach the server. Please check your internet connection.';
+            this.errorMessage = 'Unable to reach the server. Please check your internet connection.';
           } else if(err.status === 504){
             // A gateway timeout error occurred.
-            //this.errorMessage = 'The server took too long to respond. Please try again later.';
+            this.errorMessage = 'The server took too long to respond. Please try again later.';
           } else {
             // Some other error occurred.
-           // this.errorMessage = 'An error occurred: ' + err.message;
+            this.errorMessage = 'An error occurred: ' + err.message;
           }
         }
       });

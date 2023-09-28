@@ -12,6 +12,7 @@
         <div>
           <label for="email">Email:</label>
           <input type="email" id="email" formControlName="email" class="form-control">
+          <div *ngIf="!createAccountForm.controls['email'].dirty && !submitted">Email only for display examples. Use whatever!</div>
           <div *ngIf="createAccountForm.controls['email'].invalid && (createAccountForm.controls['email'].dirty || submitted)">
             <div *ngIf="createAccountForm.controls['email'].errors?.['email']">Please enter a valid email.</div>
           </div>
@@ -24,9 +25,6 @@
             <div *ngIf="createAccountForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</div>
           </div>
         </div>
-        <!-- TODO: Errors here maybe idk haven't tested 3tired
-           need a testing account and logs on backend to test if create account works and what makes it. 
-           also probably delete user service --> 
         <div>
           <label for="confirm_password">Confirm Password:</label>
           <input type="password" id="confirm_password" formControlName="confirm_password" class="form-control" required>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { TabsComponent } from '../tabs/tabs.component'; 
 import { SchoolsComponent } from '../schools/schools.component';
+import { PersonalSchoolsScrollbarComponent } from '../personal-schools-scrollbar/personal-schools-scrollbar.component';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { SchoolsComponent } from '../schools/schools.component';
 export class ProjectComponent implements AfterViewInit  {
   @ViewChild(TabsComponent) tabsComponent: TabsComponent;
   @ViewChild(SchoolsComponent) schools: SchoolsComponent;
+  //@ViewChild(PersonalSchoolsScrollbarComponent) personalSchools: PersonalSchoolsScrollbarComponent;
+
   constructor(
      private authService: AuthService,
      private router: Router,
@@ -44,4 +47,12 @@ export class ProjectComponent implements AfterViewInit  {
     console.log("refresh");
     this.schools.refreshSchools();
   }
+  // refreshUserSchools(){
+  //   console.log("refresh User");
+  //   if(this.personalSchools) {
+  //     this.personalSchools.refreshSchools();
+  //   } else {
+  //     console.error('personalSchools is not initialized yet');
+  //   }
+  // }
 }

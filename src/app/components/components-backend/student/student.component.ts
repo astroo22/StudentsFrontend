@@ -13,7 +13,7 @@ import { ReportCard } from '../../../models/report-card.model';
 export class StudentComponent implements OnInit {
   @Input() student: Student;
   reportCard: ReportCard;
-  
+
 
 
   ngOnInit(): void {

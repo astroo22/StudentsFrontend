@@ -52,7 +52,7 @@ export class SchoolComponent implements OnInit {
     
   }
   ngOnChanges(changes: SimpleChanges){
-    if (changes['school']){
+    if (changes['school'] && this.school && this.school.school_id){
       this.getSchoolData(this.school.school_id)
       this.numberOfStudents = this.school.student_list.length
       this.isPreviousDisabledGrades = true;

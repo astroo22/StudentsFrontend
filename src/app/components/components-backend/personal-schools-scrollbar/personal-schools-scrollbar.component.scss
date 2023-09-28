@@ -11,23 +11,25 @@
 .Scroll_Group {
     position: relative;
     width: 388px;
-    height: 700px;
+    //height: 700px;
     overflow: hidden;
 }
 .Repeat_Grid {
     //mix-blend-mode: normal;
-    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    //box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
     position: relative;
-    margin-top:  30px;
-    margin-right: 10px;
-    width: 400px;
-    left: 30px;
-    height: 625px;
+    margin-top:  1vh;
+    width: 25vh;
+    height: 48vh;
     overflow-y: scroll;
-    background-color: #221e1e;
+    padding-left: 1vh;
+    border-radius: 0.8vh;
     .disabled {
       pointer-events: none;
   }
+}
+.Repeat_Grid::-webkit-scrollbar {
+  display: none;
 }
 .disabled-overlay {
   position: absolute;
@@ -42,34 +44,30 @@
 
 
 .Group_Class {
-    position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 350px;
-    height: 61px;
+  position: relative;
+  margin-top: 1vh;
+  margin-bottom: 1.5vh;
+  width: 35vh;
+  height: 4vh;
     //overflow: visible;
 }
 
 .Component_11__1_Class {
-    position: relative;
-    width: 340px;
-    height: 61px;
-    left:10px;
-    overflow: visible;
+  position: relative;
+  width: 25vh;
+  height: 6vh;
+  left: 1vh;
     //background-color: #000;
 }
-.Ranks{
-    top: 257px;
-    left: 52px;
-    width: 420px;
-    height: 37px;
-    margin-left: 10px; 
-    font-weight: bold;
-    text-align: left;
-    font-family: Roboto;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
+#title{
+  font-size:2vh;
+  margin-left: 1vh; 
+  font-weight: bold;
+  text-align: left;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
 }
   
 .School_Rectangle {
@@ -78,23 +76,37 @@
     justify-content: space-between;
     background-color: #fffdfd;
     color: #fff;
-    padding: 10px;
+    padding: .5vh;
+    border-radius: 0.3vh;
+    width: 23vh;
   }
   
   .Ranking_Box {
-    width: 42px;
-    height: 35px;
-    text-align: left;
+    width: 4vh;
+    height: 3.5vh;
+    //padding-bottom: 1vh;
+    text-align: center;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 2.5vh;
     color: #067FFF;
+  }
+  #background{
+    margin-top: 2vh;
+    background-color: #221e1e;
+    height: 50vh;
+    width: 27vh;
+    padding-top: .5vh;
+    padding-bottom: .5vh;
+    border-radius: 0.8vh;
+    margin-left:1vh;
   }
   
   .School_Name_Flexbox {
-    width: 314px;
-    height: 24px;
+    width: 20vh;
+    height: 3vh;
+    padding-top: .3vh;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
@@ -104,14 +116,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; 
-  
   }
   .add-school-button-container {
     position: sticky; 
     bottom: 0;
     display: flex;
-    justify-content: center;
-    margin-left: 3vh;
+    justify-content: left;
+    //margin-left: 3vh;
+    padding-left:1.2vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
     padding-right: 1vh;
@@ -120,10 +132,10 @@
   .add-school-button {
     font-family: Roboto;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vh;
     text-align: left;
-    width: 340px;
-    height: 45px;
+    width: 25vh;
+    height: 3.5vh;
     color: #000;
     background-color: #D5EAFF;
     border: none;
@@ -136,9 +148,7 @@
         margin-right: 5px;  
         transition: transform 0.3s ease;  
       }
-    
-      &:hover {
-        
+      &:hover { 
         background-color: #dbdbdb;
         .icon {
           transform: rotate(30deg);  // Rotates the icon 30 degrees on hover

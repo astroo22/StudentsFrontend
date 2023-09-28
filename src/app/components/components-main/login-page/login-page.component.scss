@@ -1,4 +1,4 @@
-$form-text-title-font: normal normal bold 35px/25px Roboto;
+$form-text-title-font: normal normal bold 3vh Roboto;
 $form-text-font: normal normal bold 16px/25px Roboto;
 
 .login-container {
@@ -14,9 +14,9 @@ $form-text-font: normal normal bold 16px/25px Roboto;
       flex-direction: column;
       align-items: center;
       background-color: #5c5858;
-       width: 32vh; 
-      height: 25vh;
-      padding: 8px 16px;
+      width: 32vh; 
+      min-height: 33vh;
+      padding: 2vh 1vh;
       border-radius: 10px;
     }
     .form-control{
@@ -24,8 +24,8 @@ $form-text-font: normal normal bold 16px/25px Roboto;
       height: 3vh;
     }
     #title{
-      margin-top: 2vh;
-      margin-bottom:2vh;
+      margin-top: 1.5vh;
+      margin-bottom:1.5vh;
       font: $form-text-title-font
     }
   
@@ -55,8 +55,8 @@ $form-text-font: normal normal bold 16px/25px Roboto;
         color: #fff;
         border: none;
         border-radius: 4px;
-        padding: 8px 16px;
-        font-size: 16px;
+        padding: 1vh 2vh;
+        font-size: 1.5vh;
         cursor: pointer;
         transition: background-color 0.3s ease;
         bottom: -4.5vh;
