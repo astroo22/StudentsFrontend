@@ -79,6 +79,13 @@ $tertiary-color: #000000;
     margin-top:1vh;
     margin-bottom:1vh;
   }
+  
+  .button1, .button-85 {
+    padding: 1vh 2vw;
+    min-width: 10vw;
+    max-width: 20vw; 
+    font-size: 1vw; 
+}
  
 
   .button1 {
@@ -98,34 +105,34 @@ $tertiary-color: #000000;
     touch-action: manipulation;
   }
 
-  .button1:before{
-    content: "";
-    position: absolute;
-    background: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #fffb00,
-      #48ff00,
-      #00ffd5,
-      #002bff,
-      #7a00ff,
-      #ff00c8,
-      #ff0000
-    );
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: btn-primary-background 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
+  // .button1:before{
+  //   content: "";
+  //   position: absolute;
+  //   background: linear-gradient(
+  //     45deg,
+  //     #ff0000,
+  //     #ff7300,
+  //     #fffb00,
+  //     #48ff00,
+  //     #00ffd5,
+  //     #002bff,
+  //     #7a00ff,
+  //     #ff00c8,
+  //     #ff0000
+  //   );
+  //   top: -2px;
+  //   left: -2px;
+  //   background-size: 400%;
+  //   z-index: -1;
+  //   filter: blur(5px);
+  //   -webkit-filter: blur(5px);
+  //   width: calc(100% + 4px);
+  //   height: calc(100% + 4px);
+  //   animation: btn-primary-background 20s linear infinite;
+  //   transition: opacity 0.3s ease-in-out;
+  //   border-radius: 10px;
     
-  }
+  // }
   
   
 /* Button by CSS Scan, From: https://getcssscan.com/css-button-examples */

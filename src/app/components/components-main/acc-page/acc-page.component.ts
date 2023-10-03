@@ -409,13 +409,21 @@ export class AccPageComponent implements OnInit, OnDestroy {
     this.us.deleteUser(this.ownerID).subscribe(
       response => {
         console.log(response);
-        this.as.logout;
+        this.as.logout();
       },
       error => {
         console.error(error);
         // Handle error response
       }
     );
+  }
+  handleAccDeleteConfirm(confirm: boolean) {
+    this.showAccConfirmDialog = false;
+    if (confirm) {
+      // handle the 'Yes' action here
+      console.log("acc delete confirmed!")
+      this.deleteAccount();
+    }
   }
   openEmailConfirmDialog() {
     this.showEmailConfirmDialog = true;
@@ -430,14 +438,7 @@ export class AccPageComponent implements OnInit, OnDestroy {
       this.deleteEmail();
     }
   }
-  handleAccDeleteConfirm(confirm: boolean) {
-    this.showAccConfirmDialog = false;
-    if (confirm) {
-      // handle the 'Yes' action here
-      console.log("acc delete confirmed!")
-      this.deleteAccount();
-    }
-  }
+  
   
 
   sendVerificationEmail() {

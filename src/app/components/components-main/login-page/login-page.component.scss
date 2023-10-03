@@ -59,7 +59,8 @@ $form-text-font: normal normal bold 16px/25px Roboto;
         font-size: 1.5vh;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        bottom: -4.5vh;
+        
+        bottom: var(--login-button-bottom-scaling);
   
         &:hover {
           background-color: #a0a1a0;

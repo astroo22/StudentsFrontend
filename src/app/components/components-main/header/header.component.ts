@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthService } from '../../../../services/auth.service';
+import { Component, OnInit, OnDestroy,ChangeDetectorRef } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,11 +9,12 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   username: string | null = null;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private cd: ChangeDetectorRef) { }
   private subscription: Subscription;
   ngOnInit(): void {
     this.subscription = this.authService.username$.subscribe(username => {
       this.username = username;
+      this.cd.detectChanges();
     });
   }
   ngOnDestroy(): void {

@@ -58,6 +58,7 @@ export class LoginPageComponent {
               console.log(this.errorMessage);
             }
           } else {
+            this.errorMessage = "* Incorrect Username or Password";
             console.error("Unexpected error:", error);
           }
         }

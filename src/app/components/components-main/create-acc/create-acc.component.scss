@@ -32,6 +32,10 @@ $form-text-font: normal normal bold 16px/25px Roboto;
       flex-direction: column;
       gap: 2vh;
       font:$form-text-font;
+      div {
+        min-height: 3vh; 
+        width: 25vh;
+      }
   
       input {
         padding: 1vh;
@@ -46,6 +50,7 @@ $form-text-font: normal normal bold 16px/25px Roboto;
         color: #fff;
         background-color: #4b4b4b;
         border: none;
+        width: 25vh;
         border-radius: 4px;
         padding: 1vh 2vh;
         font-size: 2vh;

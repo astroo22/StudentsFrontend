@@ -16,7 +16,8 @@ export class ProjectComponent implements AfterViewInit  {
   @ViewChild(TabsComponent) tabsComponent: TabsComponent;
   @ViewChild(SchoolsComponent) schools: SchoolsComponent;
   //@ViewChild(PersonalSchoolsScrollbarComponent) personalSchools: PersonalSchoolsScrollbarComponent;
-
+  showModal: boolean = true; // Default value to show the modal
+  doNotShowAgain: boolean = false;
   constructor(
      private authService: AuthService,
      private router: Router,
@@ -28,10 +29,21 @@ export class ProjectComponent implements AfterViewInit  {
       this.tabsComponent.selectTabByLabel('HIGHSCORES');
     }
   }
-  
-  // ngOnInit(): void {
-  //   this.selectTab(this.tabs[this.initialTabIndex] || this.tabs[0]);
-  // }
+  ngOnInit(): void {
+    // Check user's preference from local storage
+    const hideModalPreference = localStorage.getItem('hideModal');
+    if (hideModalPreference === 'true') {
+      this.showModal = false;
+    }
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    // If the user checks "Do not show this again", save their preference in local storage
+    if (this.doNotShowAgain) {
+      localStorage.setItem('hideModal', 'true');
+    }
+  }
 
   isLoggedIn(): Boolean{
     return this.authService.isAuthenticated();
@@ -47,12 +59,4 @@ export class ProjectComponent implements AfterViewInit  {
     console.log("refresh");
     this.schools.refreshSchools();
   }
-  // refreshUserSchools(){
-  //   console.log("refresh User");
-  //   if(this.personalSchools) {
-  //     this.personalSchools.refreshSchools();
-  //   } else {
-  //     console.error('personalSchools is not initialized yet');
-  //   }
-  // }
 }

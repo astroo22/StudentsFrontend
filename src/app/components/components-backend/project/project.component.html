@@ -19,4 +19,16 @@
         </ng-template>
       </app-tab>
     </app-tabs>
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <h2>Welcome to My Project</h2>
+        <p>
+          Hello and welcome to my project. This is an example business dashboard with responsive data updates. To get the most from this website please create an account so that you can create and edit some schools and compare it against other users schools! 
+        </p>
+        <label>
+          <input type="checkbox" [(ngModel)]="doNotShowAgain" /> Do not show this again
+        </label>
+        <button (click)="closeModal()">Close</button>
+      </div>
+    </div>
 </div>

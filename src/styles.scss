@@ -91,6 +91,9 @@ hr {
   // general
   --footer-max-height: 200px;
 
+  // login
+  --login-button-bottom-scaling: -6.5vh;
+
   // home
   --home-top-margin: 12vh;
   --home-middle-margin:20vh;
@@ -129,6 +132,8 @@ hr {
     // general
       --base-padding: 5px; 
       --base-font-size: 16px;
+
+      
     // about
 
       --info-display-paragraph-length: 300px;
@@ -192,6 +197,8 @@ hr {
   :root{
     //general
     --footer-max-height: 100px;
+    // login
+    --login-button-bottom-scaling: -4.5vh;
     //home
     --home-top-margin: 4vh;
      //about
@@ -216,6 +223,8 @@ hr {
   :root{
     //general
     --footer-max-height: 100px;
+    // login
+    --login-button-bottom-scaling: -4.5vh;
     //home
     --home-top-margin: 6vh;
      //about

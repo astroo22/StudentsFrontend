@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../models/user.model';
 
@@ -17,17 +16,21 @@ export class CreateAccComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
     private router: Router,
     private userService: UserService
   ) {}
 
   ngOnInit(){
     this.createAccountForm = this.formBuilder.group({
-      username: ['', Validators.required,Validators.maxLength(16)],
-      email: ['',Validators.email],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm_password: ['', Validators.required],
+      username: ['', Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(24),
+        Validators.pattern('^[a-zA-Z0-9_-]+$')],
+        email: ['',Validators.email],
+        password: ['', [Validators.required,
+        Validators.minLength(6),
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{6,24}$')]],
+        confirm_password: ['', Validators.required],
     },{ validators: this.checkPassword });
   }
   checkPassword(control: AbstractControl): ValidationErrors | null {
@@ -66,7 +69,12 @@ export class CreateAccComponent {
         this.router.navigate(['/login']);
       },
       (error) => {
-        this.error = 'Error creating account.';
+        console.log(error.error)
+        if (error.error.includes("already exists")) {
+          this.error = "Username already exists. Please choose a different username.";
+      } else {
+          this.error = "Error creating account.";
+      }
       }
     );
   } 

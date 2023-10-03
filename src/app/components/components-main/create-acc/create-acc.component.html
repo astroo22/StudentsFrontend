@@ -8,11 +8,12 @@
           <div *ngIf="createAccountForm.controls['username'].invalid && (createAccountForm.controls['username'].dirty || submitted)">
             <div *ngIf="createAccountForm.controls['username'].errors?.['required']">*Username is required.</div>
           </div>
+          <div *ngIf="error" class="error-message">{{ error }}</div>
         </div>
         <div>
           <label for="email">Email:</label>
           <input type="email" id="email" formControlName="email" class="form-control">
-          <div *ngIf="!createAccountForm.controls['email'].dirty && !submitted">Email only for display examples. Use whatever!</div>
+          <div *ngIf="!createAccountForm.controls['email'].dirty && !submitted">Email only for display examples. Use a fake email!</div>
           <div *ngIf="createAccountForm.controls['email'].invalid && (createAccountForm.controls['email'].dirty || submitted)">
             <div *ngIf="createAccountForm.controls['email'].errors?.['email']">Please enter a valid email.</div>
           </div>
@@ -21,16 +22,25 @@
           <label for="password">Password:</label>
           <input type="password" id="password" formControlName="password" class="form-control" required>
           <div *ngIf="createAccountForm.controls['password'].invalid && (createAccountForm.controls['password'].dirty || submitted)">
-            <div *ngIf="createAccountForm.controls['password'].errors?.['required']">Password is required.</div>
-            <div *ngIf="createAccountForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</div>
+            <div *ngIf="createAccountForm.controls['password'].errors?.['required']; else minLengthError">Password is required.</div>
+            <ng-template #minLengthError>
+              <div *ngIf="createAccountForm.controls['password'].errors?.['minlength']; else patternError">Password must be at least 6 characters long.</div>
+            </ng-template>
+            <ng-template #patternError>
+              <div *ngIf="createAccountForm.controls['password'].errors?.['pattern']">
+                Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character.
+              </div>
+            </ng-template>       
           </div>
         </div>
         <div>
           <label for="confirm_password">Confirm Password:</label>
           <input type="password" id="confirm_password" formControlName="confirm_password" class="form-control" required>
           <div *ngIf="createAccountForm.controls['confirm_password'].invalid && (createAccountForm.controls['confirm_password'].dirty || submitted)">
-            <div *ngIf="createAccountForm.controls['confirm_password'].errors?.['required']">Confirm password is required.</div>
-            <div *ngIf="createAccountForm.errors?.['match']">Passwords do not match.</div>
+            <div *ngIf="createAccountForm.controls['confirm_password'].errors?.['required']; else noMatchError">Confirm password is required.</div>
+            <ng-template #noMatchError>
+              <div *ngIf="createAccountForm.errors?.['match']">Passwords do not match.</div>
+            </ng-template>
         </div>
         </div>
         <button type="submit">Create Account</button>
