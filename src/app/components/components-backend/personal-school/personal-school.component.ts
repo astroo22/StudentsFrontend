@@ -35,17 +35,22 @@ export class PersonalSchoolComponent {
   // update vars
   hasChanges: boolean = false;
   isNameConfirmed: boolean = false;
-  unenrollStudents: string[] = [];
+  changedStudentIds: string[] = [];
   updatedSchoolName?: string;
   editSchoolNameFlag: boolean = false;
 
   // flags
   showDeleteConfirmDialog: boolean =false;
   confirmDeleteDialogMessage: string = "Are you sure you want to delete this school?"
+  skipDataFetch: boolean = false;
+  
 
   constructor(private schoolService: SchoolService,private reportCardService: ReportCardService) {}
 
   ngOnChanges(changes: SimpleChanges){
+    if (this.skipDataFetch) {
+      return;
+    }
     if (changes['school']){
       this.hasChanges = false;
       this.isNameConfirmed = false;
@@ -161,54 +166,65 @@ export class PersonalSchoolComponent {
     this.updatedSchoolName = this.school.school_name;
     this.hasChanges = true;
   }
+
   trashStudent(student: Student): void {
     student.enrolled = !student.enrolled;
-    console.log(student)
-    const index = this.unenrollStudents.indexOf(student.student_id);
-    if (index === -1) {
-      // Add student_id to unenrollStudents list if it's not present
-      this.unenrollStudents.push(student.student_id);
-      console.log("in if");
+    if (this.changedStudentIds.includes(student.student_id)) {
+      // If already in the list, remove it
+      this.changedStudentIds = this.changedStudentIds.filter(id => id !== student.student_id);
     } else {
-      // Remove student_id from unenrollStudents list if it's already there
-      this.unenrollStudents.splice(index, 1);
+      // If not in the list, add it
+      this.changedStudentIds.push(student.student_id);
     }
-    console.log("after if")
+
     // Apply filters and sort again to update list
     this.filterStudentsByGrade();
     this.sortStudentsBy();
     this.hasChanges = true;
+}
+
+
+saveChanges(): void {
+  let name = "";
+  let newAvgGpa: number;
+
+  if (this.updatedSchoolName && this.updatedSchoolName !== this.school.school_name) {
+    name = this.updatedSchoolName.length > 0 ? this.updatedSchoolName : "";
   }
-  saveChanges(): void{
-    let name = "";
-    let studentIds: string[] = [];
-    console.log(this.unenrollStudents)
-    if (this.updatedSchoolName && this.updatedSchoolName !== this.school.school_name) {
-      name = this.updatedSchoolName.length > 0 ? this.updatedSchoolName : "";
+
+  newAvgGpa = this.computeAvgGPA();
+  this.skipDataFetch = true;
+  this.school.avg_gpa = newAvgGpa;
+  this.skipDataFetch = false;
+
+  this.schoolService.updateSchool(this.school.school_id, name, this.changedStudentIds, newAvgGpa).subscribe((response) => {
+    this.editSchoolNameFlag = false;
+    if (name !== "") {
+      this.school.school_name = name;
     }
-    if(this.unenrollStudents.length >0){
-      studentIds = this.unenrollStudents;
-      console.log(studentIds)
-    }
-    this.schoolService.updateSchool(this.school.school_id, name, studentIds).subscribe((response) => {
-      // Handle response
-      this.editSchoolNameFlag = false;
-      if (name != ""){
-        this.school.school_name = name
-      }
-    });
-    if(this.unenrollStudents.length >0){
-      this.schoolService.updateSchoolAvgGpa(this.school.school_id).subscribe((response)=>{
-        console.log(response);
+    this.getStudentData();
+    this.changedStudentIds = [];
+  });
+  this.hasChanges = false;
+}
+
+computeAvgGPA(): number {
+      let totalGPA = 0;
+      let numberOfEnrolledStudents = 0;
+  
+      this.masterStudentsRecord.forEach(student => {
+          if (student.enrolled) {
+              totalGPA += student.avg_gpa;
+              numberOfEnrolledStudents++;
+          }
       });
-      console.log("updated school avg")
-    }
-    this.hasChanges = false;
-   
+  
+    console.log(numberOfEnrolledStudents)
+    let avgGPA = numberOfEnrolledStudents > 0 ? totalGPA / numberOfEnrolledStudents : 0;
+    console.log(avgGPA)
+    return parseFloat(avgGPA.toFixed(2));
   }
-  // *ngIf="showDeleteConfirmDialog" 
-  //                           [message]="confirmDeleteDialogMessage" 
-  //                           (confirm)="deleteSchool($event)">
+
   confirmSchoolName(): void {
     if (this.updatedSchoolName !== this.school.school_name) {
       this.isNameConfirmed = true;

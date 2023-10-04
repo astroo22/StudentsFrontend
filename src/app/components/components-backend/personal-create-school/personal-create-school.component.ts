@@ -1,10 +1,12 @@
-import { Component, Output,OnInit,EventEmitter,} from '@angular/core';
+import { Component, Output,OnInit,EventEmitter,ChangeDetectorRef} from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { FormGroup, FormBuilder,Validators,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SchoolService } from 'src/app/services/school.service';
 import {School} from '../../../models/school.model';
 
+// TODO: can probably remove the animations pretty sure they were linked to the old
+// popup box I had. Leaving for now review and make sure later
 @Component({
   selector: 'app-personal-create-school',
   templateUrl: './personal-create-school.component.html',
@@ -52,7 +54,8 @@ export class PersonalCreateSchoolComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private sc: SchoolService) { }
+    private sc: SchoolService,
+    private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     // const hideInfo = localStorage.getItem('hideInfo');
@@ -76,6 +79,7 @@ export class PersonalCreateSchoolComponent implements OnInit {
       this.schoolForm.get('schoolName')?.enable();
       this.schoolForm.get('studentsPerGrade')?.enable();
     }
+    this.cdr.detectChanges();
   }
   get f() {
     return this.schoolForm.controls;
@@ -120,7 +124,7 @@ export class PersonalCreateSchoolComponent implements OnInit {
     if (this.schoolForm.valid) {
       this.name = this.f['schoolName'].value 
       this.ownerID = localStorage.getItem('ownerID')!
-      this.numStdGrade = this.f['studentsPerGrade'].value
+      this.numStdGrade = this.f['studentsPerGrade'].value;
       this.setLoadingState(true);
       this.schoolCreationStatus.emit(true);
       this.sc.createNewSchool(this.name, this.ownerID, this.numStdGrade).subscribe({
@@ -132,7 +136,6 @@ export class PersonalCreateSchoolComponent implements OnInit {
         this.setLoadingState(false);
         this.schoolCreationStatus.emit(false);
       }});
-      // might just hit the page again to reload.
     }
   }
   startCheckingSchoolCreation() {
@@ -145,8 +148,11 @@ export class PersonalCreateSchoolComponent implements OnInit {
             this.returnSchool = response.school;
             this.f['schoolName'].setValue("");
             this.submitted = false;
-            //this.schoolCreationStatus.emit(false);
+            this.schoolCreationStatus.emit(false);
             this.schoolCreatedStatus.emit(true);
+            // NEED to get it to get the updated info
+            this.setLoadingState(false);
+
             setTimeout(() => {
               this.setLoadingState(false);
           }, 3000);

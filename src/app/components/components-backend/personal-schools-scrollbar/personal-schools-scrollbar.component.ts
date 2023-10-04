@@ -71,6 +71,7 @@ export class PersonalSchoolsScrollbarComponent {
   }
 
   createSchoolHelper(){
+    console.log("create school helper hit");
     this.createSchoolEvent.emit();
   }
 

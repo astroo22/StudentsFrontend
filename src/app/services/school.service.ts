@@ -65,17 +65,12 @@ export class SchoolService {
   getAllSchoolsForUser(owner_id: string): Observable<any> {
     this.as.isAuthenticated();
     const token = localStorage.getItem('access_token');
-    // prepare headers
-    // const headers = new HttpHeaders({
-    //     'Authorization': `Bearer ${token}`
-    // });
-
     return this.http.get(`${this.apiSchUrl}/${owner_id}`).pipe(
       map((response:any)=>response as School)
     );
   }
 
-  updateSchool(school_id: string, school_name: string,school_enrollment_change_ids: string[]): Observable<any> {
+  updateSchool(school_id: string, school_name: string,school_enrollment_change_ids: string[],avg_gpa: number): Observable<any> {
     this.as.isAuthenticated();
     const token = localStorage.getItem('access_token');
     const ownerID = localStorage.getItem('ownerID');
@@ -87,7 +82,8 @@ export class SchoolService {
     const data = {
       owner_id: ownerID,
       name: school_name,
-      enrollment_change_ids: school_enrollment_change_ids
+      enrollment_change_ids: school_enrollment_change_ids,
+      avg_gpa: avg_gpa
    };
 
     return this.http.put<any>(`${this.apiSchUrl}/school/${school_id}`, data, { headers: headers });
