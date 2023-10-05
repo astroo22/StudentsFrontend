@@ -122,6 +122,7 @@ hr {
       --ranking-box-height: 3vh;
       --title-bar-height: 4.5vh;
       --professor-item-width: 20vh;
+      --button-bar-spacing: 46vh;
     
     //personal schools
     --student-list-max-height: 28vh;
@@ -206,7 +207,7 @@ hr {
      --info-display-column-height: 400px;
      --scroll-button-offset: 50px;
       //schools
-      --font-size-stats-value: 1.2em;
+      //--font-size-stats-value: 1.2em;
       --font-size-school-name: 2.1em;
       --font-size-stats-title: 0.7em;
       --font-size-ranking-box: 1.4em;
@@ -214,8 +215,9 @@ hr {
       --font-size-highscore-items: 0.8em;
       --font-size-highscore-sub-items: 0.5em;
       --font-size-highscore-button:.8em;
-
+      
     //personal schools
+    --button-bar-spacing: 30vh;
     --student-list-max-height: 14vh;
   }
 }
@@ -232,7 +234,7 @@ hr {
      --info-display-column-height: 500px;
      --scroll-button-offset: 50px;
       //schools
-      --font-size-stats-value: 1.2em;
+      //--font-size-stats-value: 1.2em;
       --font-size-school-name: 2.1em;
       --font-size-stats-title: 0.7em;
       --font-size-ranking-box: 1.4em;
@@ -240,9 +242,9 @@ hr {
       --font-size-highscore-items: 0.8em;
       --font-size-highscore-sub-items: 0.5em;
       --font-size-highscore-button:.8em;
-      
-      //personal schools
-      --student-list-max-height: 16vh;
+    //personal schools
+    --button-bar-spacing: 30vh;
+    --student-list-max-height: 16vh;
   }
 }
 @media (700px <= height <=799px){
@@ -256,7 +258,7 @@ hr {
      --info-display-column-height: 600px;
      --scroll-button-offset: 50px;
       //schools
-     // --font-size-stats-value: 1.2em;
+     // //--font-size-stats-value: 1.2em;
       --font-size-school-name: 1.9em;
       --font-size-stats-title: 0.7em;
       --font-size-ranking-box: 1.3em;
@@ -266,7 +268,8 @@ hr {
       --font-size-highscore-button:.7em;
 
     //personal schools
-    --student-list-max-height: 18vh;
+    --button-bar-spacing: 35vh;
+    --student-list-max-height: 20vh;
      
   }
 }
@@ -281,7 +284,7 @@ hr {
      --info-display-column-height: 700px;
      --scroll-button-offset: 50px;
      //schools
-    // --font-size-stats-value: 1.2em;
+     --font-size-stats-value: 2.5vh;
      --font-size-school-name: 2.0em;
      --font-size-stats-title: 0.7em;
      --font-size-ranking-box: 1.4em;
@@ -289,8 +292,9 @@ hr {
      --font-size-highscore-items: 0.7em;
      --font-size-highscore-sub-items: 0.5em;
      --font-size-highscore-button:.7em;
-
-    //personal schools
+    
+     //personal schools
+    --button-bar-spacing: 35vh;
     --student-list-max-height: 20vh;
     
   }
@@ -307,14 +311,15 @@ hr {
      --scroll-button-offset: 75px;
 
      //schools
+     --font-size-stats-value: 2.5vh;
      --font-size-school-name: 2.1em;
      --font-size-stats-title: 0.6em;
      --font-size-ranking-box: 1.2em;
      --font-size-highscore-title-bar: 1.05em;
-     --font-size-highscore-items: 0.8em;
-     --font-size-highscore-sub-items: 0.5em;
+     --font-size-highscore-items: 1em;
+     --font-size-highscore-sub-items: 0.65em;
      --font-size-highscore-button:.8em;
-     
+     --button-bar-spacing: 35vh;
       //personal schools
     --student-list-max-height: 22vh;
     
@@ -331,13 +336,14 @@ hr {
      --info-display-column-height: 850px;
      --scroll-button-offset: 75px;
      //schools
+     --font-size-stats-value: 3vh;
      --font-size-school-name: 2.25em;
      --font-size-stats-title: 0.75em;
      --font-size-ranking-box: 1.5em;
      --font-size-highscore-title-bar: 1.125em;
      --font-size-highscore-items: 1.125em;
      --font-size-highscore-sub-items: 0.75em;
-
+     --button-bar-spacing: 35vh;
     //personal schools
     --student-list-max-height: 24vh;
      
@@ -358,7 +364,7 @@ hr {
       --font-size-highscore-title-bar: 1.125em;
       --font-size-highscore-items: 1.125em;
       --font-size-highscore-sub-items: 0.75em;
-
+      --button-bar-spacing: 35vh;
     //personal schools
     --student-list-max-height: 26vh;
   }
@@ -386,6 +392,7 @@ hr {
           --ranking-box-height: 3vh;
           --title-bar-height: 4.5vh;
           --professor-item-width: 20vh;
+          --button-bar-spacing: 35vh;
       
     //personal schools
     --student-list-max-height: 26vh;
@@ -413,6 +420,7 @@ hr {
           --ranking-box-height: 3vh;
           --title-bar-height: 4.5vh;
           --professor-item-width: 20vh;
+          --button-bar-spacing: 38vh;
   }
 }
 @media (1400px <= height <=1599px){
