@@ -3,15 +3,15 @@
   <div class="stats-line">
     <div class="stats-item">
       <span class="stats-title">Number of Students: </span>
-      <span class="students-item-label">{{ numberOfStudents }}</span>
+      <span class="item-label students-item-label">{{ numberOfStudents }}</span>
     </div>
     <div class="stats-item ">
       <span class="stats-title">Average GPA:</span>
-      <span class="gpa-item-label">{{ school.avg_gpa | number:'1.2-2' || '-' }}</span>
+      <span class="item-label gpa-item-label">{{ school.avg_gpa | number:'1.2-2' || '-' }}</span>
     </div>
     <div class="stats-item">
       <span class="stats-title">School Ranking:</span>
-      <span class="ranking-item-label">{{ school.ranking  || '-' }}</span>
+      <span class="item-label ranking-item-label">{{ school.ranking  || '-' }}</span>
     </div>
   </div>
 

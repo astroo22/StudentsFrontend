@@ -114,6 +114,7 @@
   margin-left: 2vh;
   margin-bottom: 1vh;
 }
+
 .stats-title {
   font-size: var(--font-size-stats-title);
   font-weight: bold;
@@ -132,16 +133,22 @@
   margin-right: 30px;
   box-shadow: .5em 0.7em 1.5em -0.5em #2dbafcec;
 }
-
+.stats-title, .item-label {
+  white-space: nowrap; // Prevent text from wrapping
+  //overflow: hidden; // Hide overflowed content
+  text-overflow: ellipsis; // Add ellipsis for overflowed content
+  font-weight: bold;
+}
 .stats-item {
   display: flex;
   position: relative;
   flex-direction: row;
   //border: 1px solid #000000;
-  padding: 1em;
+  padding: .5em;
   background: #D5EAFF;
   height: 5vh;
   flex-grow: 1;
+  min-width: 0;
   
   .students-item-label,
   .gpa-item-label,
@@ -227,7 +234,7 @@
   }
 }
 .top-grades-container {
-  flex: 35%;
+  flex: 40%;
   margin-left: 2.5vh;
   .grade-box{
     display: flex;
