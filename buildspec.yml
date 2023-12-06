@@ -1,11 +1,11 @@
-version: 0.2
+version: 0.3
 
 phases:
   install:
     runtime-versions:
-      nodejs: 14
+      nodejs: 18
     commands:
-      - n 16.14
+      - echo "Using Node.js version $(node --version)"
       - echo Installing source NPM...
       - npm install -g @angular/cli
       - echo Installing project NPM dependencies...
