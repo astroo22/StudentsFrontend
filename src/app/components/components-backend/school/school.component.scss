@@ -163,14 +163,27 @@
     font-weight: bold;
     color: #000000;
   }
-  .students-item-label{
-    left: 18vh;
+  @media(max-height:799px){
+    .students-item-label{
+      left: 16vh;
+    }
+    .gpa-item-label{
+      left: 12vh;
+    }
+    .ranking-item-label{
+      left: 14vh;
+    }
   }
-  .gpa-item-label{
-    left: 14vh;
-  }
-  .ranking-item-label{
-    left: 16vh;
+  @media(min-height:800px){
+    .students-item-label{
+      left: 18vh;
+    }
+    .gpa-item-label{
+      left: 14vh;
+    }
+    .ranking-item-label{
+      left: 16vh;
+    }
   }
 }
 //?????????????????????????????????????????????????????????????

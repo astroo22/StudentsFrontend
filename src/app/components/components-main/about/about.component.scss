@@ -48,7 +48,7 @@ $button-secondary-color:#006effc5;
 #container {
     display: flex;
     justify-content: space-between;
-    margin-left: 10vh;
+    margin-left: 5vh;
     width: 100%;
     padding: 20px;
     #selection-column {
@@ -62,7 +62,7 @@ $button-secondary-color:#006effc5;
         font: normal normal normal 24px/38px Source;
         text-align: left;
         justify-content: center;
-        padding-left: 50px;
+       //padding-left: 50px;
         max-height: var(--info-display-column-height);
 
         
