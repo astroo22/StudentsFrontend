@@ -1,25 +1,79 @@
 footer {
-    background-color: #07070a;
-    color: #fff;
-    padding: 17px 0;
-  
-    .container {
-      max-width: 100%;
-      padding-left: 10%;
-      margin: 0 auto;
-      // display:flex;
-      // flex-direction: row;
-  
+  background-color: #07070a;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 1.5vh;
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10%;
+
+    
+
+    .footer-section {
+      flex: 1;
+      display: block;
+      margin-bottom: 10px;
+      margin: 0 10px;
+
       .footer-title {
-        display: flex;
-        font-size: 2.5vh;
+        font-size: 2vh;
         font-weight: bold;
         padding-bottom: 1vh;
       }
-  
+
       .footer-text {
-        margin-bottom: 2vh;
-        font-size: 1.5vh;
+        max-width: 80%; // Adjust as needed
+        margin: 0 auto;
+      }
+      .footer-title, .footer-text {
+        display: block;
+        margin: 0;
+        padding: 0;
       }
     }
   }
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      max-height: 100px; // Set a maximum height
+      overflow-y: auto; // Make it scrollable if content exceeds max height
+      // margin-left: auto;
+      // margin-right: auto;
+    }
+    .footer-section {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .footer-text{
+      margin-left:2.5vh !important;
+    }
+  }
+  // scroll bar 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #3614b1; /* color of the tracking area */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #160561; /* color of the scroll thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6f00ff; /* color when hovering over the scroll thumb */
+  }
+  
+  /* For IE and Edge */
+  footer {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  }
+}
