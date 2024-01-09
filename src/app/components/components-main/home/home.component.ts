@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  name = 'John Doe';
-  title = 'Software Engineer';
-  skills = ['Angular', 'React', 'Node.js', 'Express', 'MongoDB'];
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (window.innerWidth <= 1023) { // Example breakpoint for mobile
+      document.body.classList.add('enable-scroll');
+    } else {
+      document.body.classList.remove('enable-scroll');
+    }
+  }
+
+  ngOnInit() {
+    this.onResize();
+  }
 }

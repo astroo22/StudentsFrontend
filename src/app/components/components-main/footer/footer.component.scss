@@ -2,7 +2,7 @@ footer {
   background-color: #07070a;
   color: #fff;
   padding: 20px 0;
-  font-size: 1.5vh;
+  font-size: 1.3vh;
 
   .footer-container {
     display: flex;
@@ -41,8 +41,8 @@ footer {
     .footer-container {
       flex-direction: column;
       text-align: center;
-      max-height: 100px; // Set a maximum height
-      overflow-y: auto; // Make it scrollable if content exceeds max height
+      max-height: 100px;
+      overflow-y: auto; // Makes it scrollable when content exceeds max height
       // margin-left: auto;
       // margin-right: auto;
     }
@@ -51,7 +51,7 @@ footer {
       text-align: center;
     }
     .footer-text{
-      margin-left:2.5vh !important;
+      margin-left:6vh !important;
     }
   }
   // scroll bar 

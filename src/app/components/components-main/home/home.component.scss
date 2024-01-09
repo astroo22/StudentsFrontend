@@ -7,132 +7,133 @@ $tertiary-color: #000000;
   min-height: 100vh;
 }
 #container {
-    overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    // ha gradients are neat. I should try this on a button or two
-    #intro-container{
-      //margin-left: 10vh;
-      
-      
-      margin-top: 20vh;
-      margin-right: var(--home-middle-margin);
-      #intro-title{
+  overflow: hidden;
+  min-height: 100vh;
+ // max-height: 120vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #intro-container{
+    margin-left: 5vh;
+    margin-top: 20vh;
+    margin-right: var(--home-middle-margin);
+    #intro-title{
+      color: $primary-text-color; 
+      font: normal normal normal var(--home-intro-title-font-size) Source;
+      text-align: left;
+    }
+    #intro-content-box{
+      margin-left: 5vh;
+      flex-direction: column;
+      width: 50vh;
+      #name-title{
+        padding-top:3vh;
+        font: normal normal bold var(--home-name-title-font-size) Source;
+        color: $secondary-text-color;
+      }
+      #job-title{
         color: $primary-text-color; 
-        font: normal normal normal 3vh Source;
-        text-align: left;
+        font: normal normal bold var(--home-job-title-font-size) Source ;
       }
-      #intro-content-box{
-        margin-left: 5vh;
-        flex-direction: column;
-        width: 50vh;
-        #name-title{
-          padding-top:3vh;
-          font: normal normal bold 4vh Source;
-          color: $secondary-text-color;
-        }
-        #job-title{
-          color: $primary-text-color; 
-          font: normal normal bold 3.5vh Source ;
-        }
-        #intro{
-          padding-top: 1vh;
-          color: $primary-text-color; 
-          font: normal normal normal 2vh Roboto;
-          letter-spacing: 1px;
-        }
+      #intro{
+        padding-top: 1vh;
+        color: $primary-text-color; 
+        font: normal normal normal var(--home-intro-content-font-size) Roboto;
+        letter-spacing: 1px;
       }
+    }
+    
+  }
+  #tech-used-container{
+    margin-top: var(--home-top-margin);
+   // margin-left: 5vh;
+    width: 31vh;
+    max-height: calc(100vh - 10vh - 12vh);
+    color: $primary-text-color;
+
+  }
+  #tools-title{
+    font: normal normal bold var(--home-tools-title-font-size) Source;
+  }
+}
+ul{
+  list-style-type: none;  
+  padding-left: 0;  
+    
+}
+li{
+  font: normal normal normal var(--home-tools-li-font-size) Roboto;
+}
+
+ul li::before {
+    content: ">";          
+    margin-right: 10px;     
+}
+
+
+.text-highlight{
+  font: normal normal bold var(--home-tools-li-title-font-size) Roboto;
+  color: $secondary-text-color;
+  margin-top:1vh;
+  margin-bottom:1vh;
+}
+@media(min-width:1024px){
+  #container{
+    overflow: hidden;
+  }
+}
+@media (max-width: 1023px) { 
+  #container {
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    min-height: auto;
+
+    #intro-container, #tech-used-container {
+      margin: 0 auto;
+      width: 90%;
       
+    }
+    #intro-container{
+      margin-top: 12vh;
+      margin-left:7vh;
+      //margin-top: 10vh;
+      margin-right:5vh;
     }
     #tech-used-container{
-      margin-top: var(--home-top-margin);
-      margin-left: 5vh;
-      width: 31vh;
-      max-height: calc(100vh - 10vh - 12vh);
-      color: $primary-text-color;
-
-    }
-    #tools-title{
-      font: normal normal bold 2vh Source;
+      margin-left:12vh;
+      margin-top: 8vh;
+      min-height:80vh;
     }
   }
-  ul {
-    list-style-type: none;  
-    padding-left: 0;  
-      
-  }
-  li{
-    font: normal normal normal 1.5vh Roboto;
-  }
+}
 
-  ul li::before {
-      content: ">";          
-      margin-right: 10px;     
-  }
-
-
-  .text-highlight{
-    font: normal normal bold 1.6vh Roboto;
-    color: $secondary-text-color;
-    margin-top:1vh;
-    margin-bottom:1vh;
-  }
-  
-  .button1, .button-85 {
+// only buttons past this point
+.button1, .button-85 {
     padding: 1vh 2vw;
-    min-width: 10vw;
-    max-width: 20vw; 
-    font-size: 1vw; 
+    min-width: 150px;
+    max-width: 300px; 
+    font-size: 1.2em; 
 }
  
 
-  .button1 {
-    padding: 0.6em 2em;
-    border: none;
-    outline: none;
-    margin-left: 5vh;
-    margin-top: 5vh;
-    margin-right:5vh;
-    background: #111;
-    cursor: pointer;
-    border-radius: 10px;
-    color: $primary-text-color;
-    z-index: 0;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-
-  // .button1:before{
-  //   content: "";
-  //   position: absolute;
-  //   background: linear-gradient(
-  //     45deg,
-  //     #ff0000,
-  //     #ff7300,
-  //     #fffb00,
-  //     #48ff00,
-  //     #00ffd5,
-  //     #002bff,
-  //     #7a00ff,
-  //     #ff00c8,
-  //     #ff0000
-  //   );
-  //   top: -2px;
-  //   left: -2px;
-  //   background-size: 400%;
-  //   z-index: -1;
-  //   filter: blur(5px);
-  //   -webkit-filter: blur(5px);
-  //   width: calc(100% + 4px);
-  //   height: calc(100% + 4px);
-  //   animation: btn-primary-background 20s linear infinite;
-  //   transition: opacity 0.3s ease-in-out;
-  //   border-radius: 10px;
-    
-  // }
+.button1 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  margin-left: 5vh;
+  margin-top: 5vh;
+  margin-right:5vh;
+  background: #111;
+  cursor: pointer;
+  border-radius: 10px;
+  color: $primary-text-color;
+  z-index: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
   
   
 /* Button by CSS Scan, From: https://getcssscan.com/css-button-examples */

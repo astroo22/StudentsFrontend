@@ -38,6 +38,31 @@ body {
   color: $tertiary-color;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body.enable-scroll {
+  overflow: auto;
+}
+// scroll bar 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3614b1; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #160561; /* color of the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f00ff; /* color when hovering over the scroll thumb */
+}
+
+/* For IE and Edge */
+footer {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
 
 .navbar {
   background-color: $primary-color;
@@ -94,10 +119,17 @@ hr {
   // login
   --login-button-bottom-scaling: -6.5vh;
 
-  // home
+  // home - intro sec
   --home-top-margin: 12vh;
   --home-middle-margin:20vh;
-
+  --home-intro-title-font-size:3vh;
+  --home-name-title-font-size:4vh;
+  --home-job-title-font-size:3.5vh;
+  --home-intro-content-font-size:2vh;
+  // home - technologies sec
+  --home-tools-title-font-size: 2vh;
+  --home-tools-li-font-size:1.5vh;
+  --home-tools-li-title-font-size:1.6vh;
 
   // about
   --info-display-column-height: 675px;
@@ -134,7 +166,13 @@ hr {
       --base-padding: 5px; 
       --base-font-size: 16px;
 
-      
+      // home intro sec
+    --home-middle-margin:1vh;
+    --home-intro-title-font-size:2.5vh;
+    --home-name-title-font-size:3.5vh;
+    --home-job-title-font-size:3vh;
+    --home-intro-content-font-size:1.5vh;
+
     // about
 
       --info-display-paragraph-length: 300px;
@@ -142,26 +180,63 @@ hr {
       //--container-padding-left: 100px;
   }
 }
-@media (700px <= width <=1079px){
+@media (700px <= width <=1023px){
   :root {
     
     // general
       --base-padding: 5px; 
       --base-font-size: 16px;
 
-    // home
-      --home-middle-margin:10vh;
+    // home intro sec
+    --home-middle-margin:5vh;
+    --home-intro-title-font-size:2.5vh;
+    --home-name-title-font-size:3.5vh;
+    --home-job-title-font-size:3vh;
+    --home-intro-content-font-size:1.5vh;
+    // home tools sec
+    // --home-tools-title-font-size: 1.5vh;
+    // --home-tools-li-font-size:1.2vh;
+    // --home-tools-li-title-font-size:1.3vh;
     // about
 
       --info-display-paragraph-length: 400px;
   }
 }
-@media (1080px <= width <=1439px) {
+@media (1024px <= width <=1200px) {
   :root {
     // general
       --base-padding: 20px; 
       --base-font-size: 16px;
-    //about
+    // home intro sec
+    --home-middle-margin:5vh;
+    --home-intro-title-font-size:2.5vh;
+    --home-name-title-font-size:3.5vh;
+    --home-job-title-font-size:3vh;
+    --home-intro-content-font-size:1.5vh;
+    // home tools sec
+    --home-tools-title-font-size: 1.5vh;
+    --home-tools-li-font-size:1.2vh;
+    --home-tools-li-title-font-size:1.3vh;
+    // about
+      --info-display-paragraph-length: 500px;
+  }
+}
+@media (1201px <= width <=1439px) {
+  :root {
+    // general
+      --base-padding: 20px; 
+      --base-font-size: 16px;
+    // home intro sec
+    --home-middle-margin:7vh;
+    --home-intro-title-font-size:2.5vh;
+    --home-name-title-font-size:3.5vh;
+    --home-job-title-font-size:3vh;
+    --home-intro-content-font-size:1.5vh;
+    // home tools sec
+    --home-tools-title-font-size: 2vh;
+    --home-tools-li-font-size:1.5vh;
+    --home-tools-li-title-font-size:1.6vh;
+    // about
       --info-display-paragraph-length: 500px;
   }
 }
