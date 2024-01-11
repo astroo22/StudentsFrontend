@@ -21,7 +21,7 @@ $button-secondary-color:#006effc5;
         flex: 1;
         gap: 20px;
         border-right: none; 
-        padding-right: 20px; // edit this maybe margin right tho
+        padding-right: 20px;
         color: $primary-text-color; 
         font: normal normal normal 24px/38px Source;
         text-align: left;
@@ -37,7 +37,7 @@ $button-secondary-color:#006effc5;
             position: absolute;
             top: 10%; 
             bottom: 10%; 
-            right: -3vh;
+            right: -2vh;
             width: 2px;
             background: linear-gradient(to bottom, transparent, #ffffff70, transparent);
         }
@@ -79,7 +79,7 @@ $button-secondary-color:#006effc5;
     #information-container {
         position: relative;
         flex: 4; 
-        padding-left: 150px; // Some spacing to the left of the information sections
+        padding-left: 150px;
         max-height: var(--info-display-max-height);
     }
 
@@ -102,6 +102,7 @@ $button-secondary-color:#006effc5;
         z-index: 1000;
     }
 }
+
 #about-project{
     padding-top: 1vh;
     color: $primary-text-color; 
@@ -137,4 +138,26 @@ $button-secondary-color:#006effc5;
     font: normal normal normal 18px/30px Roboto; 
     letter-spacing: 1px;
     text-align: justify; 
+}
+@media(max-width: 800px){
+    #container{
+        margin-left:1vh;
+        padding:1px;
+        
+        font: normal normal normal 1rem Source;
+        .selection-column{
+            font: normal normal normal 1rem  Source;
+            padding-right: 5px;
+        }
+       
+        #information-container {
+            position: relative;
+            flex: 4; 
+            padding-left: 50px; 
+            max-height: var(--info-display-max-height);
+        }
+    }
+    #about-paragraph,#about-me{
+        font-size:smaller;
+    }
 }
