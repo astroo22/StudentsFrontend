@@ -11,8 +11,8 @@
   justify-content: center;
 }
 #column-container{
-  margin-left:25vh;
-  margin-right: 25vh;
+  margin-left:15vh;
+  margin-right:15vh;
 }
 .iframe-container {
   position: relative;
@@ -34,8 +34,8 @@
 }
 @media (max-width: 768px) { 
   #column-container {
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
   }
 
   .iframe-container {
