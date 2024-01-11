@@ -144,6 +144,7 @@ $button-secondary-color:#006effc5;
         margin-left:.5vh;
         padding:1px;
         margin-right:2vh;
+        margin-bottom:10vh;
         
         font: normal normal normal 1rem Source;
         .selection-column{
@@ -160,6 +161,8 @@ $button-secondary-color:#006effc5;
             padding-left: 20px;
             max-height: var(--info-display-max-height);
             margin-right: 1vh;
+           // margin-bottom: 2vh;
+           min-height: 500px;
         }
         .scroll-indicator {
             width: 20px; 
