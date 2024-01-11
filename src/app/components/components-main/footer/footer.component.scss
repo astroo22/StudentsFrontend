@@ -37,21 +37,28 @@ footer {
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .footer-container {
-      flex-direction: column;
+      //flex-direction: column;
       text-align: center;
       max-height: 100px;
       overflow-y: auto; // Makes it scrollable when content exceeds max height
       // margin-left: auto;
       // margin-right: auto;
-    }
-    .footer-section {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .footer-text{
-      margin-left:6vh !important;
-    }
+      .footer-section {
+        margin-bottom: 10px;
+        text-align: center;
+        .footer-title {
+          font-size: 1em;
+         // padding-bottom: 1vh;
+        }
+    
+        .footer-text {
+          max-width: 80%; // Adjust as needed
+          margin: 0 auto;
+          font-size: .5em;
+        }
+      } 
+    } 
   }
 }
