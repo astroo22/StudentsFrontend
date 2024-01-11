@@ -88,7 +88,7 @@ ul li::before {
   #container {
     flex-direction: column;
     align-items: center;
-    overflow: auto;
+    //overflow: auto;
     min-height: auto;
 
     #intro-container, #tech-used-container {
@@ -115,22 +115,62 @@ ul li::before {
     }
   }
 }
+@media (max-width: 800px) {
+  #container {
+      flex-direction: column;
+      align-items: center;
+      min-height: auto;
+      padding: 10px;
+
+      #intro-container, #tech-used-container {
+          width: 80%; 
+          margin: 0 auto; 
+          margin-left:1vh;
+      }
+      #intro-container{
+        margin-top:12vh;
+      }
+      #intro-title, #name-title, #job-title, #intro {
+          font-size: smaller; // Adjust font size for smaller screens
+      }
+
+      .button1, .button-85 {
+          padding: 10px 20px; 
+          font-size: 1em; 
+          margin: 10px 0; 
+          padding: .5vh 1vw;
+          min-width: 25px;
+          max-width: 150px;  
+          margin-left: 5vh;
+          margin-top: 1vh;
+          margin-right:1vh;
+      }
+
+      #tech-used-container {
+          margin-top: 20px;
+      }
+
+      .text-highlight, ul, li {
+          font-size: smaller; // Adjust font size for list items
+      }
+  }
+}
 // scroll bar 
-::-webkit-scrollbar {
-  width: 10px;
-}
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
 
-::-webkit-scrollbar-track {
-  background: #4b4857; /* color of the tracking area */
-}
+// ::-webkit-scrollbar-track {
+//   background: #4b4857; /* color of the tracking area */
+// }
 
-::-webkit-scrollbar-thumb {
-  background: #c8c3df; /* color of the scroll thumb */
-}
+// ::-webkit-scrollbar-thumb {
+//   background: #c8c3df; /* color of the scroll thumb */
+// }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #6f00ff; /* color when hovering over the scroll thumb */
-}
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #6f00ff; /* color when hovering over the scroll thumb */
+// }
 
 
 // only buttons past this point
