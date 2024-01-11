@@ -34,7 +34,10 @@ export class ProjectComponent implements AfterViewInit  {
     const hideModalPreference = localStorage.getItem('hideModal');
     if (hideModalPreference === 'true') {
       this.showModal = false;
+    }else if(this.isLoggedIn()){
+      this.showModal = false;
     }
+    
   }
 
   closeModal(): void {

@@ -93,22 +93,45 @@ ul li::before {
 
     #intro-container, #tech-used-container {
       margin: 0 auto;
-      width: 90%;
+      width: 80%;
       
     }
     #intro-container{
       margin-top: 12vh;
-      margin-left:7vh;
+      margin-left:10vh;
       //margin-top: 10vh;
       margin-right:5vh;
     }
     #tech-used-container{
-      margin-left:12vh;
+      margin-left:15vh;
       margin-top: 8vh;
       min-height:80vh;
     }
+    ul{
+      margin-left:5vh;
+    }
+    .text-highlight{
+      margin-left:3vh;
+    }
   }
 }
+// scroll bar 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4b4857; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8c3df; /* color of the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f00ff; /* color when hovering over the scroll thumb */
+}
+
 
 // only buttons past this point
 .button1, .button-85 {

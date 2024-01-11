@@ -155,6 +155,9 @@ export class PersonalCreateSchoolComponent implements OnInit {
 
             setTimeout(() => {
               this.setLoadingState(false);
+              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate(['/project']);
+              });
           }, 3000);
           }
           else if (response.status === 'Failed') {

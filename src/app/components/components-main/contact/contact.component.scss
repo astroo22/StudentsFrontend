@@ -1,14 +1,15 @@
 #container {
     display: flex;
     background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
+    justify-content: center; 
+    align-items: center;
   }
   #info{
     padding-top: 50px;
     color: #FFF;
     min-height: 83vh; 
-    margin-left:40vh;
+    //margin-left:40vh;
     margin-top: 20vh;
-    
   }
   
   h2 {

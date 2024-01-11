@@ -54,26 +54,4 @@ footer {
       margin-left:6vh !important;
     }
   }
-  // scroll bar 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #3614b1; /* color of the tracking area */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #160561; /* color of the scroll thumb */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #6f00ff; /* color when hovering over the scroll thumb */
-  }
-  
-  /* For IE and Edge */
-  footer {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-  }
 }

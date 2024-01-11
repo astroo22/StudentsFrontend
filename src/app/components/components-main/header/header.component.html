@@ -1,23 +1,24 @@
-<nav class="navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg" id="navbarId" #navbarNav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"  (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarNav">
+    <!-- aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
     </button>
     <div id="navbar-contents">
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div [class.collapse]="isNavbarCollapsed" [class.show]="!isNavbarCollapsed" class="navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item-left">
-            <a class="nav-link" routerLink="/">Home</a>
+            <a class="nav-link" routerLink="/" (click)="closeNavbar()">Home</a>
           </li>
           <li class="nav-item-left">
-            <a class="nav-link" routerLink="/project">Project</a>
+            <a class="nav-link" routerLink="/project" (click)="closeNavbar()">Project</a>
           </li>
           <li class="nav-item-left">
-            <a class="nav-link" routerLink="/contact">Contact</a>
+            <a class="nav-link" routerLink="/contact" (click)="closeNavbar()">Contact</a>
           </li>
           <li class="nav-item-left">
-            <a class="nav-link" routerLink="/about">About</a>
+            <a class="nav-link" routerLink="/about" (click)="closeNavbar()">About</a>
           </li>
           <li class="nav-item-left">
-            <a class="nav-link" routerLink="/resume">Resume</a>
+            <a class="nav-link" routerLink="/resume" (click)="closeNavbar()">Resume</a>
           </li>
         </ul>
       </div>

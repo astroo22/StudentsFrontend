@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy,ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, OnDestroy,ChangeDetectorRef } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   username: string | null = null;
+  isNavbarCollapsed = true;
   constructor(private authService: AuthService, private cd: ChangeDetectorRef) { }
   private subscription: Subscription;
   ngOnInit(): void {
@@ -22,7 +24,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-  logout(){
+  toggleNavbar(): void {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  closeNavbar(): void {
+    this.isNavbarCollapsed = true;
+  }
+
+  logout(): void {
     this.authService.logout();
+    this.closeNavbar();
   }
 }
