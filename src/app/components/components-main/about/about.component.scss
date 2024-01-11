@@ -143,6 +143,7 @@ $button-secondary-color:#006effc5;
     #container{
         margin-left:1vh;
         padding:1px;
+        margin-right:2vh;
         
         font: normal normal normal 1rem Source;
         .selection-column{
@@ -157,13 +158,13 @@ $button-secondary-color:#006effc5;
         #information-container {
             position: relative;
             flex: 4; 
-            padding-left: 25px; 
+            padding-left: 25px;
             max-height: var(--info-display-max-height);
             margin-right: 1vh;
         }
     }
     .paragraph {
-        max-width: 350px; 
+        max-width: 340px; 
         margin: 1em 0; 
     }
     #about-paragraph,#about-me{
