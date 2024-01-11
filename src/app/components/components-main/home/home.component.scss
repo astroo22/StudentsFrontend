@@ -123,9 +123,10 @@ ul li::before {
       padding: 10px;
 
       #intro-container, #tech-used-container {
-          width: 80%; 
+          width: 100%; 
           margin: 0 auto; 
           margin-left:1vh;
+          margin-right:1vh;
       }
       #intro-container{
         margin-top:10vh;
@@ -155,6 +156,10 @@ ul li::before {
 
       .text-highlight, ul, li {
           font-size: smaller; // Adjust font size for list items
+      }
+      #tech-used-container{
+        margin-top: 5vh;
+        margin-bottom: 2vh;
       }
   }
 }
