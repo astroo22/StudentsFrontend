@@ -57,7 +57,7 @@
   .nav-item-right {
     justify-content: right;
     margin-left: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     align-items: center;
@@ -73,7 +73,7 @@
       font-family: Roboto;
       letter-spacing: 0px;
       white-space: nowrap; 
-      min-width: 150px; 
+      //min-width: 150px; 
       &:hover{
         background-color: #000000;
         color: #6f00ff;
@@ -131,16 +131,40 @@
 .navbar-collapse {
   width: 100%;
   justify-content: left;
-  background-color: #000; // Your preferred background color
+  background-color: #000; 
   z-index: 1000; // To make sure it’s above other elements
 }
 
 .navbar-nav.ml-auto {
   position: absolute;
   z-index: 1001; 
-  right: 20px; // Adjust as per your design needs
-  top: 1.9vh;
+  right: 20px; 
+  top: 1.5vh;
   align-items: center;
   flex-direction: row;
 }
 
+@media (max-width: 800px) {
+  .nav-item-left, .nav-item-right {
+    font-size: 0.9rem; 
+    padding: 0.5rem; 
+  }
+  .navbar-nav.ml-auto{
+    right: 5px;
+    top: 1vh;
+  }
+  .me-5{
+    margin-right: .5rem !important;
+  }
+  .btn{
+    font-size: .8rem;
+  }
+  #or-text{
+    font-size: .8rem;
+  }
+  .ms-2{
+    margin-left: 0rem !important;
+    margin-right:0rem !important;
+  }
+
+}

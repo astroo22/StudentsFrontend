@@ -4,43 +4,6 @@ $tertiary-color: #000000;
 $button-primary-color:#ffffffd8;
 $button-secondary-color:#006effc5;
 
-// $width1: 1280px;
-// $size-s: 640px;
-
-// Small Desktops and above
-// :root {
-//     --info-display-column-height: #{$size-s};
-// }
-// @media (min-width: $width1) {
-//     :root {
-//         --base-padding: 20px; 
-//         --base-font-size: 16px;
-//         --info-display-max-height: 675px;
-//         --info-display-column-height: #{$size-s};
-//         //--container-padding-left: 100px;
-//     }
-// }
-
-// Medium Desktops and above
-// @media (min-width: 1440px) {
-//     :root {
-//         --base-padding: 30px; 
-//         --base-font-size: 18px;
-//         --info-display-min-height: 675px;
-//         --container-padding-left: 150px;
-//     }
-// }
-
-// // Large Desktops and above
-// @media (min-width: 1920px) {
-//     :root {
-//         --base-padding: 40px; 
-//         --base-font-size: 20px;
-//         --info-display-min-height: 300px; 
-//         --container-padding-left: 200px;
-//     }
-// }
-//#2375e098
 #background{
    background: transparent linear-gradient(180deg, #000A1D 0%, #000000 100%) 0% 0% no-repeat padding-box;
    min-height: 85vh;
@@ -52,7 +15,7 @@ $button-secondary-color:#006effc5;
     width: 100%;
     padding: 20px;
     margin-top: 80px;
-    #selection-column {
+    .selection-column {
         display: flex;
         flex-direction: column;
         flex: 1;
@@ -130,11 +93,11 @@ $button-secondary-color:#006effc5;
     }
     .scroll-indicator {
         position: absolute;
-        width: 30px; // Set as needed
+        width: 30px; 
         height: 30px;
-        bottom: var(--scroll-button-offset); // Adjust as needed
+        bottom: var(--scroll-button-offset); 
         left: 33%;
-        //transform: translateX(-50%); // Center the icon horizontally
+        //transform: translateX(-50%); 
         cursor: pointer;
         z-index: 1000;
     }
@@ -166,12 +129,12 @@ $button-secondary-color:#006effc5;
 }
 
 .paragraph {
-    max-width: var(--info-display-paragraph-length); // Adjust to your design needs, it defines the maximum width of the paragraph.
-    margin: 1em 0; // Adds some vertical space above and below the paragraph
+    max-width: var(--info-display-paragraph-length); 
+    margin: 1em 0; 
 }
 
 .body-text{
-    font: normal normal normal 18px/30px Roboto; // Increased line height for better readability
+    font: normal normal normal 18px/30px Roboto; 
     letter-spacing: 1px;
-    text-align: justify; // Justify the text, you can use 'left' if you don't like justified text
+    text-align: justify; 
 }

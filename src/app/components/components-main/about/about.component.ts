@@ -11,6 +11,7 @@ export class AboutComponent implements AfterViewInit {
   @ViewChild('scrollableDiv', { static: false, read: ElementRef }) scrollableDiv: ElementRef;
   currentDisplay: string = 'about-project'; // default display
   isScrollable: boolean = false;
+  isSelectionHidden = true;
   private destroy$ = new Subject<void>();
   private threshold: number = 20;
 
@@ -77,5 +78,9 @@ export class AboutComponent implements AfterViewInit {
 
   displayInfo(section: string): void {
       this.currentDisplay = section;
+  }
+  toggleSelection() {
+    console.log("hit")
+    this.isSelectionHidden = !this.isSelectionHidden;
   }
 }
