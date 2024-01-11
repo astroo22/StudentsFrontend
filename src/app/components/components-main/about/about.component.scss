@@ -162,9 +162,19 @@ $button-secondary-color:#006effc5;
             max-height: var(--info-display-max-height);
             margin-right: 1vh;
         }
+        .scroll-indicator {
+            position: absolute;
+            width: 20px; 
+            height: 20px;
+            bottom: var(--scroll-button-offset); 
+            left: 40%;
+            //transform: translateX(-50%); 
+            cursor: pointer;
+            z-index: 1000;
+        }
     }
     .paragraph {
-        max-width: 340px; 
+        max-width: 325px; 
         margin: 1em 0; 
     }
     #about-paragraph,#about-me{
@@ -174,9 +184,9 @@ $button-secondary-color:#006effc5;
         font-size: .7rem;
     }
     .sub-title{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .sub-title-small{
-        font-size: 1rem;
+        font-size: .8rem;
     }
 }
