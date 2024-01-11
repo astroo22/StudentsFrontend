@@ -1,9 +1,4 @@
 $font-title: normal normal normal 25px/30px Roboto;
-
-#content{
-  //overflow-x: hidden;
-}
-
 .app-schools {
  // background-color: #2b2a2a;
   padding: 20px;
@@ -51,7 +46,7 @@ $font-title: normal normal normal 25px/30px Roboto;
     }
   }
 }
-.modal {
+.model {
   position: fixed;
   top: 0;
   left: 0;
@@ -64,8 +59,8 @@ $font-title: normal normal normal 25px/30px Roboto;
   z-index: 1000;  // to ensure the modal is on top
 }
 
-.modal-content {
-  width: 60%;  // you can adjust this value as per your requirements
+.model-content {
+  width: 60%;
   max-width: 50vh;
   background-color: #ffffff;
   padding: 20px;
@@ -99,4 +94,7 @@ $font-title: normal normal normal 25px/30px Roboto;
       background-color: #0056b3;
     }
   }
+}
+@media(max-size:800px){
+  
 }
