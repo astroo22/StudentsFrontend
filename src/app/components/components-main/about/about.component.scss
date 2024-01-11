@@ -143,7 +143,8 @@ $button-secondary-color:#006effc5;
     #container{
         margin-left:.5vh;
         padding:1px;
-        margin-right:2vh;
+       // padding-right:10px;
+        margin-right:5vh;
         margin-bottom:2vh;
         
         font: normal normal normal 1rem Source;
@@ -179,6 +180,7 @@ $button-secondary-color:#006effc5;
     }
     .body-text{
         font-size: .7rem;
+        padding-right:10px;
     }
     .sub-title{
         font-size: 1.2rem;
