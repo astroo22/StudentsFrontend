@@ -141,7 +141,7 @@ hr {
     --student-list-max-height: 28vh;
 }
 // have not used any general tags yet hoping to add a bunch for font etc
-@media (500px <= width <= 699px){
+@media (max-width: 699px){
   :root {
     // general
       --base-padding: 5px; 
@@ -149,10 +149,10 @@ hr {
 
       // home intro sec
     --home-middle-margin:1vh;
-    --home-intro-title-font-size:2.5vh;
-    --home-name-title-font-size:3.5vh;
-    --home-job-title-font-size:3vh;
-    --home-intro-content-font-size:1.5vh;
+    --home-intro-title-font-size:2vh;
+    --home-name-title-font-size:3vh;
+    --home-job-title-font-size:2.5vh;
+    --home-intro-content-font-size:1vh;
 
     // about
 
@@ -175,7 +175,7 @@ hr {
     --home-job-title-font-size:3vh;
     --home-intro-content-font-size:1.5vh;
     // home tools sec
-    // --home-tools-title-font-size: 1.5vh;
+     --home-tools-title-font-size: 1vh;
     // --home-tools-li-font-size:1.2vh;
     // --home-tools-li-title-font-size:1.3vh;
     // about

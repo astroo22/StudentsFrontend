@@ -133,6 +133,9 @@ ul li::before {
       #intro-title, #name-title, #job-title, #intro {
           font-size: smaller; // Adjust font size for smaller screens
       }
+      #intro-content-box{
+        max-width: 400px;
+      }
 
       .button1, .button-85 {
           padding: 10px 20px; 
