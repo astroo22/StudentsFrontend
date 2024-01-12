@@ -268,13 +268,13 @@ hr {
       --font-size-stats-title: 0.5em;
       --font-size-ranking-box: 1em;
       --font-size-highscore-title-bar: .7em;
-      --font-size-highscore-items: 0.6em;
+      --font-size-highscore-items: 0.4em;
       --font-size-highscore-sub-items: 0.3em;
       --font-size-highscore-button:.6em;
       
     //personal schools
     --button-bar-spacing: 30vh;
-    --student-list-max-height: 14vh;
+    --student-list-max-height: 16vh;
   }
 }
 @media (600px <= height <=700px){
@@ -295,12 +295,12 @@ hr {
       --font-size-stats-title: 0.6em;
       --font-size-ranking-box: 1.1em;
       --font-size-highscore-title-bar: .7em;
-      --font-size-highscore-items: 0.6em;
-      --font-size-highscore-sub-items: 0.5em;
+      --font-size-highscore-items: 0.5em;
+      --font-size-highscore-sub-items: 0.4em;
       --font-size-highscore-button:.7em;
     //personal schools
     --button-bar-spacing: 30vh;
-    --student-list-max-height: 16vh;
+    --student-list-max-height: 18vh;
   }
 }
 @media (700px <= height <=799px){
@@ -351,7 +351,7 @@ hr {
     
      //personal schools
     --button-bar-spacing: 35vh;
-    --student-list-max-height: 20vh;
+    --student-list-max-height: 22vh;
     
   }
 }
