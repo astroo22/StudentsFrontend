@@ -6,19 +6,24 @@ $form-text-font: normal normal normal 15px/15px Roboto;
     //justify-content: center;
     flex-direction: column;
     //padding: 2vh;
-    margin-top: 12vh;
-    margin-left: 27vh;
-    margin-bottom: 17.5vh;
+    margin-top: 15vh;
+    margin-left: 15vh;
+    //margin-bottom: 17.5vh;
     border-radius: 0.8vh;
     box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
     width: 76vh; 
-    height: 53vh;
+    height: 50vh;
+    @media(max-width:800px){
+      height: 70vh;
+      width: 50vh;
+      margin-left: 3vh;
+    }
     background-color: #f4f4f4; 
   }
   #parent-title{
-    margin-top: 4vh;
+    margin-top: 3vh;
     margin-left: 5vh;
-    font: normal normal bold 40px/45px Roboto;
+    font: normal normal bold 1.5em Roboto;
     margin-bottom: 2vh;
   }
   
@@ -168,7 +173,9 @@ $form-text-font: normal normal normal 15px/15px Roboto;
   }
   .bottom-button{
     margin-right:10vh;
-    
+    @media(max-width:800px){
+      margin-right: 4vh;
+    }
     button{
         background-color: red;
         box-shadow: 0 0.7em 1.5em -0.5em #f5818198;
