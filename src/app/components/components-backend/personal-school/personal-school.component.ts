@@ -199,6 +199,7 @@ saveChanges(): void {
 
   this.schoolService.updateSchool(this.school.school_id, name, this.changedStudentIds, newAvgGpa).subscribe((response) => {
     this.editSchoolNameFlag = false;
+    this.isNameConfirmed = false;
     if (name !== "") {
       this.school.school_name = name;
     }

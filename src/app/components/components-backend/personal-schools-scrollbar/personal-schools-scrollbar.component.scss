@@ -10,11 +10,11 @@
 }
 .Scroll_Group {
     position: relative;
-    width: 388px;
+    width: 29vh;
     //height: 700px;
-    @media (max-width:800px) {
-      width: 30vh;
-    }
+    // @media (max-width:800px) {
+    //   width: 30vh;
+    // }
     overflow: hidden;
 }
 .Repeat_Grid {
@@ -114,14 +114,14 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5vh;
     color: #000;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    @media(max-width:800px){
-      font-size: .7em;
-    } 
+    // @media(max-width:800px){
+    //   font-size: .7em;
+    // } 
   }
   .add-school-button-container {
     position: sticky; 
