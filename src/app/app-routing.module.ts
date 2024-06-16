@@ -13,13 +13,13 @@ import { AboutComponent } from './components/components-main/about/about.compone
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'project', component: ProjectComponent },
+  // { path: 'project', component: ProjectComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent},
   { path: 'resume', component: ResumeComponent },
-  { path: 'login', component: LoginPageComponent},
-  { path: 'create-account', component: CreateAccComponent},
-  { path: 'account-settings', component: AccPageComponent,canActivate: [AuthGuard] }
+  // { path: 'login', component: LoginPageComponent},
+  // { path: 'create-account', component: CreateAccComponent},
+  // { path: 'account-settings', component: AccPageComponent,canActivate: [AuthGuard] }
 ];
 
 @NgModule({

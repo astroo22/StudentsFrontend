@@ -8,9 +8,9 @@
           <li class="nav-item-left">
             <a class="nav-link" routerLink="/" (click)="closeNavbar()">Home</a>
           </li>
-          <li class="nav-item-left">
+          <!-- <li class="nav-item-left">
             <a class="nav-link" routerLink="/project" (click)="closeNavbar()">Project</a>
-          </li>
+          </li> -->
           <li class="nav-item-left">
             <a class="nav-link" routerLink="/contact" (click)="closeNavbar()">Contact</a>
           </li>
@@ -22,7 +22,7 @@
           </li>
         </ul>
       </div>
-      <ul class="navbar-nav ml-auto">
+      <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item-right" *ngIf="!username">
           <button class="btn btn-outline-primary me-2" routerLink="/login">Login</button>
         </li>
@@ -34,19 +34,19 @@
           <span id="welcome-banner">Welcome, {{username}}</span>
         </li>
 
-        <!-- acc button  -->
+        <!- acc button 
         <li class="dropdown" *ngIf="username">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="icon-container">
               <img class="avatar-icon" src="assets/icons/usericon.png">
             </div>
           </button>
-          <!-- the dropdown  -->
+          <!- the dropdown  
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
            <li><a class="dropdown-item" href="/account-settings">Account Settings</a></li>
            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </nav>
